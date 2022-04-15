@@ -1,3 +1,4 @@
+vim.g.mapleader = " "
 vim.api.nvim_set_keymap('n', ';', ':', {noremap = true, silent = false})
 vim.api.nvim_set_keymap('n', '<leader>w', ':w!', {noremap = true, silent = false})
 vim.api.nvim_set_keymap('n', 'k', 'gk', {noremap = true, silent = false})
