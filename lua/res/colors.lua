@@ -4,7 +4,7 @@ if vim.fn.has("termguicolors") == 1 then
   vim.opt.termguicolors = true
 end
 
-vim.cm 'color codedark'
+vim.cmd 'color codedark'
 
 vim.opt.guicursor = {
   [[n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50]],
