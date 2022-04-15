@@ -1,0 +1,24 @@
+{
+  "explorer.width": 80,
+  "explorer.icon.enableNerdfont": true,
+  "explorer.previewAction.onHover": false,
+  "explorer.keyMappings.global": {
+    "<cr>": ["expandable?", ["expanded?", "collapse", "expand"], "open"],
+    "v": "open:vsplit"
+  },
+  "explorer.file.reveal.auto": true,
+  "coc.preferences.formatOnSaveFiletypes": [
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact"
+  ],
+  "coc.preferences.formatOnType": true,
+  "codeLens.enable": true,
+  "eslint.autoFixOnSave": true,
+  "eslint.probe": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+  "eslint.packageManager": "yarn",
+  "eslint.alwaysShowStatus": true,
+  "diagnostic.checkCurrentLine": true,
+  "tsserver.formatOnType": true
+}
