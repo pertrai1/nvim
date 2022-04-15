@@ -1,2 +1,0 @@
-local fn = vim.fn
-

@@ -1,5 +1,7 @@
 local fn = vim.fn
 
+vim.opt.encoding = 'UTF-8'
+
 vim.opt.hidden = true
 vim.opt.number = true
 vim.opt.lazyredraw = true
@@ -33,16 +35,8 @@ vim.opt.smartcase = true
 vim.opt.incsearch = true
 vim.opt.confirm = true
 vim.opt.clipboard = { 'unnamedplus' }
-vim.opt.termguicolors = true
-vim.opt.guifont = 'Fira Code Regular Nerd Font Complete Mono:h14'
 
 vim.opt.emoji = false
-
-vim.opt.guicursor = {
-  [[n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50]],
-  [[a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor]],
-  [[sm:block-blinkwait175-blinkoff150-blinkon175]],
-}
 
 vim.opt.cursorlineopt = 'screenline,number'
 
@@ -75,14 +69,14 @@ vim.opt.shortmess = {
   W = true, -- Don't show [w] or written when writing
 }
 
-vim.opt.updatetime = 300
-vim.opt.timeout = true
-vim.opt.timeoutlen = 500
-vim.opt.ttimeoutlen = 10
+-- vim.opt.updatetime = 300
+-- vim.opt.timeout = true
+-- vim.opt.timeoutlen = 500
+-- vim.opt.ttimeoutlen = 10
 
 vim.opt.splitbelow = true
 vim.opt.splitright = true
-vim.opt.eadirection = 'hor'
+-- vim.opt.readirection = 'hor'
 -- exclude usetab as we do not want to jump to buffers in already open tabs
 -- do not use split or vsplit to ensure we don't open any new windows
 vim.o.switchbuf = 'useopen,uselast'
@@ -109,7 +103,7 @@ vim.opt.backup = false
 vim.opt.writebackup = false
 vim.opt.undofile = true
 vim.opt.swapfile = false
-
+vim.opt.undolevels = 1000
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.wrapscan = true -- Searches wrap around the end of the file

@@ -7,81 +7,20 @@
 " ctrl-0 = alt-back
 " ctrl-i = alt-forward
 "
-call plug#begin()
-Plug 'pangloss/vim-javascript'
-Plug 'leafgarland/typescript-vim'
-
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'liuchengxu/vista.vim'
-" Plug 'preservim/nerdtree'
-
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-
-" Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
-Plug 'nvim-lualine/lualine.nvim'
-
-Plug 'jiangmiao/auto-pairs'
-
-Plug 'airblade/vim-gitgutter'
-
-Plug 'editorconfig/editorconfig-vim'
-
-" Plug 'flazz/vim-colorschemes'
-
-Plug 'Mofiqul/vscode.nvim'
-Plug 'tomasiser/vim-code-dark'
-
-Plug 'kyazdani42/nvim-web-devicons'
-Plug 'kyazdani42/nvim-tree.lua'
-Plug 'folke/trouble.nvim'
-
-Plug 'akinsho/bufferline.nvim'
-Plug 'akinsho/toggleterm.nvim'
-
-Plug 'mhinz/vim-startify'
-
-" Plug 'github/copilot.vim'
-
-Plug 'rbgrouleff/bclose.vim'
-Plug 'francoiscabrol/ranger.vim'
-
-Plug 'vim-test/vim-test'
-
-Plug 'kdheepak/lazygit.nvim'
-
-Plug 'fedepujol/move.nvim'
-
-Plug 'tpope/vim-commentary'
-call plug#end()
-
 lua << EOF
-require('res.globals')
+require('res.plugins')
 require('res.settings')
+require('res.colors')
+require('res.fonts')
 require('res.keymap')
 EOF
 
 " set to auto read when file is changed outside
-set autoread
-au FocusGained,BufEnter * checktime
+" set autoread
 
 filetype plugin indent on
 
 set wildmode=longest,list
-
-let mapleader=" "
-
-" General
-set hidden
-set number
-" set relativenumber
-set encoding=utf-8
-set linebreak
-syntax on
-set wrap
-set clipboard=unnamed
-set history=10000
 
 set backspace=eol,start,indent
 set wildmenu
@@ -99,13 +38,6 @@ nnoremap <leader>pv :Ex<CR>
 nnoremap dw vb"_d
 " select all
 nmap <C-a> gg<S-v>G
-
-" Colors
-" let g:vscode_style="light"
-" let g:vscode_italic_comment=1
-" colorscheme vscode
-colorscheme codedark
-set termguicolors
 
 lua << EOF
 require("bufferline").setup {
@@ -144,18 +76,7 @@ EOF
 vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
 vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 
-" Give more space for displaying messages
-set cmdheight=2
-
-" Longer updatetime (default is 4000 ms = 4 s) leads to noticeable
-" delays
-set updatetime=300
 set nocompatible
-
-set ai
-set si
-
-set laststatus=2
 
 let g:coc_global_extensions = [
   \ 'coc-tsserver'
