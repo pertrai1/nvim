@@ -13,13 +13,10 @@ Plug 'leafgarland/typescript-vim'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'liuchengxu/vista.vim'
-" Plug 'preservim/nerdtree'
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
-" Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
 Plug 'nvim-lualine/lualine.nvim'
 
 Plug 'jiangmiao/auto-pairs'
@@ -28,21 +25,12 @@ Plug 'airblade/vim-gitgutter'
 
 Plug 'editorconfig/editorconfig-vim'
 
-" Plug 'flazz/vim-colorschemes'
-
-Plug 'Mofiqul/vscode.nvim'
-Plug 'tomasiser/vim-code-dark'
-
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kyazdani42/nvim-tree.lua'
-Plug 'folke/trouble.nvim'
 
 Plug 'akinsho/bufferline.nvim'
-Plug 'akinsho/toggleterm.nvim'
 
 Plug 'mhinz/vim-startify'
-
-" Plug 'github/copilot.vim'
 
 Plug 'rbgrouleff/bclose.vim'
 Plug 'francoiscabrol/ranger.vim'
@@ -50,10 +38,9 @@ Plug 'francoiscabrol/ranger.vim'
 Plug 'vim-test/vim-test'
 
 Plug 'kdheepak/lazygit.nvim'
-
-Plug 'fedepujol/move.nvim'
-
 Plug 'tpope/vim-commentary'
+
+Plug 'tomasiser/vim-code-dark'
 call plug#end()
 
 " set to auto read when file is changed outside
@@ -113,10 +100,6 @@ set nowritebackup
 " Misc. Key Mapping
 nnoremap <C-x> :q<CR>
 inoremap jk <esc>
-nnoremap <leader>/ "fyiw 
-nnoremap <leader>pv :Ex<CR>
-" Start new line from any current position
-" inoremap <S-Return> <C-o>o
 
 " Operate on display lines
 nnoremap k gk
@@ -130,9 +113,6 @@ nnoremap dw vb"_d
 nmap <C-a> gg<S-v>G
 
 " Colors
-" let g:vscode_style="light"
-" let g:vscode_italic_comment=1
-" colorscheme vscode
 colorscheme codedark
 set termguicolors
 
@@ -162,10 +142,6 @@ require("nvim-tree").setup{
 }
 require("nvim-web-devicons").setup {}
 require("lualine").setup {}
-require("toggleterm").setup {
-  direction = 'float'
-}
-require("trouble").setup {}
 EOF
 
 " Visual mode related
@@ -178,7 +154,7 @@ set cmdheight=2
 
 " Longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays
-set updatetime=300
+set updatetime=500
 set nocompatible
 
 set showcmd
@@ -243,14 +219,6 @@ autocmd CursorHold * :call <SID>show_hover_doc()
 
 nnoremap <leader>e <cmd>CocCommand explorer<CR>
 
-" Trouble
-nnoremap <leader>xx <cmd>TroubleToggle<CR>
-nnoremap <leader>xw <cmd>TroubleToggle workspace_diagnostics<CR>
-nnoremap <leader>xd <cmd>TroubleToggle document_diagnostics<CR>
-nnoremap <leader>xq <cmd>TroubleToggle quickfix<CR>
-nnoremap <leader>xl <cmd>TroubleToggle loclist<CR>
-nnoremap gR <cmd>TroubleToggle lsp_references<CR>
-
 " Vista
 nnoremap <silent> <leader>v :Vista!!<CR>
 
@@ -269,27 +237,12 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 " Switch CWD to the directory of current buffer
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
 
-" NERDTree
-" let NERDTreeShowBookmarks=1
-" let NERDTreeChDirMode=0
-" let NERDTreeShowHidden=1
-" let NERDTreeQuitOnOpen=1
-" let NERDTreeIgnore = []
-" let NERDTreeWinSize=70
-" nnoremap <leader>n :NERDTreeFocus<CR>
-" nnoremap <C-n> :NERDTree<CR>
-" nnoremap <C-t> :NERDTreeToggle<CR>
-" nnoremap <C-f> :NERDTreeFind<CR>
-
 " NvimTree
 " https://github.com/kyazdani42/nvim-tree.lua
 nnoremap <C-n> :NvimTreeToggle<CR>
 nnoremap <leader>n :NvimTreeFocus<CR>
 nnoremap <C-f> :NvimTreeFindFileToggle<CR>
 autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif
-
-" Close the tab if NERDTree is the only window remaining in it.
-" autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
 " FZF
 nnoremap <C-p> :GFiles<CR>
@@ -320,22 +273,6 @@ nnoremap <leader>wh <C-w><C-h>
 nnoremap n nzzzv
 nnoremap N Nzzzv
 nnoremap J mzJ`z
-
-" Undo break points <= really helpful
-inoremap , ,<C-g>u
-inoremap . .<C-g>u
-inoremap ! !<C-g>u
-inoremap ? ?<C-g>u
-
-" Airline
-" let g:airline#extensions#bufferline#enabled=1
-" let g:airline#extensions#brance#enabled=1
-" let g:airline#extensions#tabline#enabled=1
-" let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
-" let g:airline_theme='papercolor'
-
-" Bufferline
-nnoremap <silent> gb :BufferLinePick<CR>
 
 " Tabs
 nnoremap <leader>tn :tabnew<CR>
@@ -387,9 +324,6 @@ nnoremap <Down> <cmd>resize -1<CR>
 nnoremap <Right> <cmd>vertical resize +1<CR>
 nnoremap <Left> <cmd>vertical resize -1<CR>
 
-" Toggle fold
-" nnoremap <CR> za
-
 " Easier line-wise movement
 nnoremap gh g^
 nnoremap gl g$
@@ -419,10 +353,6 @@ nmap <silent> t<C-l> :TestLast<CR>
 nmap <silent> t<C-v> :TestVisit<CR>
 
 let g:test#javascript#runner = 'jest'
-
-" CoPilot
-" imap <silent><script><expr> <C-j> copilot#Accept("\<CR>")
-" let g:copilot_no_tab_map = v:true
 
 nmap <silent> lg :LazyGit<CR>
 
