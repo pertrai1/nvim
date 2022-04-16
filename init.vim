@@ -12,7 +12,6 @@ Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'liuchengxu/vista.vim'
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -26,7 +25,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'editorconfig/editorconfig-vim'
 
 Plug 'kyazdani42/nvim-web-devicons'
-Plug 'kyazdani42/nvim-tree.lua'
+Plug 'preservim/nerdtree'
 
 Plug 'akinsho/bufferline.nvim'
 
@@ -36,8 +35,6 @@ Plug 'rbgrouleff/bclose.vim'
 Plug 'francoiscabrol/ranger.vim'
 
 Plug 'vim-test/vim-test'
-
-Plug 'kdheepak/lazygit.nvim'
 Plug 'tpope/vim-commentary'
 
 Plug 'tomasiser/vim-code-dark'
@@ -124,22 +121,6 @@ require("bufferline").setup {
     show_tab_indicators = true
   }
 }
-require("nvim-tree").setup{
-  update_cwd = true,
-  update_focused_file = {
-    enable = true,
-    update_cwd = true,
-    ignore_list = {}
-  },
-  disable_window_picker = 0,
-  view = {
-    width = 50,
-    side = "left"
-  },
-  git = {
-    ignore = false
-  }
-}
 require("nvim-web-devicons").setup {}
 require("lualine").setup {}
 EOF
@@ -219,9 +200,6 @@ autocmd CursorHold * :call <SID>show_hover_doc()
 
 nnoremap <leader>e <cmd>CocCommand explorer<CR>
 
-" Vista
-nnoremap <silent> <leader>v :Vista!!<CR>
-
 " Buffers
 " close all buffers
 nnoremap <silent> <leader>ba :bufdo bd<CR>
@@ -237,12 +215,20 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 " Switch CWD to the directory of current buffer
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
 
-" NvimTree
-" https://github.com/kyazdani42/nvim-tree.lua
-nnoremap <C-n> :NvimTreeToggle<CR>
-nnoremap <leader>n :NvimTreeFocus<CR>
-nnoremap <C-f> :NvimTreeFindFileToggle<CR>
-autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif
+" NERDTree
+let NERDTreeShowBookmarks=1
+let NERDTreeChDirMode=0
+let NERDTreeShowHidden=1
+let NERDTreeQuitOnOpen=1
+let NERDTreeIgnore = []
+let NERDTreeWinSize=70
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
+" Close the tab if NERDTree is the only window remaining in it.
+autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
 " FZF
 nnoremap <C-p> :GFiles<CR>
@@ -353,8 +339,6 @@ nmap <silent> t<C-l> :TestLast<CR>
 nmap <silent> t<C-v> :TestVisit<CR>
 
 let g:test#javascript#runner = 'jest'
-
-nmap <silent> lg :LazyGit<CR>
 
 xmap / <Plug>Commentary
 
