@@ -31,7 +31,6 @@ Plug 'akinsho/bufferline.nvim'
 
 Plug 'mhinz/vim-startify'
 
-Plug 'rbgrouleff/bclose.vim'
 Plug 'francoiscabrol/ranger.vim'
 
 Plug 'vim-test/vim-test'
@@ -140,9 +139,6 @@ set nocompatible
 
 set showcmd
 set showmode
-
-set ai
-set si
 
 set laststatus=2
 
@@ -269,20 +265,12 @@ nnoremap <leader>tl :tabnext<CR>
 nnoremap <leader>th :tabprevious<CR>
 
 " Moving lines
-" vmap <C-j> :m'>+<cr>`<my`>mzgv`yo`z
-" vmap <C-k> :m'<-2<cr>`>my`<mzgv`yo`z
-" inoremap <C-j> <esc>:m .+1<CR>==
-" inoremap <C-k> <esc>:m .-2<CR>==
-" nnoremap <C-k> :m .-2<CR>==
-" nnoremap <C-j> :m .+1<CR>==
-nnoremap <silent> <C-j> :MoveLine(1)<CR>
-nnoremap <silent> <C-k> :MoveLine(-1)<CR>
-vnoremap <silent> <C-j> :MoveBlock(1)<CR>
-vnoremap <silent> <C-k> :MoveBlock(-1)<CR>
-nnoremap <silent> <C-l> :MoveHChar(1)<CR>
-nnoremap <silent> <C-h> :MoveHChar(-1)<CR>
-vnoremap <silent> <C-l> :MoveHBlock(1)<CR>
-vnoremap <silent> <C-h> :MoveHBlock(-1)<CR>
+vmap <C-j> :m'>+<cr>`<my`>mzgv`yo`z
+vmap <C-k> :m'<-2<cr>`>my`<mzgv`yo`z
+inoremap <C-j> <esc>:m .+1<CR>==
+inoremap <C-k> <esc>:m .-2<CR>==
+nnoremap <C-k> :m .-2<CR>==
+nnoremap <C-j> :m .+1<CR>==
 
 " Git
 nmap ]h <Plug>(GitGutterNextHunk)
