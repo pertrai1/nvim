@@ -7,37 +7,134 @@
 " ctrl-0 = alt-back
 " ctrl-i = alt-forward
 "
-lua << EOF
-require('res.plugins')
-require('res.settings')
-require('res.colors')
-require('res.fonts')
-require('res.keymap')
-EOF
+call plug#begin('~/.config/nvim/plugged')
+Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'liuchengxu/vista.vim'
+" Plug 'preservim/nerdtree'
+
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
+Plug 'nvim-lualine/lualine.nvim'
+
+Plug 'jiangmiao/auto-pairs'
+
+Plug 'airblade/vim-gitgutter'
+
+Plug 'editorconfig/editorconfig-vim'
+
+" Plug 'flazz/vim-colorschemes'
+
+Plug 'Mofiqul/vscode.nvim'
+Plug 'tomasiser/vim-code-dark'
+
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'kyazdani42/nvim-tree.lua'
+Plug 'folke/trouble.nvim'
+
+Plug 'akinsho/bufferline.nvim'
+Plug 'akinsho/toggleterm.nvim'
+
+Plug 'mhinz/vim-startify'
+
+" Plug 'github/copilot.vim'
+
+Plug 'rbgrouleff/bclose.vim'
+Plug 'francoiscabrol/ranger.vim'
+
+Plug 'vim-test/vim-test'
+
+Plug 'kdheepak/lazygit.nvim'
+
+Plug 'fedepujol/move.nvim'
+
+Plug 'tpope/vim-commentary'
+call plug#end()
 
 " set to auto read when file is changed outside
-" set autoread
+set autoread
+au FocusGained,BufEnter * checktime
 
+set autoindent
 filetype plugin indent on
+set smartindent
+set expandtab
+set shiftround
+set shiftwidth=2
+set softtabstop=2
+set smarttab
+set tabstop=2
+set showtabline=2
 
 set wildmode=longest,list
 
+let mapleader=" "
+nnoremap ; :
+
+" Faster saving
+nmap <leader>w :w!<CR>
+
+" General
+set hidden
+set number
+" set relativenumber
+set encoding=utf-8
+set linebreak
+syntax on
+set wrap
+set clipboard=unnamed
+set history=10000
+
+set ruler
 set backspace=eol,start,indent
 set wildmenu
 
+set ignorecase
+set smartcase
+set hlsearch
+set incsearch
+
 nnoremap <silent> <BS> :nohlsearch<CR>
+
+set lazyredraw
+
+set showmatch
+
+set nobackup
+set nowb
+set noswapfile
+set nowritebackup
 
 " Misc. Key Mapping
 nnoremap <C-x> :q<CR>
+inoremap jk <esc>
 nnoremap <leader>/ "fyiw 
 nnoremap <leader>pv :Ex<CR>
 " Start new line from any current position
 " inoremap <S-Return> <C-o>o
 
+" Operate on display lines
+nnoremap k gk
+nnoremap gk k
+nnoremap j gj
+nnoremap gj j
+
 " delete a word backwards
 nnoremap dw vb"_d
 " select all
 nmap <C-a> gg<S-v>G
+
+" Colors
+" let g:vscode_style="light"
+" let g:vscode_italic_comment=1
+" colorscheme vscode
+colorscheme codedark
+set termguicolors
 
 lua << EOF
 require("bufferline").setup {
@@ -68,7 +165,7 @@ require("lualine").setup {}
 require("toggleterm").setup {
   direction = 'float'
 }
-require("which-key").setup {}
+require("trouble").setup {}
 EOF
 
 " Visual mode related
@@ -76,7 +173,21 @@ EOF
 vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
 vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 
+" Give more space for displaying messages
+set cmdheight=2
+
+" Longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+" delays
+set updatetime=300
 set nocompatible
+
+set showcmd
+set showmode
+
+set ai
+set si
+
+set laststatus=2
 
 let g:coc_global_extensions = [
   \ 'coc-tsserver'
@@ -131,6 +242,14 @@ autocmd CursorHoldI * :call <SID>show_hover_doc()
 autocmd CursorHold * :call <SID>show_hover_doc()
 
 nnoremap <leader>e <cmd>CocCommand explorer<CR>
+
+" Trouble
+nnoremap <leader>xx <cmd>TroubleToggle<CR>
+nnoremap <leader>xw <cmd>TroubleToggle workspace_diagnostics<CR>
+nnoremap <leader>xd <cmd>TroubleToggle document_diagnostics<CR>
+nnoremap <leader>xq <cmd>TroubleToggle quickfix<CR>
+nnoremap <leader>xl <cmd>TroubleToggle loclist<CR>
+nnoremap gR <cmd>TroubleToggle lsp_references<CR>
 
 " Vista
 nnoremap <silent> <leader>v :Vista!!<CR>
@@ -271,6 +390,10 @@ nnoremap <Left> <cmd>vertical resize -1<CR>
 " Toggle fold
 " nnoremap <CR> za
 
+" Easier line-wise movement
+nnoremap gh g^
+nnoremap gl g$
+
 " Re-select blocks after indenting in visual/select mode
 xnoremap < <gv
 xnoremap > >gv|
@@ -304,3 +427,4 @@ let g:test#javascript#runner = 'jest'
 nmap <silent> lg :LazyGit<CR>
 
 xmap / <Plug>Commentary
+
