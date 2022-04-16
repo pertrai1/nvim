@@ -36,6 +36,10 @@ set smartcase
 set hlsearch
 set incsearch
 
+set foldmethod=indent
+set foldcolumn=2
+set foldlevelstart=10
+
 set lazyredraw
 
 set showmatch

@@ -19,6 +19,7 @@ Plug 'editorconfig/editorconfig-vim'
 
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'preservim/nerdtree'
+Plug 'preservim/tagbar'
 
 Plug 'akinsho/bufferline.nvim'
 
@@ -31,5 +32,6 @@ Plug 'tpope/vim-commentary'
 
 Plug 'tomasiser/vim-code-dark'
 
+Plug 'folke/which-key.nvim'
 call plug#end()
 

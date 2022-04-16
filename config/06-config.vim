@@ -7,3 +7,4 @@ autocmd FileType scss setl iskeyword+=@~@
 " Auto-resize splits when Vim gets resized.
 autocmd VimResized * wincmd =
 
+autocmd FileType vim setlocal foldmethod=marker
