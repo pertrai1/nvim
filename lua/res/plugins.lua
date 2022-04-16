@@ -16,7 +16,6 @@ Plug 'Mofiqul/vscode.nvim'
 Plug 'tomasiser/vim-code-dark'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kyazdani42/nvim-tree.lua'
-Plug 'folke/trouble.nvim'
 Plug 'akinsho/bufferline.nvim'
 Plug 'akinsho/toggleterm.nvim'
 Plug 'mhinz/vim-startify'
@@ -26,5 +25,6 @@ Plug 'vim-test/vim-test'
 Plug 'kdheepak/lazygit.nvim'
 Plug 'fedepujol/move.nvim'
 Plug 'tpope/vim-commentary'
-
+Plug 'folke/which-key.nvim'
 vim.call('plug#end')
+

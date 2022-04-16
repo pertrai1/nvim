@@ -68,7 +68,7 @@ require("lualine").setup {}
 require("toggleterm").setup {
   direction = 'float'
 }
-require("trouble").setup {}
+require("which-key").setup {}
 EOF
 
 " Visual mode related
@@ -131,14 +131,6 @@ autocmd CursorHoldI * :call <SID>show_hover_doc()
 autocmd CursorHold * :call <SID>show_hover_doc()
 
 nnoremap <leader>e <cmd>CocCommand explorer<CR>
-
-" Trouble
-nnoremap <leader>xx <cmd>TroubleToggle<CR>
-nnoremap <leader>xw <cmd>TroubleToggle workspace_diagnostics<CR>
-nnoremap <leader>xd <cmd>TroubleToggle document_diagnostics<CR>
-nnoremap <leader>xq <cmd>TroubleToggle quickfix<CR>
-nnoremap <leader>xl <cmd>TroubleToggle loclist<CR>
-nnoremap gR <cmd>TroubleToggle lsp_references<CR>
 
 " Vista
 nnoremap <silent> <leader>v :Vista!!<CR>
@@ -278,10 +270,6 @@ nnoremap <Left> <cmd>vertical resize -1<CR>
 
 " Toggle fold
 " nnoremap <CR> za
-
-" Easier line-wise movement
-nnoremap gh g^
-nnoremap gl g$
 
 " Re-select blocks after indenting in visual/select mode
 xnoremap < <gv
