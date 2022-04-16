@@ -17,4 +17,4 @@ endfunction
 
 command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 
-
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }

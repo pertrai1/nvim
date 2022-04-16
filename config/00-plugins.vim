@@ -3,10 +3,11 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'antoinemadec/coc-fzf'
 
 Plug 'nvim-lualine/lualine.nvim'
 

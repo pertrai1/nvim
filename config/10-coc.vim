@@ -10,7 +10,18 @@ if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
   let g:coc_global_extensions += ['coc-eslint']
 endif
 
-nnoremap <silent> K :call CocAction('doHover')<CR>
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+nnoremap <silent> gh :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if &filetype == 'vim'
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+autocmd CursorHold * silent call CocActionAsync('highlight')
 
 nmap <F2> <Plug>(coc-rename)
 
@@ -19,16 +30,27 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gr <Plug>(coc-references)
 nmap <silent> gi <Plug>(coc-implementation)
 
+" nnoremap <silent> <leader>cl :<C-u>CocList locationlist<CR>
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
-nnoremap <silent> <leader>d :<C-u>CocList diagnostics<CR>
-nnoremap <silent> <space>s :<C-u>CocList -I symbols<CR>
-nnoremap <silent> <space>o :<C-u>CocList outline<CR>
+" nnoremap <silent> <leader>d :<C-u>CocList diagnostics<CR>
+nnoremap <silent> <leader>d :<C-u>CocFzfList diagnostics<CR>
+" nnoremap <silent> <leader>cs :<C-u>CocList -I symbols<CR>
+nnoremap <silent> <leader>cs :<C-u>CocFzfList -I symbols<CR>
+" nnoremap <silent> <leader>co :<C-u>CocList outline<CR>
+nnoremap <silent> <leader>co :<C-u>CocFzfList outline<CR>
 " nnoremap <silent> <leader>e :<C-u>CocList extensions<CR>
+nnoremap <silent> <leader>cl :<C-u>CocFzfList location<CR>
+nnoremap <silent> <leader>cR :<C-u>CocRestart<CR>
 
-nmap <leader>do <Plug>(coc-codeaction)
-nmap <leader>rn <Plug>(coc-rename)
+nmap <leader>ca <Plug>(coc-codeaction)
+nmap <leader>cr <Plug>(coc-rename)
+nmap <leader>cf <Plug>(coc-format-selected)
+vmap <leader>cf <Plug>(coc-format-selected)
+
+" Run the code lens action on the current line
+" nmap <leader>cl <Plug>(coc-codelens-action)
 
 " use <c-space> to trigger completion.
 if has('nvim')
@@ -36,19 +58,6 @@ if has('nvim')
 else
   inoremap <silent><expr> <c-@> coc#refresh()
 endif
-
-function! ShowDocIfNoDiagnostic(timer_id)
-  if (coc#float#has_float() == 0 && CocHasProvider('hover') == 1)
-    silent call CocActionAsync('doHover')
-  endif
-endfunction
-
-function! s:show_hover_doc()
-  call timer_start(500, 'ShowDocIfNoDiagnostic')
-endfunction
-
-autocmd CursorHoldI * :call <SID>show_hover_doc()
-autocmd CursorHold * :call <SID>show_hover_doc()
 
 nnoremap <leader>e <cmd>CocCommand explorer<CR>
 
