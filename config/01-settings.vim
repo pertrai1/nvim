@@ -1,5 +1,5 @@
 let mapleader=" "
-
+set mouse=a
 set autoread
 au FocusGained,BufEnter * checktime
 
