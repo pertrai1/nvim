@@ -89,7 +89,8 @@ map("n", "\\", ";", { silent = false })
 
 -- Telescope
 map("n", "<C-p>", "<cmd>lua require('telescope.builtin').find_files()<cr>", { silent = false })
-map("n", "<C-f>", "<cmd>lua require('telescope.builtin').live_grep()<cr>", { silent = false })
+map("n", "<leader>gs", "<cmd>lua require('telescope.builtin').grep_string()<cr>", { silent = false })
+map("n", "<C-f>", "<cmd>lua require('telescope.builtin').live_grep({ file_ignore_patterns = { '**/*.spec.js', '**/*.spec.ts' })<cr>", { silent = false })
 map("n", "<C-b>", "<cmd>lua require('telescope.builtin').buffers()<cr>", { silent = false })
 map("n", "<leader>fr", "<cmd>lua require('telescope.builtin').git_files()<cr>", { silent = false })
 map("n", "<leader>fb", "<cmd>lua require('telescope.builtin').buffers()<cr>", { silent = false })
@@ -101,8 +102,9 @@ map("n", "gd", "<cmd>lua require('telescope.builtin').lsp_definitions()<cr>", { 
 map("n", "gi", "<cmd>lua require('telescope.builtin').lsp_implementations()<cr>", { silent = false })
 map("n", "gy", "<cmd>lua require('telescope.builtin').lsp_type_definitions()<cr>", { silent = false })
 -- map("n", "ca", "<cmd>lua require('telescope.builtin').lsp_code_actions()<cr>", { silent = false })
-map("n", "rn", "<cmd>lua vim.lsp.buf.rename()<cr>", { silent = false })
-map("n", "ca", "<cmd>lua vim.lsp.buf.code_action()<cr>", { silent = false })
+
+map("n", "vs", "<cmd>lua require('telescope.builtin').git_status()<cr>", { silent = false })
+map("n", "vb", "<cmd>lua require('telescope.builtin').git_branches()<cr>", { silent = false })
 
 map("n", "<F8>", ":TagbarToggle<CR>", { silent = false })
 
@@ -111,3 +113,6 @@ map("n", "<leader>nt", ":NvimTreeToggle<CR>", { silent = false })
 map("n", "<leader>nr", ":NvimTreeRefresh<CR>", { silent = false })
 map("n", "<leader>nt", ":NvimTreeFindFileToggle<CR>", { silent = false })
 map("n", "<leader>nf", ":NvimTreeFocus<CR>", { silent = false })
+
+-- Bufferline
+map("n", "gb", ":BufferLinePick<CR>", { silent = true })

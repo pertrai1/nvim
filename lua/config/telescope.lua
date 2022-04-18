@@ -4,6 +4,9 @@ if not status_ok then
 end
 
 telescope.setup {
+  defaults = {
+    file_ignore_patterns = { "yarn.lock" }
+  },
   -- extensions = {
     -- fzf = {
       -- fuzzy = true,

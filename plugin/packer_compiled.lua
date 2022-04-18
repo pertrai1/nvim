@@ -149,6 +149,11 @@ _G.packer_plugins = {
     path = "/Users/robsimpson/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer",
     url = "https://github.com/williamboman/nvim-lsp-installer"
   },
+  ["nvim-lsp-ts-utils"] = {
+    loaded = true,
+    path = "/Users/robsimpson/.local/share/nvim/site/pack/packer/start/nvim-lsp-ts-utils",
+    url = "https://github.com/jose-elias-alvarez/nvim-lsp-ts-utils"
+  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/Users/robsimpson/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
@@ -163,6 +168,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/robsimpson/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
+  ["nvim-ts-context-commentstring"] = {
+    loaded = true,
+    path = "/Users/robsimpson/.local/share/nvim/site/pack/packer/start/nvim-ts-context-commentstring",
+    url = "https://github.com/JoosepAlviste/nvim-ts-context-commentstring"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
@@ -199,6 +209,11 @@ _G.packer_plugins = {
     path = "/Users/robsimpson/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
+  ["trouble.nvim"] = {
+    loaded = true,
+    path = "/Users/robsimpson/.local/share/nvim/site/pack/packer/start/trouble.nvim",
+    url = "https://github.com/folke/trouble.nvim"
+  },
   ["typescript-vim"] = {
     loaded = true,
     path = "/Users/robsimpson/.local/share/nvim/site/pack/packer/start/typescript-vim",
@@ -208,6 +223,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/robsimpson/.local/share/nvim/site/pack/packer/start/vim-code-dark",
     url = "https://github.com/tomasiser/vim-code-dark"
+  },
+  ["vim-commentary"] = {
+    loaded = true,
+    path = "/Users/robsimpson/.local/share/nvim/site/pack/packer/start/vim-commentary",
+    url = "https://github.com/tpope/vim-commentary"
   },
   ["vim-gitgutter"] = {
     loaded = true,
@@ -223,6 +243,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/robsimpson/.local/share/nvim/site/pack/packer/start/vim-jsx-pretty",
     url = "https://github.com/maxmellon/vim-jsx-pretty"
+  },
+  ["vim-mdx-js"] = {
+    loaded = true,
+    path = "/Users/robsimpson/.local/share/nvim/site/pack/packer/start/vim-mdx-js",
+    url = "https://github.com/jxnblk/vim-mdx-js"
   },
   ["vim-startify"] = {
     loaded = true,

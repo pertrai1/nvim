@@ -12,4 +12,4 @@ require('config.telescope')
 require('config.trouble')
 require('config.null-ls')
 require('config.formatter')
-
+require('config.diagnostics')
