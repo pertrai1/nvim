@@ -33,6 +33,11 @@ return require("packer").startup(
     use 'pangloss/vim-javascript'
     use 'leafgarland/typescript-vim'
     use 'editorconfig/editorconfig-vim'
+    use 'JoosepAlviste/nvim-ts-context-commentstring'
+    use 'jxnblk/vim-mdx-js'
+
+    -- General
+    use 'tpope/vim-commentary'
 
     -- Colors
     use 'projekt0n/github-nvim-theme'
@@ -76,6 +81,8 @@ return require("packer").startup(
         'nvim-lua/plenary.nvim'
       },
     }
+    use 'folke/trouble.nvim'
+    use 'jose-elias-alvarez/nvim-lsp-ts-utils'
 
     -- Completion
     use 'hrsh7th/cmp-nvim-lsp'
