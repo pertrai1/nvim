@@ -88,13 +88,26 @@ map("x", "<S-Tab>", "<gv", { silent = false })
 map("n", "\\", ";", { silent = false })
 
 -- Telescope
-map("n", "<leader>ff", "<cmd>lua require('telescope.builtin').find_files()<cr>", { silent = false })
-map("n", "<leader>fg", "<cmd>lua require('telescope.builtin').live_grep()<cr>", { silent = false })
+map("n", "<C-p>", "<cmd>lua require('telescope.builtin').find_files()<cr>", { silent = false })
+map("n", "<C-f>", "<cmd>lua require('telescope.builtin').live_grep()<cr>", { silent = false })
+map("n", "<C-b>", "<cmd>lua require('telescope.builtin').buffers()<cr>", { silent = false })
+map("n", "<leader>fr", "<cmd>lua require('telescope.builtin').git_files()<cr>", { silent = false })
 map("n", "<leader>fb", "<cmd>lua require('telescope.builtin').buffers()<cr>", { silent = false })
 map("n", "<leader>fh", "<cmd>lua require('telescope.builtin').help_tags()<cr>", { silent = false })
 map("n", "<leader>fs", "<cmd>lua require 'telescope'.extensions.file_browser.file_browser( { path = vim.fn.expand('%:p:h') } )<CR>", { silent = false })
 
+map("n", "gr", "<cmd>lua require('telescope.builtin').lsp_references()<cr>", { silent = false })
+map("n", "gd", "<cmd>lua require('telescope.builtin').lsp_definitions()<cr>", { silent = false })
+map("n", "gi", "<cmd>lua require('telescope.builtin').lsp_implementations()<cr>", { silent = false })
+map("n", "gy", "<cmd>lua require('telescope.builtin').lsp_type_definitions()<cr>", { silent = false })
+-- map("n", "ca", "<cmd>lua require('telescope.builtin').lsp_code_actions()<cr>", { silent = false })
+map("n", "rn", "<cmd>lua vim.lsp.buf.rename()<cr>", { silent = false })
+map("n", "ca", "<cmd>lua vim.lsp.buf.code_action()<cr>", { silent = false })
+
 map("n", "<F8>", ":TagbarToggle<CR>", { silent = false })
 
--- Trouble
-
+-- NVim
+map("n", "<leader>nt", ":NvimTreeToggle<CR>", { silent = false })
+map("n", "<leader>nr", ":NvimTreeRefresh<CR>", { silent = false })
+map("n", "<leader>nt", ":NvimTreeFindFileToggle<CR>", { silent = false })
+map("n", "<leader>nf", ":NvimTreeFocus<CR>", { silent = false })

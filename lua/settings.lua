@@ -69,3 +69,10 @@ autocmd VimResized * wincmd =
 vim.cmd([[
 autocmd FileType vim setlocal foldmethod=marker
 ]])
+
+vim.api.nvim_exec([[
+augroup FormatAutogroup
+  autocmd!
+  autocmd BufWritePost *.js,*.ts,*.scss FormatWrite
+augroup END
+]], true)

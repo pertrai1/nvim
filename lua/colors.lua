@@ -4,3 +4,7 @@ if vim.fn.has("termguicolors") == 1 then
   vim.opt.termguicolors = true
 end
 vim.cmd 'color codedark'
+
+-- require("github-theme").setup({
+  -- theme_style = 'dimmed'
+-- })
