@@ -18,11 +18,6 @@ if fn.empty(fn.glob(install_path)) > 0 then
   })
 end
 vim.api.nvim_command("packadd packer.nvim")
--- returns the require for use in `config` parameter of packer's use
--- expects the name of the config file
-function get_setup(name)
-  return string.format('require("setup/%s")', name)
-end
 
 return require("packer").startup(
   function()
@@ -56,6 +51,8 @@ return require("packer").startup(
     }
     use 'mhinz/vim-startify'
     use 'folke/which-key.nvim'
+    use 'RRethy/vim-illuminate'
+
     -- use('simrat39/symbols-outline.nvim')
     use { 'norcalli/nvim-colorizer.lua', branch = 'color-editor' }
 
@@ -74,6 +71,7 @@ return require("packer").startup(
         'onsails/lspkind-nvim'
       }
     }
+    use 'tamago324/nlsp-settings.nvim'
     use 'creativenull/diagnosticls-configs-nvim'
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
     use {
@@ -82,8 +80,10 @@ return require("packer").startup(
         'nvim-lua/plenary.nvim'
       },
     }
-    use 'folke/trouble.nvim'
+    use 'ray-x/lsp_signature.nvim'
     use 'jose-elias-alvarez/nvim-lsp-ts-utils'
+
+    use 'folke/trouble.nvim'
 
     -- Completion
     use 'hrsh7th/cmp-nvim-lsp'
