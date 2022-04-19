@@ -114,6 +114,11 @@ _G.packer_plugins = {
     path = "/Users/robsimpson/.local/share/nvim/site/pack/packer/start/github-nvim-theme",
     url = "https://github.com/projekt0n/github-nvim-theme"
   },
+  ["impatient.nvim"] = {
+    loaded = true,
+    path = "/Users/robsimpson/.local/share/nvim/site/pack/packer/start/impatient.nvim",
+    url = "https://github.com/lewis6991/impatient.nvim"
+  },
   ["lspkind-nvim"] = {
     loaded = true,
     path = "/Users/robsimpson/.local/share/nvim/site/pack/packer/start/lspkind-nvim",

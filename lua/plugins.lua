@@ -38,6 +38,7 @@ return require("packer").startup(
 
     -- General
     use 'tpope/vim-commentary'
+    use 'lewis6991/impatient.nvim'
 
     -- Colors
     use 'projekt0n/github-nvim-theme'
