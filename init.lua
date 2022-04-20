@@ -2,6 +2,7 @@ require('impatient')
 require('plugins')
 require('settings')
 require('colors')
+require('commands')
 require('keymaps')
 
 require('plugins.treesitter')

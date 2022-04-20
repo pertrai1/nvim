@@ -2,6 +2,7 @@ local cmp = require('cmp')
 local lspconfig = require('lspconfig')
 local null_ls = require('null-ls')
 local lspkind = require('lspkind')
+local signature = require('lsp_signature')
 
 local buf_map = function(bufnr, mode, lhs, rhs, opts)
     vim.api.nvim_buf_set_keymap(bufnr, mode, lhs, rhs, opts or {
@@ -9,17 +10,9 @@ local buf_map = function(bufnr, mode, lhs, rhs, opts)
     })
 end
 
-local function lsp_highlight_document(client)
-  if client.resolved_capabilities.document_highlight then
-    local status_ok, illuminate = pcall(require, "illuminate")
-    if not status_ok then
-      return
-    end
-    illuminate.on_attach(client)
-  end
-end
-
 local on_attach = function(client, bufnr)
+    signature.on_attach(client)
+
     vim.cmd("command! LspDef lua vim.lsp.buf.definition()")
     vim.cmd("command! LspFormatting lua vim.lsp.buf.formatting()")
     vim.cmd("command! LspCodeAction lua vim.lsp.buf.code_action()")
@@ -42,10 +35,27 @@ local on_attach = function(client, bufnr)
     buf_map(bufnr, "n", "<Leader>a", ":LspDiagLine<CR>")
     buf_map(bufnr, "i", "<C-x><C-x>", "<cmd> LspSignatureHelp<CR>")
 
-    lsp_highlight_document(client)
-    -- if client.resolved_capabilities.document_formatting then
-        -- vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
-    -- end
+
+    -- Set some keybinds conditional on server capabilities
+    if client.resolved_capabilities.document_formatting then
+        buf_map(bufnr, "n", "<leader>lf", "<cmd>lua vim.lsp.buf.formatting()<CR>")
+    elseif client.resolved_capabilities.document_range_formatting then
+        buf_map(bufnr, "n", "<leader>lf", "<cmd>lua vim.lsp.buf.range_formatting()<CR>")
+    end
+
+    -- Set autocommands conditional on server_capabilities
+    if client.resolved_capabilities.document_highlight then
+        vim.api.nvim_exec([[
+        hi LspReferenceRead cterm=underline gui=underline
+        hi LspReferenceText cterm=underline gui=underline
+        hi LspReferenceWrite cterm=underline gui=underline
+        augroup lsp_document_highlight
+        autocmd! * <buffer>
+        autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
+        autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
+        augroup END
+        ]], false)
+    end
 end
 
 
@@ -86,7 +96,14 @@ cmp.setup({
    }
 })
 
--- Setup lspconfig.
+-- Setup lspconfig
+lspconfig.html.setup {
+  filetypes = {"html", "eruby"},
+  capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+}
+lspconfig.cssls.setup{
+  capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+}
 lspconfig.tsserver.setup {
   on_attach = function(client, bufnr)
         client.resolved_capabilities.document_formatting = false

@@ -114,5 +114,8 @@ map("n", "<leader>nr", ":NvimTreeRefresh<CR>", { silent = false })
 map("n", "<leader>nt", ":NvimTreeFindFileToggle<CR>", { silent = false })
 map("n", "<leader>nf", ":NvimTreeFocus<CR>", { silent = false })
 
+-- Trouble
+map("n", "<leader>tt", ":TroubleToggle<CR>", { silent = true })
+
 -- Bufferline
 map("n", "gb", ":BufferLinePick<CR>", { silent = true })
