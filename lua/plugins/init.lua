@@ -83,7 +83,11 @@ return require("packer").startup(
     use 'ray-x/lsp_signature.nvim'
     use 'jose-elias-alvarez/nvim-lsp-ts-utils'
 
-    use 'folke/trouble.nvim'
+    use {
+      "folke/trouble.nvim",
+      requires = "kyazdani42/nvim-web-devicons",
+      config = function() require("trouble").setup {} end
+    }
 
     -- Completion
     use 'hrsh7th/cmp-nvim-lsp'
