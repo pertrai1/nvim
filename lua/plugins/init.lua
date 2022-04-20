@@ -41,7 +41,7 @@ return require("packer").startup(
     -- Visual
     use 'nvim-lualine/lualine.nvim'
     use 'kyazdani42/nvim-web-devicons'
-    use 'tomasiser/vim-code-dark'
+    use 'Mofiqul/vscode.nvim'
     use 'akinsho/bufferline.nvim'
     use {
       'kyazdani42/nvim-tree.lua',
