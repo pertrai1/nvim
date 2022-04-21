@@ -9,10 +9,20 @@ treesitter.setup {
     enable = true,
     additional_vim_regex_highlighting = true
   },
-  indent = {
-    enable = false
-  },
   context_commentstring = {
+    enable = true,
+    config = {
+      -- Languages that have a single comment style
+      typescript = "// %s",
+      css = "/* %s */",
+      scss = "/* %s */",
+      html = "<!-- %s -->",
+      svelte = "<!-- %s -->",
+      vue = "<!-- %s -->",
+      json = "",
+    },
+  },
+  indent = {
     enable = true
-  }
+  },
 }
