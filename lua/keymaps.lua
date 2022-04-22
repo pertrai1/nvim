@@ -144,7 +144,7 @@ map("n", "t<C-l>", ":TestLast<CR>", { silent = true, noremap = true })
 map("n", "t<C-v>", ":TestVisit<CR>", { silent = true, noremap = true })
 
 -- LazyGit
-map("n", "lg", ":LazyGit<CR>", { silent = true, noremap = true })
+map("n", "<leader>lg", ":LazyGit<CR>", { silent = true, noremap = true })
 
 -- Commentary
 map("x", "/", "<Plug>Commentary", { silent = false })

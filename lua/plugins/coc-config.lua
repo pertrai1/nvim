@@ -22,7 +22,7 @@ vim.api.nvim_set_keymap("n", "<leader>co", ":<C-u>CocList -I outline<CR>", { sil
 vim.api.nvim_set_keymap("n", "[g", "<Plug>(coc-diagnostic-pre)", { silent = true, noremap = true })
 vim.api.nvim_set_keymap("n", "]g", "<Plug>(coc-diagnostic-next)", { silent = true, noremap = true })
 
-vim.api.nvim_set_keymap("n", "<leader>l", ":CocCommand eslint.executeAutofix<CR>", {})
+vim.api.nvim_set_keymap("n", "<leader>cl", ":CocCommand eslint.executeAutofix<CR>", {})
 
 
 vim.api.nvim_set_keymap("n", "<leader>cf", ":exe 'CocList -I --input='.expand('<cword>').' grep'<CR>", { silent = true })
