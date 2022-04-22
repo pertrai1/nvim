@@ -52,13 +52,7 @@ Plug 'tpope/vim-commentary'
 call plug#end()
 
 lua << EOF
-require("bufferline").setup {
-  options = {
-    diagnostics = "coc",
-    numbers = "buffer_id",
-    show_tab_indicators = true
-  }
-}
+require("plugins.bufferline")
 require("nvim-tree").setup{
   diagnostics = { enable = true },
   tab_open = true,
@@ -86,7 +80,7 @@ require("nvim-tree").setup{
   }
 }
 require("nvim-web-devicons").setup {}
-require("lualine").setup {}
+require('plugins.lualine')
 require("toggleterm").setup {
   direction = 'float'
 }
@@ -94,6 +88,7 @@ require("trouble").setup {}
 
 require('settings')
 require('keymaps')
+require('plugins.coc-config')
 EOF
 
 filetype plugin indent on
@@ -142,51 +137,10 @@ if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
   let g:coc_global_extensions += ['coc-eslint']
 endif
 
-" Use tab for trigger completion with characters ahead and navigate.
-" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
-" other plugin before putting this into your config.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
 " Make <CR> auto-select the first completion item and notify coc.nvim to
 " format on enter, <cr> could be remapped by other vim plugin
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-
-nnoremap <silent> K :call CocAction('doHover')<CR>
-
-nmap <F2> <Plug>(coc-rename)
-
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gr <Plug>(coc-references)
-nmap <silent> gi <Plug>(coc-implementation)
-
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
-
-nnoremap <silent> <leader>d :<C-u>CocList diagnostics<CR>
-nnoremap <silent> <space>s :<C-u>CocList -I symbols<CR>
-nnoremap <silent> <space>o :<C-u>CocList outline<CR>
-" nnoremap <silent> <leader>e :<C-u>CocList extensions<CR>
-
-nmap <leader>do <Plug>(coc-codeaction)
-nmap <leader>rn <Plug>(coc-rename)
-
-" use <c-space> to trigger completion.
-if has('nvim')
-  inoremap <silent><expr> <c-space> coc#refresh()
-else
-  inoremap <silent><expr> <c-@> coc#refresh()
-endif
 
 function! ShowDocIfNoDiagnostic(timer_id)
   if (coc#float#has_float() == 0 && CocHasProvider('hover') == 1)
@@ -213,8 +167,6 @@ function! s:GrepArgs(...)
   return join(list', "\n")
 endfunction
 
-" Keymapping for grep word under cursor with interactive mode
-nnoremap <silent> <leader>cf :exe 'CocList -I --input='.expand('<cword>').' grep'<CR>
 
 " Vista
 nnoremap <silent> <leader>v :Vista!!<CR>

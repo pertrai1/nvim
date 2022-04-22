@@ -3,10 +3,6 @@ if not status_ok then
   return
 end
 
-lualine.setup({
-  options = {
-    theme = "vscode"
-  }
-})
+lualine.setup({})
 
 
