@@ -1,4 +1,7 @@
 local opt = vim.opt -- to set options
+
+vim.g.mapleader = " "
+
 opt.autoread = true
 opt.autoindent = true
 opt.smartindent = true

@@ -11,8 +11,9 @@ vim.g.mapleader = " "
 
 -- General
 map("i", "jk", "<esc>", { silent = true })
-map("n", "<BS>", ":nohlsearch<CR>", { silent = true })
+map("n", "<BS>", ":nohlsearch<CR>", { silent = true, noremap = true })
 map("n", ";", ":", { silent = false })
+map("n", "<leader>w", ":w!", { silent = false, noremap = true })
 
 -- Operate on display lines
 map("n", "k", "gk", { silent = false })
@@ -21,29 +22,38 @@ map("n", "j", "gj", { silent = false })
 map("n", "gj", "j", { silent = false })
 
 -- Nvim Tree
-map("n", "<leader>e", ":NvimTreeToggle<CR>", { silent = true })
-map("n", "<leader>u", ":NvimTreeFindFile<CR>", { silent = true })
+map("n", "<C-n>", ":NvimTreeToggle<CR>", { silent = true, noremap = true })
+map("n", "<C-f>", ":NvimTreeFindFileToggle<CR>", { silent = true, noremap = true })
+-- NVim
+-- map("n", "<leader>nt", ":NvimTreeToggle<CR>", { silent = false })
+map("n", "<leader>nr", ":NvimTreeRefresh<CR>", { silent = false })
+-- map("n", "<leader>nt", ":NvimTreeFindFileToggle<CR>", { silent = false })
+map("n", "<leader>nf", ":NvimTreeFocus<CR>", { silent = false })
+
 
 -- Update Plugins
-map("n", "<Leader>u", ":PackerSync<CR>")
+-- map("n", "<Leader>u", ":PackerSync<CR>")
 
 -- Visual mode pressing * or # searches for the current selection
 map("x", "*", ":<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>", { silent = true })
 map("x", "#", ":<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>", { silent = true })
 
 -- Buffers
-map("n", "<leader>ba", ":bufdo bd<CR>", { silent = true })
-map("n", "<leader>bl", ":bnext<CR>", { silent = true })
-map("n", "<S-l>", ":bnext<CR>", { silent = true })
-map("n", "<leader>bh", ":bprevious<CR>", { silent = true })
-map("n", "<S-h>", ":bprevious<CR>", { silent = true })
-map("n", "<leader>b", ":bw<CR>", { silent = true })
+map("n", "<leader>ba", ":bufdo bd<CR>", { silent = true, noremap = true })
+map("n", "<leader>bl", ":bnext<CR>", { silent = true, noremap = true })
+map("n", "<S-l>", ":bnext<CR>", { silent = true, noremap = true })
+map("n", "<leader>bh", ":bprevious<CR>", { silent = true, noremap = true })
+map("n", "<S-h>", ":bprevious<CR>", { silent = true, noremap = true })
+map("n", "<leader>b", ":bw<CR>", { silent = true, noremap = true })
 
 -- Window Mappings
 map("n", "<leader>wj", "<C-w><C-j>", { silent = false })
 map("n", "<leader>wk", "<C-w><C-k>", { silent = false })
 map("n", "<leader>wl", "<C-w><C-l>", { silent = false })
 map("n", "<leader>wh", "<C-w><C-h>", { silent = false })
+
+-- Bufferline
+map("n", "gb", ":BufferLinePick<CR", { silent = true, noremap = true })
 
 -- Keeping it centered
 map("n", "n", "nzzzv", { silent = false })
@@ -108,14 +118,35 @@ map("n", "vb", "<cmd>lua require('telescope.builtin').git_branches()<cr>", { sil
 
 map("n", "<F8>", ":TagbarToggle<CR>", { silent = false })
 
--- NVim
-map("n", "<leader>nt", ":NvimTreeToggle<CR>", { silent = false })
-map("n", "<leader>nr", ":NvimTreeRefresh<CR>", { silent = false })
-map("n", "<leader>nt", ":NvimTreeFindFileToggle<CR>", { silent = false })
-map("n", "<leader>nf", ":NvimTreeFocus<CR>", { silent = false })
-
 -- Trouble
 map("n", "<leader>tt", ":TroubleToggle<CR>", { silent = true })
+-- nnoremap <leader>xx <cmd>TroubleToggle<CR>
+-- nnoremap <leader>xw <cmd>TroubleToggle workspace_diagnostics<CR>
+-- nnoremap <leader>xd <cmd>TroubleToggle document_diagnostics<CR>
+-- nnoremap <leader>xq <cmd>TroubleToggle quickfix<CR>
+-- nnoremap <leader>xl <cmd>TroubleToggle loclist<CR>
+-- nnoremap gR <cmd>TroubleToggle lsp_references<CR>
+map("n", "gL", "<cmd>call coc#rpc#request('fillDiagnostics', [bufnr('%')])<CR><cmd>Trouble loclist<CR>", { silent = true, noremap = true })
+
 
 -- Bufferline
 map("n", "gb", ":BufferLinePick<CR>", { silent = true })
+
+-- Ranger
+map("n", "<leader>rf", ":RangerWorkingDirectory<CR>", { silent = false, noremap = true })
+map("n", "<leader>rw", ":RangerWorkingDirectoryNewTab<CR>", { silent = false, noremap = true })
+
+-- Testing
+map("n", "t<C-n>", ":TestNearest<CR>", { silent = true, noremap = true })
+map("n", "t<C-f>", ":TestFile<CR>", { silent = true, noremap = true })
+map("n", "t<C-a>", ":TestSuite<CR>", { silent = true, noremap = true })
+map("n", "t<C-l>", ":TestLast<CR>", { silent = true, noremap = true })
+map("n", "t<C-v>", ":TestVisit<CR>", { silent = true, noremap = true })
+
+-- LazyGit
+map("n", "lg", ":LazyGit<CR>", { silent = true, noremap = true })
+
+-- Commentary
+map("x", "/", "<Plug>Commentary", { silent = false })
+
+
