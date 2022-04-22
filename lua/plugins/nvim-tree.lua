@@ -37,7 +37,7 @@ end
 --- Each of these are documented in `:help nvim-tree.OPTION_NAME`
 nvim_tree.setup {
   auto_reload_on_write = true,
-  disable_netrw = false,
+  disable_netrw = true,
   hide_root_folder = false,
   hijack_cursor = false,
   hijack_netrw = true,
@@ -52,8 +52,9 @@ nvim_tree.setup {
     width = 30,
     height = 30,
     side = "left",
-    preserve_window_proportions = false,
+    preserve_window_proportions = true,
     number = false,
+    auto_resize = true,
     relativenumber = false,
     signcolumn = "yes",
     mappings = {
@@ -78,8 +79,8 @@ nvim_tree.setup {
     auto_open = true,
   },
   update_focused_file = {
-    enable = false,
-    update_cwd = false,
+    enable = true,
+    update_cwd = true,
     ignore_list = {},
   },
   ignore_ft_on_setup = {},

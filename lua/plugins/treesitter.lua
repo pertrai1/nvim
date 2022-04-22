@@ -4,7 +4,7 @@ if not status_ok then
 end
 
 treesitter.setup {
-  ensure_installed = { 'html', 'javascript', 'typescript', 'tsx', 'css', 'json' },
+  ensure_installed = "maintained",
   highlight = {
     enable = true,
     additional_vim_regex_highlighting = true

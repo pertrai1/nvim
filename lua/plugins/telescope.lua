@@ -4,6 +4,11 @@ if not status_ok then
 end
 
 telescope.setup {
+  pickers = {
+    file_files = {
+      theme = "ivy"
+    }
+  },
   defaults = {
     file_ignore_patterns = { "yarn.lock" }
   },
