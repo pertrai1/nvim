@@ -11,6 +11,11 @@ call plug#begin()
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-file-browser.nvim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'liuchengxu/vista.vim'
 " Plug 'preservim/nerdtree'
@@ -53,6 +58,8 @@ call plug#end()
 
 lua << EOF
 require("plugins.bufferline")
+require("plugins.treesitter")
+require("plugins.telescope")
 require("nvim-tree").setup{
   diagnostics = { enable = true },
   tab_open = true,

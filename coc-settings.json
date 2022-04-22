@@ -14,7 +14,7 @@
       "typescriptreact"
   ],
   "coc.preferences.formatOnType": true,
-  "codeLens.enable": true,
+  "codeLens.enable": false,
   "eslint.autoFixOnSave": true,
   "eslint.probe": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
   "eslint.packageManager": "yarn",
