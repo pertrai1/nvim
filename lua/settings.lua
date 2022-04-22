@@ -33,7 +33,7 @@ opt.foldlevelstart = 10
 
 vim.o.lazyredraw = true
 opt.showmatch = true
--- opt.nobackup = true
+opt.backup = false
 -- opt.nowb = true
 opt.swapfile = false
 opt.writebackup = false

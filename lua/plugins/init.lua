@@ -62,7 +62,8 @@ return require("packer").startup(
     }
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
     use 'nvim-telescope/telescope-file-browser.nvim'
-
+    
+    use { 'neoclide/coc.nvim', branch = 'release' }
     -- Collection of configurations for the built-in LSP client
     use {
       'neovim/nvim-lspconfig',
