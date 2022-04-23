@@ -2,10 +2,10 @@ local cmp = require "cmp"
 local cmp_compare = require "cmp_compare"
 cmp.setup {
     preselect = cmp.PreselectMode.None,
-    completion = {
-        keyword_length = 0,
-        autocomplete = false,
-    },
+    -- completion = {
+    -- keyword_length = 0,
+    -- autocomplete = false,
+    -- },
 
     mapping = {
         ["<C-d>"] = cmp.mapping.scroll_docs(-5),
@@ -97,6 +97,7 @@ cmp.setup {
     },
 
     window = {
+        completion = cmp.config.window.bordered(),
         documentation = cmp.config.window.bordered()
     },
 
