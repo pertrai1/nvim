@@ -1,3 +1,1 @@
-vim.api.nvim_command [[ hi def link LspReferenceText CursorLine ]]
-vim.api.nvim_command [[ hi def link LspReferenceWrite CursorLine ]]
-vim.api.nvim_command [[ hi def link LspReferenceRead CursorLine ]]
+vim.cmd [[command! -nargs=* -complete=customlist,fugitive#CompleteObject GitBase lua require('git').set_base(<q-args>)]]

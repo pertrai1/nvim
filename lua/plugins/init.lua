@@ -1,111 +1,240 @@
-vim.cmd([[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerCompile
-  augroup end
-]])
+vim.g.loaded_netrwPlugin = false
+vim.cmd [[packadd cfilter]]
 
-local fn = vim.fn
-local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
-if fn.empty(fn.glob(install_path)) > 0 then
-  packer_bootstrap = fn.system({
-    "git",
-    "clone",
-    "--depth",
-    "1",
-    "https://github.com/wbthomason/packer.nvim",
-    install_path,
-  })
-end
-vim.api.nvim_command("packadd packer.nvim")
+require("packer").startup {
+    function()
+        use "wbthomason/packer.nvim"
 
-return require("packer").startup(
-  function()
-    -- Packer can manage itself
-    use 'wbthomason/packer.nvim'
+        use "neovim/nvim-lspconfig"
+        use "williamboman/nvim-lsp-installer"
+        use "ray-x/lsp_signature.nvim"
+        use "jose-elias-alvarez/nvim-lsp-ts-utils"
 
-    -- Language settings
-    use 'pangloss/vim-javascript'
-    use 'leafgarland/typescript-vim'
-    use 'editorconfig/editorconfig-vim'
-    use 'JoosepAlviste/nvim-ts-context-commentstring'
-    use 'jxnblk/vim-mdx-js'
+        use {
+            "stevearc/dressing.nvim",
+            config = "require 'plugins.dressing'",
+        }
 
-    -- General
-    use 'tpope/vim-commentary'
-    use 'lewis6991/impatient.nvim'
+        use {
+            "kyazdani42/nvim-web-devicons",
+            config = "require 'plugins.nvim-web-devicons'",
+        }
 
-    -- Colors
-    use 'projekt0n/github-nvim-theme'
+        use {
+            "nvim-neo-tree/neo-tree.nvim",
+            branch = "v2.x",
+            requires = {
+                "nvim-lua/plenary.nvim",
+                "MunifTanjim/nui.nvim",
+            },
+            after = { "nvim-web-devicons" },
+            config = "require 'plugins.neo-tree'",
+        }
 
-    -- Visual
-    use 'nvim-lualine/lualine.nvim'
-    use 'kyazdani42/nvim-web-devicons'
-    use 'Mofiqul/vscode.nvim'
-    use 'akinsho/bufferline.nvim'
-    use {
-      'kyazdani42/nvim-tree.lua',
-      requires = {
-        'kyazdani42/nvim-web-devicons', -- optional, for file icon
-      }
-    }
-    use 'mhinz/vim-startify'
-    use 'folke/which-key.nvim'
-    use 'RRethy/vim-illuminate'
+        use {
+            "hrsh7th/nvim-cmp",
+            requires = {
+                -- { "andersevenrud/compe-tmux" },
+                { "hrsh7th/cmp-buffer" },
+                { "hrsh7th/cmp-path" },
+                { "hrsh7th/cmp-nvim-lua" },
+                { "hrsh7th/cmp-nvim-lsp" },
+                { "saadparwaiz1/cmp_luasnip" },
+                { "hrsh7th/cmp-cmdline" },
+                { "lukas-reineke/cmp-under-comparator" },
+                { "lukas-reineke/cmp-rg" },
+                { "octaltree/cmp-look" },
+            },
+            config = "require 'plugins.nvim-cmp'",
+        }
+        use {
+            "L3MON4D3/LuaSnip",
+            config = "require 'plugins.lua-snip'",
+        }
 
-    -- use('simrat39/symbols-outline.nvim')
-    use { 'norcalli/nvim-colorizer.lua', branch = 'color-editor' }
+        use {
+            "nvim-treesitter/nvim-treesitter",
+            run = ":TSUpdate",
+            config = "require 'plugins.nvim-treesitter'",
+        }
+        -- use "nvim-treesitter/playground"
+        use "nvim-treesitter/nvim-treesitter-refactor"
+        use "nvim-treesitter/nvim-treesitter-textobjects"
+        use "RRethy/nvim-treesitter-textsubjects"
+        use "JoosepAlviste/nvim-ts-context-commentstring"
+        use "David-Kunz/treesitter-unit"
+        use "windwp/nvim-ts-autotag"
+        use "spywhere/detect-language.nvim"
 
-    use {
-      'nvim-telescope/telescope.nvim',
-      requires = { {'nvim-lua/plenary.nvim'} }
-    }
-    use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
-    use 'nvim-telescope/telescope-file-browser.nvim'
-    
-    use { 'neoclide/coc.nvim', branch = 'release' }
-    -- Collection of configurations for the built-in LSP client
-    use {
-      'neovim/nvim-lspconfig',
-      requires = {
-        'williamboman/nvim-lsp-installer',
-        'onsails/lspkind-nvim'
-      }
-    }
-    use 'tamago324/nlsp-settings.nvim'
-    use 'creativenull/diagnosticls-configs-nvim'
-    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-    use {
-      'jose-elias-alvarez/null-ls.nvim',
-      requires = {
-        'nvim-lua/plenary.nvim'
-      },
-    }
-    use 'ray-x/lsp_signature.nvim'
-    use 'jose-elias-alvarez/nvim-lsp-ts-utils'
+        use {
+            "lukas-reineke/lsp-format.nvim",
+            config = "require 'plugins.lsp-format'",
+        }
 
-    use {
-      "folke/trouble.nvim",
-      requires = "kyazdani42/nvim-web-devicons",
-      config = function() require("trouble").setup {} end
-    }
+        use "overcache/NeoSolarized"
+        -- use {
+        -- "akinsho/org-bullets.nvim",
+        --  config = "require 'plugins.org-bullets'",
+        -- }
 
-    -- Completion
-    use 'hrsh7th/cmp-nvim-lsp'
-    use 'hrsh7th/cmp-buffer'
-    use 'hrsh7th/cmp-path'
-    use 'hrsh7th/cmp-cmdline'
-    use 'hrsh7th/nvim-cmp'
-    use 'hrsh7th/vim-vsnip'
-    use 'windwp/nvim-autopairs'
-    use 'mhartington/formatter.nvim'
-    use 'HerringtonDarkholme/yats.vim'
-    use 'maxmellon/vim-jsx-pretty'
-    
-    -- Tag viewer
-    use 'preservim/tagbar'
+        use {
+            "dhruvasagar/vim-table-mode",
+            config = "require 'plugins.vim-table-mode'",
+        }
 
-    -- Git
-    use 'airblade/vim-gitgutter'
-  end
-)
+        use {
+            "navarasu/onedark.nvim",
+            -- "mjlbach/onedark.nvim",
+            config = "require 'plugins.onedark'",
+        }
+        use {
+            "lukas-reineke/headlines.nvim",
+            config = "require 'plugins.headlines'",
+        }
+        use {
+            "lukas-reineke/virt-column.nvim",
+            config = "require 'plugins.virt-column'",
+        }
+        use {
+            "lukas-reineke/indent-blankline.nvim",
+            config = "require 'plugins.indent-blankline'",
+        }
+
+        use {
+            "junegunn/fzf.vim",
+            requires = {
+                { "junegunn/fzf" },
+            },
+            config = "require 'plugins.fzf'",
+        }
+        use "vijaymarupudi/nvim-fzf"
+
+        use "tpope/vim-fugitive"
+        use "tpope/vim-rhubarb"
+        use "tpope/vim-repeat"
+        use "tpope/vim-eunuch"
+        use "tpope/vim-obsession"
+        use "tpope/vim-sleuth"
+
+        use {
+            "numToStr/Comment.nvim",
+            config = "require 'plugins.comment'",
+        }
+
+        use {
+            "rmagatti/auto-session",
+            config = "require 'plugins.auto-session'",
+        }
+
+        use "krisajenkins/vim-projectlocal"
+
+        use {
+            "airblade/vim-gitgutter",
+            config = "require 'plugins.vim-gitgutter'",
+        }
+
+        use {
+            "pwntester/octo.nvim",
+            requires = {
+                { "nvim-lua/plenary.nvim" },
+                { "nvim-lua/popup.nvim" },
+                { "nvim-telescope/telescope.nvim" },
+            },
+            config = "require 'plugins.octo'",
+        }
+
+        use {
+            "numToStr/Navigator.nvim",
+            config = "require 'plugins.navigator'",
+        }
+
+        use {
+            "SirVer/ultisnips",
+            config = "require 'plugins.ultisnips'",
+        }
+
+        use {
+            "cohama/lexima.vim",
+            config = "require 'plugins.lexima'",
+        }
+
+        use "michaeljsmith/vim-indent-object"
+        use "wellle/targets.vim"
+
+        use "vim-scripts/UnconditionalPaste"
+
+        use {
+            "haya14busa/incsearch.vim",
+            config = "require 'plugins.incsearch'",
+        }
+        use "vim-scripts/CmdlineComplete"
+
+        use {
+            "mileszs/ack.vim",
+            config = "require 'plugins.ack'",
+        }
+
+        use {
+            "romainl/vim-qf",
+            config = "require 'plugins.vim-qf'",
+        }
+        use {
+            "kevinhwang91/nvim-bqf",
+            config = "require 'plugins.nvim-bqf'",
+        }
+        use {
+            "https://gitlab.com/yorickpeterse/nvim-pqf.git",
+            config = "require 'plugins.nvim-pqf'",
+        }
+
+        use "machakann/vim-sandwich"
+
+        use "bounceme/poppy.vim"
+
+        use "bkad/camelcasemotion"
+
+        use "vim-scripts/ReplaceWithRegister"
+        use "vim-scripts/ReplaceWithSameIndentRegister"
+
+        use "arthurxavierx/vim-caser"
+
+        use "z1mm32m4n/vim-superman"
+
+        use {
+            "rhysd/clever-f.vim",
+            config = "require 'plugins.clever-f'",
+        }
+        use "kepbod/quick-scope"
+        use "ggandor/lightspeed.nvim"
+
+        use {
+            "AndrewRadev/splitjoin.vim",
+            config = "require 'plugins.splitjoin'",
+        }
+
+        use {
+            "kshenoy/vim-signature",
+            config = "require 'plugins.vim-signature'",
+        }
+
+        use "kana/vim-niceblock"
+
+        use {
+            "tyru/open-browser.vim",
+            config = "require 'plugins.open-browser'",
+        }
+
+        use "famiu/feline.nvim"
+
+        use "jparise/vim-graphql"
+
+        use "milisims/nvim-luaref"
+    end,
+    config = {
+        display = {
+            open_fn = function()
+                return require("packer.util").float { border = vim.g.floating_window_border }
+            end,
+        },
+    },
+}

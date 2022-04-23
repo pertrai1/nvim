@@ -1,81 +1,100 @@
-local opt = vim.opt -- to set options
+vim.cmd [[syntax enable]]
+vim.cmd [[filetype plugin indent on]]
 
-vim.g.mapleader = " "
+local opt = setmetatable({}, {
+    __newindex = function(_, key, value)
+        vim.o[key] = value
+        vim.bo[key] = value
+    end,
+})
 
-opt.autoread = true
-opt.autoindent = true
-opt.smartindent = true
+-- opt.dict = "~/dotfiles/lib/10k.txt"
 opt.expandtab = true
-opt.shiftround = true
-opt.shiftwidth = 2
-opt.softtabstop = 2
-opt.smarttab = true
-opt.tabstop = 2
-opt.showtabline = 2
-opt.ignorecase = true
-opt.smartcase = true
-opt.hlsearch = true
-opt.incsearch = true
-
-opt.backspace = { "indent", "eol", "start" }
-opt.clipboard = "unnamedplus"
-opt.completeopt = "menu,menuone,noselect"
-opt.encoding = "utf-8"
-opt.mouse = "a"
-
-opt.hidden = true
-opt.ruler = true
-opt.number = true
-opt.linebreak = true
-opt.wrap = true
-opt.history = 10000
-
--- opt.foldmethod = "indent"
--- opt.foldcolumn = 2
-opt.foldlevelstart = 10
-
-vim.o.lazyredraw = true
-opt.showmatch = true
-opt.backup = false
--- opt.nowb = true
+opt.formatoptions = "crqnbj"
+opt.grepprg = "rg --vimgrep --no-heading --hidden"
+opt.shiftwidth = 4
+opt.smartindent = true
+opt.softtabstop = 4
+opt.spellcapcheck = ""
 opt.swapfile = false
-opt.writebackup = false
+opt.tabstop = 4
+opt.textwidth = 80
+opt.undofile = true
+opt.undolevels = 10000
 
-opt.cmdheight = 2
+vim.o.clipboard = "unnamedplus"
+vim.o.completeopt = "menu,menuone,noinsert,noselect"
+vim.o.confirm = true
+vim.o.diffopt = "internal,filler,closeoff,foldcolumn:0,hiddenoff,algorithm:patience"
+vim.o.emoji = false
+vim.o.foldclose = "all"
+vim.o.foldopen = "all"
+vim.opt.foldtext = "v:lua.foldtext()"
+vim.o.hidden = true
+vim.o.history = 10000
+vim.o.ignorecase = true
+vim.o.inccommand = "nosplit"
+vim.o.infercase = true
+vim.o.lazyredraw = true
+vim.o.mouse = "a"
+vim.o.pumblend = 10
+vim.o.ruler = false
+vim.o.scrolloff = 8
+vim.o.showbreak = "↳⋅"
+vim.o.showcmd = false
+vim.o.showmode = false
+vim.o.showtabline = 0
+vim.o.sidescroll = 5
+vim.o.sidescrolloff = 15
+vim.o.smartcase = true
+vim.o.smarttab = true
+vim.o.splitbelow = true
+vim.o.splitright = true
+vim.o.termguicolors = true
+-- vim.o.timeoutlen = 300
+vim.o.undodir = vim.fn.expand "~/.config/nvim/backups"
+vim.o.updatetime = 300
+vim.o.viewoptions = ""
+vim.o.virtualedit = "onemore"
+vim.o.whichwrap = "b,h,l"
+vim.o.wildmode = "longest,full"
+vim.o.wildoptions = "pum"
 
-opt.updatetime = 300
+vim.wo.foldenable = false
+vim.wo.foldlevel = 2
+vim.wo.foldmethod = "indent"
+vim.wo.signcolumn = "yes:1"
+vim.wo.conceallevel = 2
+vim.wo.concealcursor = "n"
+vim.wo.breakindent = true
+vim.wo.linebreak = true
+vim.wo.number = true
+vim.wo.relativenumber = false
+vim.wo.cursorline = true
+vim.wo.winhighlight = "NormalNC:WinNormalNC"
+vim.opt.list = true
+vim.opt.listchars = {
+    space = "⋅",
+    eol = "↴",
+    tab = "__",
+    trail = "•",
+    extends = "❯",
+    precedes = "❮",
+    nbsp = "_",
+}
+vim.opt.fillchars = {
+    fold = " ",
+    diff = "╱",
+}
 
-opt.showcmd = true
-opt.showmode = true
-
-opt.laststatus = 2
-
-vim.cmd([[
-autocmd FocusGained,BufEnter * checktime
-]])
-
--- Return to last edit position when opening files (You want this!)
-vim.cmd([[
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-]])
-
--- CSS/SCSS
-vim.cmd([[
-autocmd FileType scss setl iskeyword+=@~@
-]])
-
--- Auto-resize splits when Vim gets resized.
-vim.cmd([[
-autocmd VimResized * wincmd =
-]])
-
-vim.cmd([[
-autocmd FileType vim setlocal foldmethod=marker
-]])
-
--- vim.api.nvim_exec([[
--- augroup FormatAutogroup
-  -- autocmd!
-  -- autocmd BufWritePost *.js,*.ts,*.scss FormatWrite
--- augroup END
--- ]], true)
+vim.g.floating_window_border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }
+vim.g.floating_window_border_dark = {
+    { "╭", "FloatBorderDark" },
+    { "─", "FloatBorderDark" },
+    { "╮", "FloatBorderDark" },
+    { "│", "FloatBorderDark" },
+    { "╯", "FloatBorderDark" },
+    { "─", "FloatBorderDark" },
+    { "╰", "FloatBorderDark" },
+    { "│", "FloatBorderDark" },
+}
