@@ -124,6 +124,12 @@ _G.packer_plugins = {
     path = "/Users/robsimpson/.local/share/nvim/site/pack/packer/start/auto-session",
     url = "https://github.com/rmagatti/auto-session"
   },
+  ["bufferline.nvim"] = {
+    config = { "require 'plugins.bufferline'" },
+    loaded = true,
+    path = "/Users/robsimpson/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
+    url = "https://github.com/akinsho/bufferline.nvim"
+  },
   camelcasemotion = {
     loaded = true,
     path = "/Users/robsimpson/.local/share/nvim/site/pack/packer/start/camelcasemotion",
@@ -246,6 +252,12 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/robsimpson/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim",
     url = "https://github.com/ray-x/lsp_signature.nvim"
+  },
+  ["lualine.nvim"] = {
+    config = { "require 'plugins.lualine'" },
+    loaded = true,
+    path = "/Users/robsimpson/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
   },
   ["neo-tree.nvim"] = {
     config = { "require 'plugins.neo-tree'" },
@@ -507,110 +519,18 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: dressing.nvim
-time([[Config for dressing.nvim]], true)
-require 'plugins.dressing'
-time([[Config for dressing.nvim]], false)
--- Config for: virt-column.nvim
-time([[Config for virt-column.nvim]], true)
-require 'plugins.virt-column'
-time([[Config for virt-column.nvim]], false)
--- Config for: auto-session
-time([[Config for auto-session]], true)
-require 'plugins.auto-session'
-time([[Config for auto-session]], false)
--- Config for: fzf.vim
-time([[Config for fzf.vim]], true)
-require 'plugins.fzf'
-time([[Config for fzf.vim]], false)
--- Config for: clever-f.vim
-time([[Config for clever-f.vim]], true)
-require 'plugins.clever-f'
-time([[Config for clever-f.vim]], false)
--- Config for: nvim-pqf.git
-time([[Config for nvim-pqf.git]], true)
-require 'plugins.nvim-pqf'
-time([[Config for nvim-pqf.git]], false)
 -- Config for: nvim-treesitter
 time([[Config for nvim-treesitter]], true)
 require 'plugins.nvim-treesitter'
 time([[Config for nvim-treesitter]], false)
--- Config for: onedark.nvim
-time([[Config for onedark.nvim]], true)
-require 'plugins.onedark'
-time([[Config for onedark.nvim]], false)
--- Config for: indent-blankline.nvim
-time([[Config for indent-blankline.nvim]], true)
-require 'plugins.indent-blankline'
-time([[Config for indent-blankline.nvim]], false)
--- Config for: splitjoin.vim
-time([[Config for splitjoin.vim]], true)
-require 'plugins.splitjoin'
-time([[Config for splitjoin.vim]], false)
--- Config for: lexima.vim
-time([[Config for lexima.vim]], true)
-require 'plugins.lexima'
-time([[Config for lexima.vim]], false)
--- Config for: Navigator.nvim
-time([[Config for Navigator.nvim]], true)
-require 'plugins.navigator'
-time([[Config for Navigator.nvim]], false)
--- Config for: vim-gitgutter
-time([[Config for vim-gitgutter]], true)
-require 'plugins.vim-gitgutter'
-time([[Config for vim-gitgutter]], false)
--- Config for: vim-qf
-time([[Config for vim-qf]], true)
-require 'plugins.vim-qf'
-time([[Config for vim-qf]], false)
 -- Config for: lsp-format.nvim
 time([[Config for lsp-format.nvim]], true)
 require 'plugins.lsp-format'
 time([[Config for lsp-format.nvim]], false)
--- Config for: Comment.nvim
-time([[Config for Comment.nvim]], true)
-require 'plugins.comment'
-time([[Config for Comment.nvim]], false)
--- Config for: ack.vim
-time([[Config for ack.vim]], true)
-require 'plugins.ack'
-time([[Config for ack.vim]], false)
--- Config for: LuaSnip
-time([[Config for LuaSnip]], true)
-require 'plugins.lua-snip'
-time([[Config for LuaSnip]], false)
--- Config for: nvim-web-devicons
-time([[Config for nvim-web-devicons]], true)
-require 'plugins.nvim-web-devicons'
-time([[Config for nvim-web-devicons]], false)
--- Config for: octo.nvim
-time([[Config for octo.nvim]], true)
-require 'plugins.octo'
-time([[Config for octo.nvim]], false)
--- Config for: vim-table-mode
-time([[Config for vim-table-mode]], true)
-require 'plugins.vim-table-mode'
-time([[Config for vim-table-mode]], false)
 -- Config for: vim-signature
 time([[Config for vim-signature]], true)
 require 'plugins.vim-signature'
 time([[Config for vim-signature]], false)
--- Config for: headlines.nvim
-time([[Config for headlines.nvim]], true)
-require 'plugins.headlines'
-time([[Config for headlines.nvim]], false)
--- Config for: open-browser.vim
-time([[Config for open-browser.vim]], true)
-require 'plugins.open-browser'
-time([[Config for open-browser.vim]], false)
--- Config for: incsearch.vim
-time([[Config for incsearch.vim]], true)
-require 'plugins.incsearch'
-time([[Config for incsearch.vim]], false)
--- Config for: nvim-bqf
-time([[Config for nvim-bqf]], true)
-require 'plugins.nvim-bqf'
-time([[Config for nvim-bqf]], false)
 -- Config for: ultisnips
 time([[Config for ultisnips]], true)
 require 'plugins.ultisnips'
@@ -619,6 +539,106 @@ time([[Config for ultisnips]], false)
 time([[Config for nvim-cmp]], true)
 require 'plugins.nvim-cmp'
 time([[Config for nvim-cmp]], false)
+-- Config for: vim-table-mode
+time([[Config for vim-table-mode]], true)
+require 'plugins.vim-table-mode'
+time([[Config for vim-table-mode]], false)
+-- Config for: nvim-bqf
+time([[Config for nvim-bqf]], true)
+require 'plugins.nvim-bqf'
+time([[Config for nvim-bqf]], false)
+-- Config for: LuaSnip
+time([[Config for LuaSnip]], true)
+require 'plugins.lua-snip'
+time([[Config for LuaSnip]], false)
+-- Config for: bufferline.nvim
+time([[Config for bufferline.nvim]], true)
+require 'plugins.bufferline'
+time([[Config for bufferline.nvim]], false)
+-- Config for: Navigator.nvim
+time([[Config for Navigator.nvim]], true)
+require 'plugins.navigator'
+time([[Config for Navigator.nvim]], false)
+-- Config for: virt-column.nvim
+time([[Config for virt-column.nvim]], true)
+require 'plugins.virt-column'
+time([[Config for virt-column.nvim]], false)
+-- Config for: vim-gitgutter
+time([[Config for vim-gitgutter]], true)
+require 'plugins.vim-gitgutter'
+time([[Config for vim-gitgutter]], false)
+-- Config for: octo.nvim
+time([[Config for octo.nvim]], true)
+require 'plugins.octo'
+time([[Config for octo.nvim]], false)
+-- Config for: lualine.nvim
+time([[Config for lualine.nvim]], true)
+require 'plugins.lualine'
+time([[Config for lualine.nvim]], false)
+-- Config for: onedark.nvim
+time([[Config for onedark.nvim]], true)
+require 'plugins.onedark'
+time([[Config for onedark.nvim]], false)
+-- Config for: dressing.nvim
+time([[Config for dressing.nvim]], true)
+require 'plugins.dressing'
+time([[Config for dressing.nvim]], false)
+-- Config for: open-browser.vim
+time([[Config for open-browser.vim]], true)
+require 'plugins.open-browser'
+time([[Config for open-browser.vim]], false)
+-- Config for: clever-f.vim
+time([[Config for clever-f.vim]], true)
+require 'plugins.clever-f'
+time([[Config for clever-f.vim]], false)
+-- Config for: auto-session
+time([[Config for auto-session]], true)
+require 'plugins.auto-session'
+time([[Config for auto-session]], false)
+-- Config for: Comment.nvim
+time([[Config for Comment.nvim]], true)
+require 'plugins.comment'
+time([[Config for Comment.nvim]], false)
+-- Config for: lexima.vim
+time([[Config for lexima.vim]], true)
+require 'plugins.lexima'
+time([[Config for lexima.vim]], false)
+-- Config for: fzf.vim
+time([[Config for fzf.vim]], true)
+require 'plugins.fzf'
+time([[Config for fzf.vim]], false)
+-- Config for: indent-blankline.nvim
+time([[Config for indent-blankline.nvim]], true)
+require 'plugins.indent-blankline'
+time([[Config for indent-blankline.nvim]], false)
+-- Config for: vim-qf
+time([[Config for vim-qf]], true)
+require 'plugins.vim-qf'
+time([[Config for vim-qf]], false)
+-- Config for: ack.vim
+time([[Config for ack.vim]], true)
+require 'plugins.ack'
+time([[Config for ack.vim]], false)
+-- Config for: incsearch.vim
+time([[Config for incsearch.vim]], true)
+require 'plugins.incsearch'
+time([[Config for incsearch.vim]], false)
+-- Config for: headlines.nvim
+time([[Config for headlines.nvim]], true)
+require 'plugins.headlines'
+time([[Config for headlines.nvim]], false)
+-- Config for: nvim-web-devicons
+time([[Config for nvim-web-devicons]], true)
+require 'plugins.nvim-web-devicons'
+time([[Config for nvim-web-devicons]], false)
+-- Config for: splitjoin.vim
+time([[Config for splitjoin.vim]], true)
+require 'plugins.splitjoin'
+time([[Config for splitjoin.vim]], false)
+-- Config for: nvim-pqf.git
+time([[Config for nvim-pqf.git]], true)
+require 'plugins.nvim-pqf'
+time([[Config for nvim-pqf.git]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd neo-tree.nvim ]]
