@@ -1,1 +1,7 @@
 plugged/
+.secrets
+backups
+spell
+.netrwhist
+plugin/packer_compiled.vim
+plugin/packer_compiled.lua
