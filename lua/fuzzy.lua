@@ -95,8 +95,7 @@ M.fzf_files = function(files, prompt, show_git)
 
         local preview = ""
         if show_git then
-            preview =
-                "--preview 'bat --italic-text=always --style=numbers,changes --color always {2..-1} | grep -A5 -B5 --color=never -P \"^..\\d+.{0,7}[+|_|~]\"'"
+            preview = "--preview 'bat --italic-text=always --style=numbers,changes --color always {2..-1} | grep -A5 -B5 --color=never -P \"^..\\d+.{0,7}[+|_|~]\"'"
         end
 
         local result = fzf.fzf(
@@ -169,6 +168,7 @@ local symbols_to_items = function(symbols)
         end
         return _items
     end
+
     return _symbols_to_items(symbols, {})
 end
 

@@ -141,6 +141,8 @@ require("packer").startup {
             config = "require 'plugins.vim-gitgutter'",
         }
 
+        use 'kdheepak/lazygit.nvim'
+
         use {
             "pwntester/octo.nvim",
             requires = {

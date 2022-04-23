@@ -16,16 +16,16 @@ cmp.setup {
                 return cmp.mapping.confirm {
                     behavior = cmp.ConfirmBehavior.Insert,
                     select = true,
-                }(fallback)
+                } (fallback)
             else
                 return fallback()
             end
         end,
         ["<C-n>"] = function(fallback)
             if cmp.visible() then
-                return cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert }(fallback)
+                return cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert } (fallback)
             else
-                return cmp.mapping.complete { reason = cmp.ContextReason.Auto }(fallback)
+                return cmp.mapping.complete { reason = cmp.ContextReason.Auto } (fallback)
             end
         end,
         ["<C-p>"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert },
@@ -96,9 +96,13 @@ cmp.setup {
         end,
     },
 
-    documentation = {
-        border = vim.g.floating_window_border_dark,
+    window = {
+        documentation = cmp.config.window.bordered()
     },
+
+    -- documentation = {
+    --border = vim.g.floating_window_border_dark,
+    -- },
 
     experimental = {
         native_menu = false,

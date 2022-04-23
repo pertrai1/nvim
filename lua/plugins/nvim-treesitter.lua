@@ -1,5 +1,20 @@
 require("nvim-treesitter.configs").setup {
-    ensure_installed = "all",
+    ensure_installed = {
+        "tsx",
+        "json",
+        "yaml",
+        "html",
+        "scss",
+        "bash",
+        "css",
+        "go",
+        "javascript",
+        "jsdoc",
+        "lua",
+        "markdown",
+        "vim"
+    },
+    ignore_install = { "php" },
     highlight = {
         enable = true,
         language_tree = true,
