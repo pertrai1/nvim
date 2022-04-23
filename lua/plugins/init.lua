@@ -88,6 +88,14 @@ require("packer").startup {
             config = "require 'plugins.onedark'",
         }
         use {
+            "nvim-lualine/lualine.nvim",
+            config = "require 'plugins.lualine'"
+        }
+        use {
+            "akinsho/bufferline.nvim",
+            config = "require 'plugins.bufferline'"
+        }
+        use {
             "lukas-reineke/headlines.nvim",
             config = "require 'plugins.headlines'",
         }
