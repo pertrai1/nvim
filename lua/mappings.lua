@@ -98,8 +98,8 @@ map("n", leader .. "f", ":lua require('fuzzy').symbols()<CR>")
 map("n", leader .. "e", ":NeoTreeFloatToggle<CR>")
 map("n", leader .. "t", ":NeoTreeFocusToggle<CR>")
 
-map("n", "<S-l>", ":bnext<CR>", { silent = true, noremap = true })
-map("n", "<S-h>", ":bprevious<CR>", { silent = true, noremap = true })
+-- map("n", "<S-l>", ":bnext<CR>", { silent = true, noremap = true })
+-- map("n", "<S-h>", ":bprevious<CR>", { silent = true, noremap = true })
 
 map(
     "i",
