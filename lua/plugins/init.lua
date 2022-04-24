@@ -87,10 +87,7 @@ require("packer").startup {
             -- "mjlbach/onedark.nvim",
             config = "require 'plugins.onedark'",
         }
-        use {
-            "nvim-lualine/lualine.nvim",
-            config = "require 'plugins.lualine'"
-        }
+        use 'feline-nvim/feline.nvim'
         use {
             "akinsho/bufferline.nvim",
             config = "require 'plugins.bufferline'"
@@ -142,7 +139,12 @@ require("packer").startup {
         }
 
         use 'kdheepak/lazygit.nvim'
-
+        use {
+            'lewis6991/gitsigns.nvim',
+            config = function()
+                require('gitsigns').setup()
+            end
+        }
         use {
             "pwntester/octo.nvim",
             requires = {
@@ -233,8 +235,6 @@ require("packer").startup {
             "tyru/open-browser.vim",
             config = "require 'plugins.open-browser'",
         }
-
-        use "famiu/feline.nvim"
 
         use "jparise/vim-graphql"
 
