@@ -4,7 +4,7 @@
 
 ```
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
- ~/.local/share/nvim/site/pack/packer/start/packer.nvim`` ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 ```
 
 bat: `brew install bat`  
@@ -24,6 +24,21 @@ Keymaps
 
 `<leader>t` - toggle neo-tree
 
+#### LSP
+
 `<Space>*` - Find references  
 `<Space>&` - Implementation  
-`C-]` - Definition
+`C-]` - Definition  
+
+#### FZF
+
+`C-p` - files
+`leader .. gf` - Git File
+
+
+`<C-o>` - Close other buffers  
+
+#### Movements  
+
+`J` - Move 5 down  
+`K` - Move 5 Up
