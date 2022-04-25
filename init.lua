@@ -1,3 +1,4 @@
+require "impatient"
 require "utils"
 require "settings"
 require "plugins"
