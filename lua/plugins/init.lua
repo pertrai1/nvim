@@ -239,6 +239,13 @@ require("packer").startup {
         use "jparise/vim-graphql"
 
         use "milisims/nvim-luaref"
+
+        use {
+            "rcarriga/vim-ultest",
+            config = "require 'plugins.vim-ultest'",
+            requires = { "vim-test/vim-test" },
+            run = ":UpdateRemotePlugins"
+        }
     end,
     config = {
         display = {
