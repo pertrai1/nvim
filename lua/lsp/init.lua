@@ -176,16 +176,12 @@ lspconfig.pyright.setup { capabilities = capabilities, on_attach = on_attach }
 -- https://github.com/theia-ide/typescript-language-server
 lspconfig.tsserver.setup {
     capabilities = capabilities,
-    on_attach = function(client, bufnr)
+    on_attach = function(client)
         client.resolved_capabilities.document_formatting = false
         require("nvim-lsp-ts-utils").setup({
             update_imports_on_move = true,
             require_confirmation_on_move = true
         })
-        local opts = { silent = true }
-        vim.api.nvim.buf_set_keymap(bufnr, "n", "gs", ":TSLspOrganize<CR>", opts)
-        -- vim.api.nvim.buf_set_keymap(bufnr, "n", "gr", ":TSLspRenameFile<CR>", opts)
-        vim.api.nvim.buf_set_keymap(bufnr, "n", "gi", ":TSLspImportAll<CR>", opts)
         on_attach(client)
     end,
 }
