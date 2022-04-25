@@ -1,7 +1,17 @@
 # My Neovim Setup
 
+### Install Packer
+
+```
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim`` ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+```
+
 bat: `brew install bat`  
-lua-language-server: `brew install lua-language-server`
+
+#### Language Servers
+lua-language-server: `brew install lua-language-server`  
+efm-language-server: `brew install efm-langserver`
 
 in .zshrc:
 
