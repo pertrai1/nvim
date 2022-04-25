@@ -3,6 +3,7 @@ local leader = "<space>"
 
 map("i", "jk", "<esc>", { silent = true })
 map("n", ";", ":", { silent = false })
+map("n", "<BS>", ":nohlsearch<CR>", { noremap = true, silent = true })
 
 map("n", leader .. leader, ":<C-u>exe v:count ? v:count . 'b' : 'b' . (bufloaded(0) ? '#' : 'n')<CR>")
 
@@ -74,6 +75,8 @@ map({ "n", "o", "v" }, "L", "$")
 
 map({ "n", "v" }, "J", "5j")
 map({ "n", "v" }, "K", "5k")
+map("n", "L", ":bnext<CR>", { silent = true, noremap = true })
+map("n", "H", ":bprevious<CR>", { silent = true, noremap = true })
 
 map({ "n", "v" }, "j", "v:count ? (v:count > 5 ? \"m'\" . v:count : '') . 'j' : 'gj'", { expr = true })
 map({ "n", "v" }, "k", "v:count ? (v:count > 5 ? \"m'\" . v:count : '') . 'k' : 'gk'", { expr = true })

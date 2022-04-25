@@ -58,6 +58,9 @@ M.symbol_kind_colors = {
     Class = "red",
 }
 
+-- local opts = { noremap = true, silent = true }
+-- vim.api.nvim_set_keymap('n', '<space>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
+
 local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 vim.fn.sign_define("DiagnosticSignError", { text = "", numhl = "DiagnosticError" })
@@ -67,8 +70,17 @@ vim.fn.sign_define("DiagnosticSignHint", { text = "", numhl = "DiagnosticHint" }
 
 local on_attach = function(client)
     require("lsp-format").on_attach(client)
+    if client.resolved_capabilities.code_action then
+        utils.map("n", "<space>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", { noremap = true, buffer = true, silent = true })
+    end
+    if client.resolved_capabilities.declaration then
+        utils.map("n", "<space>gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", { buffer = true, silent = true })
+    end
     if client.resolved_capabilities.goto_definition then
         utils.map("n", "<C-]>", "<cmd>lua vim.lsp.buf.definition()<CR>", { buffer = true })
+    end
+    if client.resolved_capabilities.type_definition then
+        utils.map("n", "<space>D", "<cmd>lua vim.lsp.buf.type_definition()<CR>", { buffer = true })
     end
     if client.resolved_capabilities.implementation then
         utils.map("n", "<space>&", "<cmd>lua vim.lsp.buf.implementation()<CR>", { buffer = true })
@@ -109,6 +121,7 @@ function _G.activeLSP()
     end
     _G.P(servers)
 end
+
 function _G.bufferActiveLSP()
     local servers = {}
     for _, lsp in pairs(vim.lsp.buf_get_clients()) do
@@ -163,9 +176,16 @@ lspconfig.pyright.setup { capabilities = capabilities, on_attach = on_attach }
 -- https://github.com/theia-ide/typescript-language-server
 lspconfig.tsserver.setup {
     capabilities = capabilities,
-    on_attach = function(client)
+    on_attach = function(client, bufnr)
         client.resolved_capabilities.document_formatting = false
-        require("nvim-lsp-ts-utils").setup {}
+        require("nvim-lsp-ts-utils").setup({
+            update_imports_on_move = true,
+            require_confirmation_on_move = true
+        })
+        local opts = { silent = true }
+        vim.api.nvim.buf_set_keymap(bufnr, "n", "gs", ":TSLspOrganize<CR>", opts)
+        -- vim.api.nvim.buf_set_keymap(bufnr, "n", "gr", ":TSLspRenameFile<CR>", opts)
+        vim.api.nvim.buf_set_keymap(bufnr, "n", "gi", ":TSLspImportAll<CR>", opts)
         on_attach(client)
     end,
 }
@@ -179,10 +199,11 @@ local function get_lua_runtime()
         end
     end
     result[vim.fn.expand "$VIMRUNTIME/lua"] = true
-    result[vim.fn.expand "~/dev/neovim/src/nvim/lua"] = true
+    result[vim.fn.expand "~/.config/nvim/lua"] = true
 
     return result
 end
+
 lspconfig.sumneko_lua.setup {
     capabilities = capabilities,
     on_attach = on_attach,
@@ -337,7 +358,7 @@ local misspell = require "efm/misspell"
 -- https://github.com/mattn/efm-langserver
 lspconfig.efm.setup {
     capabilities = capabilities,
-   -- cmd = { "/home/lukas/dev/golib/bin/efm-langserver" },
+    -- cmd = { "/home/lukas/dev/golib/bin/efm-langserver" },
     on_attach = on_attach,
     init_options = { documentFormatting = true },
     root_dir = vim.loop.cwd,
