@@ -4,6 +4,7 @@ vim.cmd [[packadd cfilter]]
 require("packer").startup {
     function()
         use "wbthomason/packer.nvim"
+        use 'lewis6991/impatient.nvim'
 
         use "neovim/nvim-lspconfig"
         use "williamboman/nvim-lsp-installer"
