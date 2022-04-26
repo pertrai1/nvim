@@ -65,6 +65,9 @@ map("n", "<C-j>", "<CMD>lua require('Navigator').down()<CR>")
 map("n", "<C-k>", "<CMD>lua require('Navigator').up()<CR>")
 map("n", "<C-l>", "<CMD>lua require('Navigator').right()<CR>")
 
+map("x", "<C-j>", ":m'>+<cr>`<my`>mzgv`yo`z", { silent = false })
+map("x", "<C-k>", ":m'<-2<cr>`>my`<mzgv`yo`z", { silent = false })
+
 map("n", "<c-w>l", "<c-w>5>")
 map("n", "<c-w>h", "<c-w>5<")
 map("n", "<c-w>k", "<c-w>5+")
@@ -95,6 +98,7 @@ map("n", leader .. "<C-p>", ":Commands<CR>")
 map("n", leader .. "<C-h>", ":Helptags<CR>")
 map("n", leader .. "m", ":Marks<CR>")
 map("n", leader .. "f", ":lua require('fuzzy').symbols()<CR>")
+map("n", leader .. "bp", ":BufferLinePick<CR>", { noremap = true, silent = true })
 
 -- map("n", "-", ":execute 'Neotree reveal git_base=' .. g:git_base<CR>")
 -- map("n", "g-", ":execute 'Neotree current git_status git_base=' .. g:git_base<CR>")
