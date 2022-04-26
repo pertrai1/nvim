@@ -115,15 +115,16 @@ map(
     { expr = true, noremap = false }
 )
 
-map("n", "grr", "<Plug>ReplaceWithSamrIndentRegisterLine", { noremap = false })
-map("n", "grR", "<Plug>ReplaceWithRegisterLine", { noremap = false })
-map("n", "gr", "<Plug>ReplaceWithRegisterOperator", { noremap = false })
+-- map("n", "grr", "<Plug>ReplaceWithSamrIndentRegisterLine", { noremap = false })
+-- map("n", "grR", "<Plug>ReplaceWithRegisterLine", { noremap = false })
+-- map("n", "gr", "<Plug>ReplaceWithRegisterOperator", { noremap = false })
 
-map("n", "glp", "<Plug>UnconditionalPasteIndentedAfter", { noremap = false })
-map("n", "glP", "<Plug>UnconditionalPasteIndentedBefore", { noremap = false })
+-- map("n", "glp", "<Plug>UnconditionalPasteIndentedAfter", { noremap = false })
+-- map("n", "glP", "<Plug>UnconditionalPasteIndentedBefore", { noremap = false })
 
-map("n", "gck", "m'yypgcc`'", { noremap = false })
+-- map("n", "gck", "m'yypgcc`'", { noremap = false })
 
+-- VERSION CONTROL
 map("n", "gj", "<Plug>(GitGutterNextHunk)", { noremap = false })
 map("n", "gk", "<Plug>(GitGutterPrevHunk)", { noremap = false })
 map("n", leader .. "gd", ":set nosplitright<CR>:execute 'Gvdiff ' .. g:git_base<CR>:set splitright<CR>")
