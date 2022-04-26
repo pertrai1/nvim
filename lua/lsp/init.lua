@@ -71,19 +71,19 @@ vim.fn.sign_define("DiagnosticSignHint", { text = "", numhl = "DiagnosticHint" }
 local on_attach = function(client)
     require("lsp-format").on_attach(client)
     if client.resolved_capabilities.code_action then
-        utils.map("n", "<space>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", { noremap = true, buffer = true, silent = true })
+        utils.map("n", "gA", "<cmd>lua vim.lsp.buf.code_action()<CR>", { noremap = true, buffer = true, silent = true })
     end
     if client.resolved_capabilities.declaration then
-        utils.map("n", "<space>gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", { buffer = true, silent = true })
+        utils.map("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", { buffer = true, silent = true })
     end
     if client.resolved_capabilities.goto_definition then
-        utils.map("n", "<C-]>", "<cmd>lua vim.lsp.buf.definition()<CR>", { buffer = true })
+        utils.map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { buffer = true })
     end
     if client.resolved_capabilities.type_definition then
-        utils.map("n", "<space>D", "<cmd>lua vim.lsp.buf.type_definition()<CR>", { buffer = true })
+        utils.map("n", "gt", "<cmd>lua vim.lsp.buf.type_definition()<CR>", { buffer = true })
     end
     if client.resolved_capabilities.implementation then
-        utils.map("n", "<space>&", "<cmd>lua vim.lsp.buf.implementation()<CR>", { buffer = true })
+        utils.map("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", { buffer = true })
     end
     if client.resolved_capabilities.hover then
         utils.map("n", "<CR>", "<cmd>lua vim.lsp.buf.hover()<CR>", { buffer = true })
@@ -97,10 +97,10 @@ local on_attach = function(client)
         )
     end
     if client.resolved_capabilities.rename then
-        utils.map("n", "<Space>rn", "<cmd>lua require'lsp.rename'.rename()<CR>", { silent = true, buffer = true })
+        utils.map("n", "gr", "<cmd>lua require'lsp.rename'.rename()<CR>", { silent = true, buffer = true })
     end
     if client.resolved_capabilities.signature_help then
-        utils.map("n", "<Space>s", "<cmd>lua vim.lsp.buf.signature_help()<CR>", { silent = true, buffer = true })
+        utils.map("n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<CR>", { silent = true, buffer = true })
     end
 
     require("lsp_signature").on_attach {
