@@ -147,16 +147,6 @@ require("packer").startup {
             end
         }
         use {
-            "pwntester/octo.nvim",
-            requires = {
-                { "nvim-lua/plenary.nvim" },
-                { "nvim-lua/popup.nvim" },
-                { "nvim-telescope/telescope.nvim" },
-            },
-            config = "require 'plugins.octo'",
-        }
-
-        use {
             "numToStr/Navigator.nvim",
             config = "require 'plugins.navigator'",
         }
