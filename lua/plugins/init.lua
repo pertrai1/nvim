@@ -185,6 +185,7 @@ require("packer").startup {
             "kevinhwang91/nvim-bqf",
             config = "require 'plugins.nvim-bqf'",
         }
+        use { "kevinhwang91/rnvimr" }
         use {
             "https://gitlab.com/yorickpeterse/nvim-pqf.git",
             config = "require 'plugins.nvim-pqf'",

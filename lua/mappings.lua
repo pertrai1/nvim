@@ -173,4 +173,6 @@ map("n", "t<C-a>", ":TestSuite<CR>", { silent = true })
 map("n", "t<C-l>", ":TestLast<CR>", { silent = true })
 map("n", "t<C-v>", ":TestVisit<CR>", { silent = true })
 
+-- Ranger
+map("n", leader .. "ra", ":RnvimrToggle<CR>", { silent = true, noremap = true })
 vim.cmd [[cabbrev nw noautocmd write]]
