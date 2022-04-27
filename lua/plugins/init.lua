@@ -33,6 +33,14 @@ require("packer").startup {
         }
 
         use {
+            "windwp/nvim-spectre",
+            requires = {
+                "nvim-lua/plenary.nvim"
+            },
+            config = "require 'plugins.spectre'",
+        }
+
+        use {
             "hrsh7th/nvim-cmp",
             requires = {
                 -- { "andersevenrud/compe-tmux" },
