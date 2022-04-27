@@ -175,4 +175,10 @@ map("n", "t<C-v>", ":TestVisit<CR>", { silent = true })
 
 -- Ranger
 map("n", leader .. "ra", ":RnvimrToggle<CR>", { silent = true, noremap = true })
+
+-- Spectre
+map("n", leader .. "sp", "<cmd>lua require('spectre').open()<CR>", { noremap = true })
+map("n", leader .. "sv", "<cmd>lua require('spectre').open_visual({select_word=true})<CR>", { noremap = true })
+map("n", leader .. "sf", "<cmd>lua require('spectre').open_file_search()<CR>", { noremap = true })
+
 vim.cmd [[cabbrev nw noautocmd write]]
