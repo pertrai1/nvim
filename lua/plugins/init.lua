@@ -1,6 +1,8 @@
 vim.g.loaded_netrwPlugin = false
 vim.cmd [[packadd cfilter]]
-
+require("packer").init({
+    max_jobs = 60
+})
 require("packer").startup {
     function()
         use "wbthomason/packer.nvim"
