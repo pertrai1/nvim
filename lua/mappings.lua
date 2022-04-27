@@ -182,11 +182,11 @@ map("n", leader .. "sv", "<cmd>lua require('spectre').open_visual({select_word=t
 map("n", leader .. "sf", "<cmd>lua require('spectre').open_file_search()<CR>", { noremap = true })
 
 -- Trouble
-map("n", leader .. "xx", "<cmd>Trouble<CR>", { silent = true, noremap = true })
-map("n", leader .. "xw", "<cmd>Trouble workspace_diagnostics<CR>", { silent = true, noremap = true })
-map("n", leader .. "xd", "<cmd>Trouble document_diagnostics<CR>", { silent = true, noremap = true })
-map("n", leader .. "xl", "<cmd>Trouble loclist<CR>", { silent = true, noremap = true })
-map("n", leader .. "xq", "<cmd>Trouble quickfix<CR>", { silent = true, noremap = true })
-map("n", "gR", "<cmd>Trouble lsp_references<CR>", { silent = true, noremap = true })
+map("n", leader .. "xx", "<cmd>TroubleToggle<CR>", { silent = true, noremap = true })
+map("n", leader .. "xw", "<cmd>TroubleToggle workspace_diagnostics<CR>", { silent = true, noremap = true })
+map("n", leader .. "xd", "<cmd>TroubleToggle document_diagnostics<CR>", { silent = true, noremap = true })
+map("n", leader .. "xl", "<cmd>TroubleToggle loclist<CR>", { silent = true, noremap = true })
+map("n", leader .. "xq", "<cmd>TroubleToggle quickfix<CR>", { silent = true, noremap = true })
+map("n", "gR", "<cmd>TroubleToggle lsp_references<CR>", { silent = true, noremap = true })
 
 vim.cmd [[cabbrev nw noautocmd write]]
