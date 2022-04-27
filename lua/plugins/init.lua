@@ -82,6 +82,21 @@ require("packer").startup {
             config = "require 'plugins.lsp-format'",
         }
 
+        use {
+            'j-hui/fidget.nvim',
+            config = "require 'plugins.fidget'"
+        }
+
+        use {
+            "folke/trouble.nvim",
+            requires = "kyazdani42/nvim-web-devicons",
+            config = function()
+                require("trouble").setup {
+                    auto_fold = true,
+                }
+            end
+        }
+
         use "overcache/NeoSolarized"
         -- use {
         -- "akinsho/org-bullets.nvim",

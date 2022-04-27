@@ -128,7 +128,7 @@ map(
 map("n", "gj", "<Plug>(GitGutterNextHunk)", { noremap = false })
 map("n", "gk", "<Plug>(GitGutterPrevHunk)", { noremap = false })
 map("n", leader .. "gd", ":set nosplitright<CR>:execute 'Gvdiff ' .. g:git_base<CR>:set splitright<CR>")
-map("n", leader .. "gr", ":Gread<CR>")
+-- map("n", leader .. "gr", ":Gread<CR>")
 map("n", leader .. "gb", ":Git blame<CR>")
 -- map("n", leader .. "gs", ":Git<CR>")
 map("n", leader .. "gs", ":LazyGit<CR>")
@@ -180,5 +180,13 @@ map("n", leader .. "ra", ":RnvimrToggle<CR>", { silent = true, noremap = true })
 map("n", leader .. "sp", "<cmd>lua require('spectre').open()<CR>", { noremap = true })
 map("n", leader .. "sv", "<cmd>lua require('spectre').open_visual({select_word=true})<CR>", { noremap = true })
 map("n", leader .. "sf", "<cmd>lua require('spectre').open_file_search()<CR>", { noremap = true })
+
+-- Trouble
+map("n", leader .. "xx", "<cmd>Trouble<CR>", { silent = true, noremap = true })
+map("n", leader .. "xw", "<cmd>Trouble workspace_diagnostics<CR>", { silent = true, noremap = true })
+map("n", leader .. "xd", "<cmd>Trouble document_diagnostics<CR>", { silent = true, noremap = true })
+map("n", leader .. "xl", "<cmd>Trouble loclist<CR>", { silent = true, noremap = true })
+map("n", leader .. "xq", "<cmd>Trouble quickfix<CR>", { silent = true, noremap = true })
+map("n", "gR", "<cmd>Trouble lsp_references<CR>", { silent = true, noremap = true })
 
 vim.cmd [[cabbrev nw noautocmd write]]
