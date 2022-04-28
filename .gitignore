@@ -3,5 +3,4 @@ plugged/
 backups
 spell
 .netrwhist
-plugin/packer_compiled.vim
-plugin/packer_compiled.lua
+plugin/
