@@ -94,7 +94,7 @@ map("n", "<C-p>", ":lua require('fzf-lua').files()<CR>")
 map("n", leader .. "gf", ":lua require('fzf-lua').git_files()<CR>")
 -- fuzzy does not seem to be working right now
 -- map("n", leader .. "n", ":lua require('fuzzy').files(vim.fn.expand('%:h'))<CR>")
-map("n", leader .. "n", ":lua require('fuzzy').files(vim.fn.expand('%:h'))<CR>")
+-- map("n", leader .. "n", ":lua require('fuzzy').files(vim.fn.expand('%:h'))<CR>")
 map("n", leader .. "p", ":lua require('fzf-lua').buffers()<CR>")
 map("n", leader .. "<C-p>", ":lua require('fzf-lua').commands()<CR>")
 map("n", leader .. "<C-h>", ":lua require('fzf-lua').help_tags()<CR>")

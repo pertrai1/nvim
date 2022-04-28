@@ -97,6 +97,11 @@ require("packer").startup {
             end
         }
 
+        use {
+            "folke/which-key.nvim",
+            config = "require 'plugins.whichkey'"
+        }
+
         use "overcache/NeoSolarized"
         -- use {
         -- "akinsho/org-bullets.nvim",
