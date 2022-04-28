@@ -1,6 +1,6 @@
 # My Neovim Setup
 
-### Install Packer
+## Install Packer
 
 ```
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
@@ -9,10 +9,9 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 
 bat: `brew install bat`  
 ack: `brew install ack`  
-sed: `brew install gsed`  
+sed: `brew install gsed`
 
-
-#### Language Servers
+## Language Servers
 
 lua-language-server: `brew install lua-language-server`  
 efm-language-server: `brew install efm-langserver`
@@ -23,37 +22,44 @@ in .zshrc:
 
 `export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'`
 
-Keymaps
+## Bindings
 
-`gcc` - line comment  
-`gbc` - block comment  
+### Basic Editing
 
-`<leader>t` - toggle neo-tree  
+| Mode | Mapping       | Binding       |
+| ---- | ------------- | ------------- |
+| n    | space         | Leader key    |
+| n/v  | leader .. gcc | Line comment  |
+| n/v  | leader .. gbc | Block comment |
 
+### Navigation
 
-#### LSP
+| Mode | Mapping      | Binding               |
+| ---- | ------------ | --------------------- |
+| n    | leader .. t  | Toggle focus Neo Tree |
+| n    | leader .. e  | Toggle float Neo Tree |
+| n    | leader .. p  | Buffers               |
+| n    | ctrl .. p    | Files                 |
+| n    | leader .. f  | Symbols               |
+| n    | leader .. gf | Git Files             |
 
-`<Space>*` - Find references  
-`<Space>&` - Implementation  
-`C-]` - Definition  
-`<Space>s` - Signature  
+### LSP
 
-#### FZF
+| Mode | Mapping      | Binding         |
+| ---- | ------------ | --------------- |
+| n    | leader .. \* | Find references |
+| n    | leader .. &  | Implementation  |
+| n    | ctrl-]       | Definition      |
+| n    | leader .. s  | Signature       |
 
-`C-p` - files  
-`leader .. gf` - Git File  
-`leader .. p` - Buffers  
-`leader .. f` - Symbols  
-
-`<C-o>` - Close other buffers  
-
+`<C-o>` - Close other buffers
 
 #### Movements
 
 `J` - Move 5 down  
-`K` - Move 5 Up  
+`K` - Move 5 Up
 
 `C-w .. l` - resize left  
 `C-w .. h` - resize right  
 `C-w .. j` - resize up  
-`C-w .. k` - resize down  
+`C-w .. k` - resize down
