@@ -86,11 +86,11 @@ in .zshrc:
 
 | Mode | Mapping       | Binding                                 |
 | ---- | ------------  | --------------------------------------  |
-| n    | t<C-n>        | Test nearest                            |
-| n    | t<C-f>        | Test file                               |
-| n    | t<C-a>        | Test suite                              |
-| n    | t<C-l>        | Test last                               |
-| n    | t<C-v>        | Test visit                              |
+| n    | t .. C-n      | Test nearest                            |
+| n    | t .. C-f      | Test file                               |
+| n    | t .. C-a      | Test suite                              |
+| n    | t .. C-l      | Test last                               |
+| n    | t .. C-v      | Test visit                              |
 
 `<C-o>` - Close other buffers
 
