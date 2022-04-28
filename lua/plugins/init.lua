@@ -132,19 +132,11 @@ require("packer").startup {
         }
 
         use {
-            "junegunn/fzf.vim",
-            requires = {
-                { "junegunn/fzf" },
-            },
-            config = "require 'plugins.fzf'",
-        }
-        use {
             "ibhagwan/fzf-lua",
             requires = {
                 'kyazdani42/nvim-web-devicons'
             }
         }
-        use "vijaymarupudi/nvim-fzf"
 
         use "tpope/vim-fugitive"
         use "tpope/vim-rhubarb"
