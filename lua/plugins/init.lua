@@ -138,6 +138,12 @@ require("packer").startup {
             },
             config = "require 'plugins.fzf'",
         }
+        use {
+            "ibhagwan/fzf-lua",
+            requires = {
+                'kyazdani42/nvim-web-devicons'
+            }
+        }
         use "vijaymarupudi/nvim-fzf"
 
         use "tpope/vim-fugitive"
