@@ -80,7 +80,7 @@ in .zshrc:
 | n    | leader .. xl  | Toggle location list                    |
 | n    | leader .. xq  | Toggle quickfix                         |
 | n    | gR            | Toggle references                       |
-|
+
 
 ### Testing
 
@@ -91,7 +91,6 @@ in .zshrc:
 | n    | t<C-a>        | Test suite                              |
 | n    | t<C-l>        | Test last                               |
 | n    | t<C-v>        | Test visit                              |
-|
 
 `<C-o>` - Close other buffers
 
