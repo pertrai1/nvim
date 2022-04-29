@@ -102,7 +102,7 @@ require("packer").startup {
             config = "require 'plugins.whichkey'"
         }
 
-        use "overcache/NeoSolarized"
+        -- use "overcache/NeoSolarized"
         -- use {
         -- "akinsho/org-bullets.nvim",
         --  config = "require 'plugins.org-bullets'",
@@ -177,6 +177,11 @@ require("packer").startup {
         use {
             "numToStr/Navigator.nvim",
             config = "require 'plugins.navigator'",
+        }
+
+        use {
+            "akinsho/toggleterm.nvim"vim",
+            config = "require 'plugins.toggleterm'"
         }
 
         use {

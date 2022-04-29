@@ -10,12 +10,15 @@ wk.setup({
     ignore_missing = true
 })
 wk.register({
+    ["/"] = { "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", "Comment" },
     a = {
         name = "General",
         c = { "<cmd>lua require 'buffers'.close()<CR>", "Close File" },
         C = { "<cmd>lua require 'buffers'.close_others()<CR>", "Close Others" },
+        f = { "<cmd>lua require('fzf-lua').files()<CR>", "Open File" },
         q = { "<cmd>lua require('fzf-lua').files()<CR>", "Quick Open" },
         h = { ":split", "Horizontal Split" },
+        s = { ":update<CR>", "Save File" },
         v = { ":vsplit<CR>", "Vertical Split" }
     },
     d = {
@@ -51,7 +54,6 @@ wk.register({
     f = {
         name = "Find",
         g = { "<cmd>lua require('fzf-lua').git_files()<CR>", "Git Files" },
-        t = { "<cmd>lua require('fzf-lua').live_grep()<CR>", "Find Text" },
         h = { "<cmd>lua require('fzf-lua').help_tags()<CR>", "Help" },
         l = { "<cmd>lua require('fzf-lua').grep_last()<CR>", "Last Search" },
         M = { "<cmd>lua require('fzf-lua').man_pages()<CR>", "Man Pages" },
@@ -95,6 +97,7 @@ wk.register({
         r = { "<cmd>lua require('spectre').open()<cr>", "Replace" },
         w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", "Replace Word" },
         f = { "<cmd>lua require('spectre').open_file_search()<cr>", "Replace Buffer" },
+        t = { "<cmd>lua require('fzf-lua').live_grep()<CR>", "Find Text" },
     },
     s = {
         name = "Search",
@@ -116,12 +119,28 @@ wk.register({
         s = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature" },
         t = { "<cmd>lua vim.lsp.buf.type_definition()<CR>", "Type Definition" },
     },
-    u = {
+    T = {
         name = "Testing",
         f = { ":TestFile<CR>", "File" },
         l = { ":TestLast", "Last" },
         n = { ":TestNearest<CR>", "Nearest" },
         s = { ":TestSuite", "Suite" },
         v = { ":TestVisit", "Visit" }
-    }
-}, { prefix = "<Space>" })
+    },
+    t = {
+        name = "Terminal",
+        ["1"] = { ":1ToggleTerm<cr>", "1" },
+        ["2"] = { ":2ToggleTerm<cr>", "2" },
+        ["3"] = { ":3ToggleTerm<cr>", "3" },
+        ["4"] = { ":4ToggleTerm<cr>", "4" },
+        n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
+        p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
+        f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
+        h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
+        v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
+    },
+}, { mode = "n", prefix = "<Space>" })
+
+wk.register({
+    ["/"] = { "<ESC><CMD>lua require('Comment.api').toggle_linewise_op(vim.fn.visualmode())<CR>", "Comment" },
+}, { mode = "v", prefix = "<Space>" })
