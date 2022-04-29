@@ -83,6 +83,7 @@ wk.register({
         h = { "<cmd>lua require('fzf-lua').help_tags()<CR>", "Help Tags" },
         m = { "<cmd>lua require('fzf-lua').marks()<CR>", "Marks" },
         r = { ":RnvimrToggle<CR>", "Ranger" },
+        s = { ":Neotree toggle float<CR>", "Sidebar Float" },
     },
     p = {
         name = "Packer",
