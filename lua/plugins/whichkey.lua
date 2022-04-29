@@ -110,9 +110,9 @@ wk.register({
     l = {
         name = "LSP",
         a = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code Actions" },
-        d = { "<cmd>lua vim.lsp.buf.declaration()<CR>", "Declaration" },
-        D = { "<cmd>lua vim.lsp.buf.definition()<CR>", "Definition" },
-        f = { "<cmd>require('lists').change_active('Quickfix')<CR>:lua vim.lsp.buf.references()<CR>", "Find References" },
+        d = { "<cmd>lua vim.lsp.buf.declaration()<CR>", "Declaration (gD)" },
+        D = { "<cmd>lua require('fzf-lua').lsp_definitions()<CR>", "Definition" },
+        f = { "<cmd>lua require('fzf-lua').lsp_references()<CR>", "Find References" },
         h = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Code Hover" },
         i = { "<cmd>lua vim.lsp.buf.implementation()<CR>", "Implemention" },
         l = { "<cmd>lua require'lsp.diagnostics'.line_diagnostics()<CR>", "Line Diagnostics" },
@@ -140,6 +140,12 @@ wk.register({
         h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
         v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
     },
+    w = {
+        name = "Window",
+        S = { ":Neotree position=right<CR>", "Sidebar Right" },
+        s = { ":Neotree position=left<CR>", "Sidebar Left" },
+        t = { ":Neotree position=float<CR>", "Sidebar Float" }
+    }
 }, { mode = "n", prefix = "<Space>" })
 
 wk.register({

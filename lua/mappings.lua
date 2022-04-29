@@ -106,8 +106,8 @@ map("n", leader .. "bp", ":BufferLinePick<CR>", { noremap = true, silent = true 
 
 -- map("n", "-", ":execute 'Neotree reveal git_base=' .. g:git_base<CR>")
 -- map("n", "g-", ":execute 'Neotree current git_status git_base=' .. g:git_base<CR>")
-map("n", leader .. "e", ":NeoTreeFloatToggle<CR>")
-map("n", leader .. "t", ":NeoTreeFocusToggle<CR>")
+map("n", leader .. "e", ":Neotree position=float<CR>")
+map("n", leader .. "t", ":Neotree show toggle<CR>")
 
 -- map("n", "<S-l>", ":bnext<CR>", { silent = true, noremap = true })
 -- map("n", "<S-h>", ":bprevious<CR>", { silent = true, noremap = true })
