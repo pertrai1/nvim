@@ -67,17 +67,12 @@ return require("packer").startup(function()
             { "lukas-reineke/cmp-rg" },
             { "octaltree/cmp-look" },
         },
-        config = "require 'plugins.nvim-cmp'",
     }
-    use {
-        "L3MON4D3/LuaSnip",
-        config = "require 'plugins.lua-snip'",
-    }
+    use "L3MON4D3/LuaSnip"
 
     use {
         "nvim-treesitter/nvim-treesitter",
         run = ":TSUpdate",
-        config = "require 'plugins.nvim-treesitter'",
     }
     -- use "nvim-treesitter/playground"
     use "nvim-treesitter/nvim-treesitter-refactor"
@@ -88,15 +83,9 @@ return require("packer").startup(function()
     use "windwp/nvim-ts-autotag"
     use "spywhere/detect-language.nvim"
 
-    use {
-        "lukas-reineke/lsp-format.nvim",
-        config = "require 'plugins.lsp-format'",
-    }
+    use "lukas-reineke/lsp-format.nvim"
 
-    use {
-        'j-hui/fidget.nvim',
-        config = "require 'plugins.fidget'"
-    }
+    use "j-hui/fidget.nvim"
 
     use {
         "folke/trouble.nvim",
@@ -112,46 +101,16 @@ return require("packer").startup(function()
         "folke/which-key.nvim",
     }
 
-    -- use "overcache/NeoSolarized"
-    -- use {
-    -- "akinsho/org-bullets.nvim",
-    --  config = "require 'plugins.org-bullets'",
-    -- }
+    use "dhruvasagar/vim-table-mode"
 
-    use {
-        "dhruvasagar/vim-table-mode",
-        config = "require 'plugins.vim-table-mode'",
-    }
-
-    use {
-        "navarasu/onedark.nvim",
-        -- "mjlbach/onedark.nvim",
-        config = "require 'plugins.onedark'",
-    }
+    use "navarasu/onedark.nvim"
     use 'feline-nvim/feline.nvim'
-    use {
-        "akinsho/bufferline.nvim",
-        config = "require 'plugins.bufferline'"
-    }
-    use {
-        "lukas-reineke/headlines.nvim",
-        config = "require 'plugins.headlines'",
-    }
-    use {
-        "lukas-reineke/virt-column.nvim",
-        config = "require 'plugins.virt-column'",
-    }
-    use {
-        "lukas-reineke/indent-blankline.nvim",
-        config = "require 'plugins.indent-blankline'",
-    }
+    use "akinsho/bufferline.nvim"
+    use "lukas-reineke/headlines.nvim"
+    use "lukas-reineke/virt-column.nvim"
+    use "lukas-reineke/indent-blankline.nvim"
 
-    use {
-        "ibhagwan/fzf-lua",
-        requires = {
-            'kyazdani42/nvim-web-devicons'
-        }
-    }
+    use "ibhagwan/fzf-lua"
 
     use "tpope/vim-fugitive"
     use "tpope/vim-rhubarb"
@@ -160,79 +119,38 @@ return require("packer").startup(function()
     use "tpope/vim-obsession"
     use "tpope/vim-sleuth"
 
-    use {
-        "numToStr/Comment.nvim",
-        config = "require 'plugins.comment'",
-    }
+    use "numToStr/Comment.nvim"
 
-    use {
-        "rmagatti/auto-session",
-        config = "require 'plugins.auto-session'",
-    }
+    use "rmagatti/auto-session"
 
     use "krisajenkins/vim-projectlocal"
 
-    use {
-        "airblade/vim-gitgutter",
-        config = "require 'plugins.vim-gitgutter'",
-    }
+    use "airblade/vim-gitgutter"
 
-    use 'kdheepak/lazygit.nvim'
-    use {
-        'lewis6991/gitsigns.nvim',
-        config = function()
-            require('gitsigns').setup()
-        end
-    }
-    use {
-        "numToStr/Navigator.nvim",
-        config = "require 'plugins.navigator'",
-    }
+    use "kdheepak/lazygit.nvim"
+    use "lewis6991/gitsigns.nvim"
+    use "numToStr/Navigator.nvim"
 
-    use {
-        "akinsho/toggleterm.nvim",
-        config = "require 'plugins.toggleterm'"
-    }
+    use "akinsho/toggleterm.nvim"
 
-    use {
-        "SirVer/ultisnips",
-        config = "require 'plugins.ultisnips'",
-    }
+    use "SirVer/ultisnips"
 
-    use {
-        "cohama/lexima.vim",
-        config = "require 'plugins.lexima'",
-    }
+    use "cohama/lexima.vim"
 
     use "michaeljsmith/vim-indent-object"
     use "wellle/targets.vim"
 
     use "vim-scripts/UnconditionalPaste"
 
-    use {
-        "haya14busa/incsearch.vim",
-        config = "require 'plugins.incsearch'",
-    }
+    use "haya14busa/incsearch.vim"
     use "vim-scripts/CmdlineComplete"
 
-    use {
-        "mileszs/ack.vim",
-        config = "require 'plugins.ack'",
-    }
+    use "mileszs/ack.vim"
 
-    use {
-        "romainl/vim-qf",
-        config = "require 'plugins.vim-qf'",
-    }
-    use {
-        "kevinhwang91/nvim-bqf",
-        config = "require 'plugins.nvim-bqf'",
-    }
-    use { "kevinhwang91/rnvimr" }
-    use {
-        "https://gitlab.com/yorickpeterse/nvim-pqf.git",
-        config = "require 'plugins.nvim-pqf'",
-    }
+    use "romainl/vim-qf"
+    use "kevinhwang91/nvim-bqf"
+    use "kevinhwang91/rnvimr"
+    use "https://gitlab.com/yorickpeterse/nvim-pqf.git"
 
     use "machakann/vim-sandwich"
 
@@ -247,29 +165,17 @@ return require("packer").startup(function()
 
     use "z1mm32m4n/vim-superman"
 
-    use {
-        "rhysd/clever-f.vim",
-        config = "require 'plugins.clever-f'",
-    }
+    use "rhysd/clever-f.vim"
     use "kepbod/quick-scope"
     use "ggandor/lightspeed.nvim"
 
-    use {
-        "AndrewRadev/splitjoin.vim",
-        config = "require 'plugins.splitjoin'",
-    }
+    use "AndrewRadev/splitjoin.vim"
 
-    use {
-        "kshenoy/vim-signature",
-        config = "require 'plugins.vim-signature'",
-    }
+    use "kshenoy/vim-signature"
 
     use "kana/vim-niceblock"
 
-    use {
-        "tyru/open-browser.vim",
-        config = "require 'plugins.open-browser'",
-    }
+    use "tyru/open-browser.vim"
 
     use "jparise/vim-graphql"
 
@@ -277,7 +183,6 @@ return require("packer").startup(function()
 
     use {
         "rcarriga/vim-ultest",
-        config = "require 'plugins.vim-ultest'",
         requires = { "vim-test/vim-test" },
         run = ":UpdateRemotePlugins"
     }
