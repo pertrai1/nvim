@@ -13,6 +13,7 @@ wk.register({
     ["/"] = { "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", "Comment" },
     a = {
         name = "General",
+        b = { "<Plug>(openbrowser-smart-search)", "Browser Search" },
         c = { "<cmd>lua require 'buffers'.close()<CR>", "Close File" },
         C = { "<cmd>lua require 'buffers'.close_others()<CR>", "Close Others" },
         f = { "<cmd>lua require('fzf-lua').files()<CR>", "Open File" },
@@ -20,6 +21,18 @@ wk.register({
         h = { ":split", "Horizontal Split" },
         s = { ":update<CR>", "Save File" },
         v = { ":vsplit<CR>", "Vertical Split" }
+    },
+    b = {
+        name = "Buffers",
+        d = { "<cmd>BufferLineSortByDirectory<CR>", "Sort by Directory" },
+        f = { "<cmd>lua require('fzf-lua').buffers()<CR>", "List Buffers" },
+        j = { "<cmd>BufferLinePick<CR>", "Jump to Buffer" },
+        l = { "<cmd>BufferLineCloseLeft<CR>", "Close all Left" },
+        m = { "<cmd>BufferLineMoveNext<CR>", "Move Right" },
+        M = { "<cmd>BufferLineMovePrev<CR>", "Move Left" },
+        n = { "<cmd>BufferLineCycleNext<CR>", "Next File" },
+        p = { "<cmd>BufferLineCyclePrev<CR>", "Previous File" },
+        r = { "<cmd>BufferLineCloseRight<CR>", "Close all Right" },
     },
     d = {
         name = "Diagnostics",
@@ -52,15 +65,9 @@ wk.register({
         S = { "<cmd>lua require('fzf-lua').lsp_workspace_symbols()<CR>", "Workspace Symbols" },
     },
     f = {
-        name = "Find",
-        g = { "<cmd>lua require('fzf-lua').git_files()<CR>", "Git Files" },
-        h = { "<cmd>lua require('fzf-lua').help_tags()<CR>", "Help" },
-        l = { "<cmd>lua require('fzf-lua').grep_last()<CR>", "Last Search" },
-        M = { "<cmd>lua require('fzf-lua').man_pages()<CR>", "Man Pages" },
-        r = { "<cmd>lua require('fzf-lua').oldfiles()<CR>", "Recent File" },
-        R = { "<cmd>lua require('fzf-lua').registers()<CR>", "Registers" },
-        k = { "<cmd>lua require('fzf-lua').keymaps()<CR>", "Keymaps" },
-        C = { "<cmd>lua require('fzf-lua').commands()<CR>", "Commands" },
+        name = "File",
+        c = { "<cmd>lua require('buffers').close()<CR>", "Close" },
+        s = { ":update<CR>", "Save" }
     },
     g = {
         name = "Git",
@@ -75,13 +82,22 @@ wk.register({
         S = { "<Plug>(GitGutterStageHunk)", "Stage Hunk" },
         u = { "<Plug>(GitGutterUndoHunk)", "Undo Hunk" },
     },
+    h = {
+        name = "Help",
+        h = { "<cmd>lua require('fzf-lua').help_tags()<CR>", "Help Tags" },
+        M = { "<cmd>lua require('fzf-lua').man_pages()<CR>", "Man Pages" },
+        k = { "<cmd>lua require('fzf-lua').keymaps()<CR>", "Keymaps" },
+        C = { "<cmd>lua require('fzf-lua').commands()<CR>", "Commands" },
+    },
+    j = {
+        name = "Jumps",
+        b = { "<Plug>Lightspeed_S", "Backward" },
+        f = { "<Plug>Lightspeed_s", "Forward" }
+    },
     n = {
         name = "Navigation",
         b = { "<cmd>lua require('fzf-lua').buffers()<CR>", "Buffers" },
-        c = { "<cmd>lua require('fzf-lua').commands()<CR>", "Commands" },
         f = { "<cmd>lua require('fzf-lua').files()<CR>", "Files" },
-        h = { "<cmd>lua require('fzf-lua').help_tags()<CR>", "Help Tags" },
-        m = { "<cmd>lua require('fzf-lua').marks()<CR>", "Marks" },
         r = { ":RnvimrToggle<CR>", "Ranger" },
         s = { ":Neotree toggle float<CR>", "Sidebar Float" },
     },
@@ -95,6 +111,10 @@ wk.register({
     },
     r = {
         name = "Find/Replace",
+        b = { "<cmd>lua require('fzf-lua').oldfiles()<CR>", "Recent File" },
+        g = { "<cmd>lua require('fzf-lua').git_files()<CR>", "Git Files" },
+        l = { "<cmd>lua require('fzf-lua').grep_last()<CR>", "Last Search" },
+        R = { "<cmd>lua require('fzf-lua').registers()<CR>", "Registers" },
         r = { "<cmd>lua require('spectre').open()<cr>", "Replace" },
         w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", "Replace Word" },
         f = { "<cmd>lua require('spectre').open_file_search()<cr>", "Replace Buffer" },
@@ -104,8 +124,9 @@ wk.register({
         name = "Search",
         c = { "<cmd>lua require('fzf-lua').grep_cword()<CR>", "Current Word" },
         f = { "<cmd>lua require('fzf-lua').live_grep()<CR>", "Find Text" },
-        h = { "<cmd>lua require('fzf-lua').search_history()<CR>", "Search History" },
+        h = { "<cmd>lua require('fzf-lua').search_history()<CR>", "History" },
         l = { "<cmd>lua require('fzf-lua').grep_last()<CR>", "Last Search" },
+        m = { "<cmd>lua require('fzf-lua').marks()<CR>", "Marks" },
     },
     l = {
         name = "LSP",
@@ -119,6 +140,7 @@ wk.register({
         r = { "<cmd>lua require'lsp.rename'.rename()<CR>", "Rename" },
         s = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature" },
         t = { "<cmd>lua vim.lsp.buf.type_definition()<CR>", "Type Definition" },
+        z = { "<cmd>LspInfo<CR>", "LSP Info" }
     },
     T = {
         name = "Testing",
