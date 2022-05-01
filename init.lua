@@ -40,7 +40,7 @@ require "plugins.splitjoin"
 require "plugins.vim-signature"
 require "plugins.open-browser"
 require "plugins.vim-ultest"
-
+require "plugins.copilot"
 require "lsp"
 require "statusline"
 

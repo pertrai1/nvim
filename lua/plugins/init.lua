@@ -84,7 +84,7 @@ return require("packer").startup(function()
     use "spywhere/detect-language.nvim"
 
     use "lukas-reineke/lsp-format.nvim"
-
+    use "github/copilot.vim"
     use "j-hui/fidget.nvim"
 
     use {
