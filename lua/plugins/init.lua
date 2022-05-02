@@ -27,15 +27,11 @@ return require("packer").startup({ function()
     use "wbthomason/packer.nvim"
     use 'lewis6991/impatient.nvim'
 
-    use "neovim/nvim-lspconfig"
-    use "williamboman/nvim-lsp-installer"
-    use "ray-x/lsp_signature.nvim"
-    use "jose-elias-alvarez/nvim-lsp-ts-utils"
-
     use "stevearc/dressing.nvim"
 
+    -- GUI
     use "kyazdani42/nvim-web-devicons"
-
+    use "navarasu/onedark.nvim"
     use {
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v2.x",
@@ -46,17 +42,10 @@ return require("packer").startup({ function()
         after = { "nvim-web-devicons" },
     }
 
-    use {
-        "windwp/nvim-spectre",
-        requires = {
-            "nvim-lua/plenary.nvim"
-        },
-    }
-
+    -- Completion
     use {
         "hrsh7th/nvim-cmp",
         requires = {
-            -- { "andersevenrud/compe-tmux" },
             { "hrsh7th/cmp-buffer" },
             { "hrsh7th/cmp-path" },
             { "hrsh7th/cmp-nvim-lua" },
@@ -68,7 +57,6 @@ return require("packer").startup({ function()
             { "octaltree/cmp-look" },
         },
     }
-    use "L3MON4D3/LuaSnip"
 
     use {
         "nvim-treesitter/nvim-treesitter",
@@ -83,10 +71,42 @@ return require("packer").startup({ function()
     use "windwp/nvim-ts-autotag"
     use "spywhere/detect-language.nvim"
     use "simrat39/symbols-outline.nvim"
-    use "lukas-reineke/lsp-format.nvim"
     use "github/copilot.vim"
     use "j-hui/fidget.nvim"
 
+    use {
+        "folke/which-key.nvim",
+    }
+
+    use "dhruvasagar/vim-table-mode"
+
+    use 'feline-nvim/feline.nvim'
+    use "akinsho/bufferline.nvim"
+    use "lukas-reineke/headlines.nvim"
+    use "lukas-reineke/virt-column.nvim"
+    use "lukas-reineke/indent-blankline.nvim"
+
+    -- fZF
+    use "ibhagwan/fzf-lua"
+
+    -- Git
+    use "kdheepak/lazygit.nvim"
+    use "airblade/vim-gitgutter"
+    use "lewis6991/gitsigns.nvim"
+    use "tpope/vim-fugitive"
+    use "tpope/vim-rhubarb"
+    use "tpope/vim-repeat"
+    use "tpope/vim-eunuch"
+    use "tpope/vim-obsession"
+    use "tpope/vim-sleuth"
+
+    -- LSP
+    use "neovim/nvim-lspconfig"
+    use "williamboman/nvim-lsp-installer"
+    use "ray-x/lsp_signature.nvim"
+    use "jose-elias-alvarez/nvim-lsp-ts-utils"
+
+    use "lukas-reineke/lsp-format.nvim"
     use {
         "folke/trouble.nvim",
         requires = "kyazdani42/nvim-web-devicons",
@@ -96,42 +116,22 @@ return require("packer").startup({ function()
             }
         end
     }
-
     use {
-        "folke/which-key.nvim",
+        "windwp/nvim-spectre",
+        requires = {
+            "nvim-lua/plenary.nvim"
+        },
     }
 
-    use "dhruvasagar/vim-table-mode"
-
-    use "navarasu/onedark.nvim"
-    use 'feline-nvim/feline.nvim'
-    use "akinsho/bufferline.nvim"
-    use "lukas-reineke/headlines.nvim"
-    use "lukas-reineke/virt-column.nvim"
-    use "lukas-reineke/indent-blankline.nvim"
-
-    use "ibhagwan/fzf-lua"
-
-    use "tpope/vim-fugitive"
-    use "tpope/vim-rhubarb"
-    use "tpope/vim-repeat"
-    use "tpope/vim-eunuch"
-    use "tpope/vim-obsession"
-    use "tpope/vim-sleuth"
-
-    use "numToStr/Comment.nvim"
-
-    use "rmagatti/auto-session"
-
-    use "krisajenkins/vim-projectlocal"
-
-    use "airblade/vim-gitgutter"
-
-    use "kdheepak/lazygit.nvim"
-    use "lewis6991/gitsigns.nvim"
-    use "numToStr/Navigator.nvim"
-
+    -- Language
+    use "L3MON4D3/LuaSnip"
     use "SirVer/ultisnips"
+
+    -- Helpers
+    use "numToStr/Comment.nvim"
+    use "rmagatti/auto-session"
+    use "krisajenkins/vim-projectlocal"
+    use "numToStr/Navigator.nvim"
 
     use "cohama/lexima.vim"
 
