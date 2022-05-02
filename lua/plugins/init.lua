@@ -23,7 +23,7 @@ require("packer").init({
     max_jobs = 60
 })
 
-return require("packer").startup(function()
+return require("packer").startup({ function()
     use "wbthomason/packer.nvim"
     use 'lewis6991/impatient.nvim'
 
@@ -82,7 +82,7 @@ return require("packer").startup(function()
     use "David-Kunz/treesitter-unit"
     use "windwp/nvim-ts-autotag"
     use "spywhere/detect-language.nvim"
-
+    use "simrat39/symbols-outline.nvim"
     use "lukas-reineke/lsp-format.nvim"
     use "github/copilot.vim"
     use "j-hui/fidget.nvim"
@@ -131,8 +131,6 @@ return require("packer").startup(function()
     use "lewis6991/gitsigns.nvim"
     use "numToStr/Navigator.nvim"
 
-    use "akinsho/toggleterm.nvim"
-
     use "SirVer/ultisnips"
 
     use "cohama/lexima.vim"
@@ -177,8 +175,6 @@ return require("packer").startup(function()
 
     use "tyru/open-browser.vim"
 
-    use "jparise/vim-graphql"
-
     use "milisims/nvim-luaref"
 
     use {
@@ -186,5 +182,10 @@ return require("packer").startup(function()
         requires = { "vim-test/vim-test" },
         run = ":UpdateRemotePlugins"
     }
-end
-)
+end,
+config = {
+    display = {
+        open_fn = require('packer.util').float,
+    }
+}
+})

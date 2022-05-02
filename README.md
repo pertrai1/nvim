@@ -18,6 +18,8 @@ efm-language-server: `brew install efm-langserver`
 
 vscode language servers: `npm install -g vscode-langservers-extracted`
 
+Typescript: `npm i -g typescript typescript-language-server`
+
 in .zshrc:
 
 `export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'`
@@ -32,7 +34,6 @@ in .zshrc:
 | n/v  | leader .. gcc | Line comment  |
 | n/v  | leader .. gbc | Block comment |
 
-
 ### Navigation
 
 | Mode | Mapping      | Binding               |
@@ -45,7 +46,6 @@ in .zshrc:
 | n    | leader .. f  | Symbols               |
 | n    | leader .. gf | Git Files             |
 
-
 ### LSP
 
 | Mode | Mapping      | Binding         |
@@ -55,45 +55,41 @@ in .zshrc:
 | n    | ctrl-]       | Definition      |
 | n    | leader .. s  | Signature       |
 
-
 ### Search
 
-| Mode | Mapping      | Binding                 |
-| ---- | ------------ | ---------------------   |
-| n    | leader .. a  | Search w Ack            |
-| n    | leader .. sp | Find and Replace        |
-| n    | leader .. sv | Find and replace current word        |
-| n    | leader .. sf | File search        |
-| n    | ?            | Search backwards        |
-| n    | n            | Next result             |
-| n    | N            | Previous result         |
-| n    | *            | All occurences          |
-
+| Mode | Mapping      | Binding                       |
+| ---- | ------------ | ----------------------------- |
+| n    | leader .. a  | Search w Ack                  |
+| n    | leader .. sp | Find and Replace              |
+| n    | leader .. sv | Find and replace current word |
+| n    | leader .. sf | File search                   |
+| n    | ?            | Search backwards              |
+| n    | n            | Next result                   |
+| n    | N            | Previous result               |
+| n    | \*           | All occurences                |
 
 ### Display
 
-| Mode | Mapping       | Binding                                 |
-| ---- | ------------  | --------------------------------------  |
-| n    | leader .. xx  | Toggle Trouble                          |
-| n    | leader .. xw  | Toggle workspace diagnostics            |
-| n    | leader .. xd  | Toggle document diagnostics             |
-| n    | leader .. xl  | Toggle location list                    |
-| n    | leader .. xq  | Toggle quickfix                         |
-| n    | gR            | Toggle references                       |
-
+| Mode | Mapping      | Binding                      |
+| ---- | ------------ | ---------------------------- |
+| n    | leader .. xx | Toggle Trouble               |
+| n    | leader .. xw | Toggle workspace diagnostics |
+| n    | leader .. xd | Toggle document diagnostics  |
+| n    | leader .. xl | Toggle location list         |
+| n    | leader .. xq | Toggle quickfix              |
+| n    | gR           | Toggle references            |
 
 ### Testing
 
-| Mode | Mapping       | Binding                                 |
-| ---- | ------------  | --------------------------------------  |
-| n    | t .. C-n      | Test nearest                            |
-| n    | t .. C-f      | Test file                               |
-| n    | t .. C-a      | Test suite                              |
-| n    | t .. C-l      | Test last                               |
-| n    | t .. C-v      | Test visit                              |
+| Mode | Mapping  | Binding      |
+| ---- | -------- | ------------ |
+| n    | t .. C-n | Test nearest |
+| n    | t .. C-f | Test file    |
+| n    | t .. C-a | Test suite   |
+| n    | t .. C-l | Test last    |
+| n    | t .. C-v | Test visit   |
 
 `<C-o>` - Close other buffers
-
 
 #### Movements
 
