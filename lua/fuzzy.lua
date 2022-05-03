@@ -1,4 +1,4 @@
-local fzf = require "fzf"
+local fzf = require "fzf-lua"
 local devicons = require "nvim-web-devicons"
 local lists = require "lists"
 local utils = require "utils"
