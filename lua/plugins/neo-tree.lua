@@ -1,4 +1,4 @@
-vim.g.neo_tree_remove_legacy_commands = true
+vim.g.neo_tree_remove_legacy_commands = 1
 require("neo-tree.sources.common.components").diagnostics = function(config, node, state)
     local diag = state.diagnostics_lookup or {}
     local diag_state = diag[node:get_id()]
@@ -60,7 +60,6 @@ require("neo-tree").setup {
             hide_gitignored = true,
         },
         follow_current_file = true,
-        hijack_netrw_behavior = "open_current",
         use_libuv_file_watcher = true,
         renderers = {
             directory = {
