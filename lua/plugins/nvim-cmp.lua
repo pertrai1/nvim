@@ -9,9 +9,17 @@ cmp.setup {
         ["<CR>"] = function(fallback)
             if cmp.visible() then
                 return cmp.mapping.confirm {
-                    behavior = cmp.ConfirmBehavior.Insert,
+                    -- behavior = cmp.ConfirmBehavior.Insert,
+                    behavior = cmp.ConfirmBehavior.Replace,
                     select = true,
                 } (fallback)
+            else
+                return fallback()
+            end
+        end,
+        ["<Tab>"] = function(fallback)
+            if cmp.visible() then
+                return cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert } (fallback)
             else
                 return fallback()
             end
@@ -61,7 +69,7 @@ cmp.setup {
                 additional_arguments = "--smart-case --hidden",
             },
         },
-        { name = "tmux", max_item_count = 5, option = { all_panes = false }, priority_weight = 50 },
+        -- { name = "tmux", max_item_count = 5, option = { all_panes = false }, priority_weight = 50 },
         {
             name = "look",
             keyword_length = 5,
