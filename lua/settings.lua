@@ -2,11 +2,14 @@ vim.cmd [[syntax enable]]
 vim.cmd [[filetype plugin indent on]]
 
 local opt = setmetatable({}, {
-    __newindex = function(_, key, value)
-        vim.o[key] = value
-        vim.bo[key] = value
-    end,
+  __newindex = function(_, key, value)
+    vim.o[key] = value
+    vim.bo[key] = value
+  end,
 })
+
+vim.g.tokyonight_style = "night"
+vim.cmd [[colorscheme tokyonight]]
 
 -- opt.dict = "~/dotfiles/lib/10k.txt"
 opt.expandtab = true
@@ -74,27 +77,27 @@ vim.wo.cursorline = true
 vim.wo.winhighlight = "NormalNC:WinNormalNC"
 vim.opt.list = true
 vim.opt.listchars = {
-    space = "⋅",
-    eol = "↴",
-    tab = "__",
-    trail = "•",
-    extends = "❯",
-    precedes = "❮",
-    nbsp = "_",
+  space = "⋅",
+  eol = "↴",
+  tab = "__",
+  trail = "•",
+  extends = "❯",
+  precedes = "❮",
+  nbsp = "_",
 }
 vim.opt.fillchars = {
-    fold = " ",
-    diff = "╱",
+  fold = " ",
+  diff = "╱",
 }
 
 vim.g.floating_window_border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }
 vim.g.floating_window_border_dark = {
-    { "╭", "FloatBorderDark" },
-    { "─", "FloatBorderDark" },
-    { "╮", "FloatBorderDark" },
-    { "│", "FloatBorderDark" },
-    { "╯", "FloatBorderDark" },
-    { "─", "FloatBorderDark" },
-    { "╰", "FloatBorderDark" },
-    { "│", "FloatBorderDark" },
+  { "╭", "FloatBorderDark" },
+  { "─", "FloatBorderDark" },
+  { "╮", "FloatBorderDark" },
+  { "│", "FloatBorderDark" },
+  { "╯", "FloatBorderDark" },
+  { "─", "FloatBorderDark" },
+  { "╰", "FloatBorderDark" },
+  { "│", "FloatBorderDark" },
 }

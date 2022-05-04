@@ -81,6 +81,7 @@ return require("packer").startup({ function()
     use {
         "folke/which-key.nvim",
     }
+    use 'folke/tokyonight.nvim'
 
     use "dhruvasagar/vim-table-mode"
 
