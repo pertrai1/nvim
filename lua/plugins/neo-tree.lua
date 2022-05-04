@@ -60,6 +60,7 @@ require("neo-tree").setup {
             hide_gitignored = true,
         },
         follow_current_file = true,
+        netrw_hijack_behavior = "open_current",
         use_libuv_file_watcher = true,
         renderers = {
             directory = {

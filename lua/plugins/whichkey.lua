@@ -44,8 +44,7 @@ wk.register({
         a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
         c = { "<cmd>TroubleToggle<cr>", "Toggle Diagnostics" },
         d = { "<cmd>TroubleToggle worspace_diagnostics<cr>", "Toggle Workspace Diagnostics" },
-        e = { "<cmd>TroubleToggle document_diagnostics<cr>", "Toggle Document Diagnostics"
-        },
+        e = { "<cmd>TroubleToggle document_diagnostics<cr>", "Toggle Document Diagnostics" },
         f = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
         F = { "<cmd>LspToggleAutoFormat<cr>", "Toggle Autoformat" },
         i = { "<cmd>LspInfo<cr>", "Info" },
@@ -67,9 +66,17 @@ wk.register({
         S = { "<cmd>lua require('telescope.builtin').lsp_workspace_symbols()<CR>", "Workspace Symbols" },
     },
 
+    e = {
+        name = "Edit",
+        f = { "<cmd>lua require('telescope.builtin').live_grep()<CR>", "Find in Files" },
+    },
+
     f = {
         name = "File",
         c = { "<cmd>lua require('buffers').close()<CR>", "Close" },
+        f = { ":RnvimrToggle<CR>", "Ranger" },
+        o = { ":Neotree position=float<CR>", "Open" },
+        r = { "<cmd>lua require('telescope.builtin').oldfiles()<CR>", "Open Recent" },
         s = { ":update<CR>", "Save" }
     },
 
@@ -90,24 +97,17 @@ wk.register({
     h = {
         name = "Help",
         C = { "<cmd>lua require('telescope.builtin').colorscheme()<CR>", "Color Schemes" },
-        c = { "<cmd>lua require('telescope.builtin').commands()<CR>", "Commands" },
         h = { "<cmd>lua require('telescope.builtin').help_tags()<CR>", "Help Tags" },
         m = { "<cmd>lua require('telescope.builtin').man_pages()<CR>", "Man Pages" },
         k = { "<cmd>lua require('telescope.builtin').keymaps()<CR>", "Keymaps" },
     },
 
-    j = {
-        name = "Jumps",
-        b = { "<Plug>Lightspeed_S", "Backward" },
-        f = { "<Plug>Lightspeed_s", "Forward" }
-    },
-
-    n = {
-        name = "Navigation",
-        b = { "<cmd>lua require('telescope.builtin').buffers()<CR>", "Buffers" },
-        f = { "<cmd>lua require('telescope.builtin').find_files()<CR>", "Files" },
-        r = { ":RnvimrToggle<CR>", "Ranger" },
-        s = { ":Neotree toggle float<CR>", "Sidebar Float" },
+    m = {
+        name = "Go",
+        b = { "<Plug>Lightspeed_S", "Jump Backward" },
+        B = { "<cmd>lua require('telescope.builtin').buffers()<CR>", "Buffers" },
+        F = { "<cmd>lua require('telescope.builtin').find_files()<CR>", "Files" },
+        f = { "<Plug>Lightspeed_s", "Jump Forward" }
     },
 
     p = {
@@ -165,6 +165,16 @@ wk.register({
         n = { ":TestNearest<CR>", "Nearest" },
         s = { ":TestSuite<CR>", "Suite" },
         v = { ":TestVisit<CR>", "Visit" }
+    },
+
+    v = {
+        name = "View",
+        c = { "<cmd>lua require('telescope.builtin').commands()<CR>", "Commands" },
+        d = { "<cmd>TroubleToggle<cr>", "Problems" },
+        e = { ":Neotree position=left toggle<CR>", "Explorer" },
+        f = { "<cmd>lua require('telescope.builtin').live_grep()<CR>", "Search" },
+        n = { ":Neotree toggle float<CR>", "Sidebar Float" },
+        s = { ":LazyGit<CR>", "SCM" },
     },
 
     w = {
