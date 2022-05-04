@@ -42,6 +42,10 @@ return require("packer").startup({ function()
         after = { "nvim-web-devicons" },
     }
 
+    -- UI to select things (files, grep results, open buffers...)
+    use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } }
+    use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+
     -- Completion
     use {
         "hrsh7th/nvim-cmp",

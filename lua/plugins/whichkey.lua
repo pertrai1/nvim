@@ -29,7 +29,7 @@ wk.register({
     b = {
         name = "Buffers",
         d = { "<cmd>BufferLineSortByDirectory<CR>", "Sort by Directory" },
-        f = { "<cmd>lua require('fzf-lua').buffers()<CR>", "List Buffers" },
+        f = { "<cmd>lua require('telescope.builtin').buffers()<CR>", "List Buffers" },
         j = { "<cmd>BufferLinePick<CR>", "Jump to Buffer" },
         l = { "<cmd>BufferLineCloseLeft<CR>", "Close all Left" },
         m = { "<cmd>BufferLineMoveNext<CR>", "Move Right" },
@@ -44,10 +44,7 @@ wk.register({
         a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
         c = { "<cmd>TroubleToggle<cr>", "Toggle Diagnostics" },
         d = { "<cmd>TroubleToggle worspace_diagnostics<cr>", "Toggle Workspace Diagnostics" },
-        e = { "<cmd>TroubleToggle document_diagnostics<cr>", "Toggle Document Diagnostics" },
-        w = {
-            "<cmd>Telescope lsp_workspace_diagnostics<cr>",
-            "Workspace Diagnostics",
+        e = { "<cmd>TroubleToggle document_diagnostics<cr>", "Toggle Document Diagnostics"
         },
         f = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
         F = { "<cmd>LspToggleAutoFormat<cr>", "Toggle Autoformat" },
@@ -62,12 +59,12 @@ wk.register({
             "Prev Diagnostic",
         },
         l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
-        o = { "<cmd>lua require('fzf-lua').lsp_document_symbols<CR>", "Outline" },
+        o = { "<cmd>lua require('telescope.builtin').lsp_document_symbols<CR>", "Outline" },
         q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
         r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
-        R = { "<cmd>lua require('fzf-lua').lsp_references<CR>", "References" },
-        s = { "<cmd>lua require('fzf-lua').lsp_document_symbols<CR>", "Document Symbols" },
-        S = { "<cmd>lua require('fzf-lua').lsp_workspace_symbols()<CR>", "Workspace Symbols" },
+        R = { "<cmd>lua require('telescope.builtin').lsp_references<CR>", "References" },
+        s = { "<cmd>lua require('telescope.builtin').lsp_document_symbols<CR>", "Document Symbols" },
+        S = { "<cmd>lua require('telescope.builtin').lsp_workspace_symbols()<CR>", "Workspace Symbols" },
     },
 
     f = {
@@ -78,25 +75,25 @@ wk.register({
 
     g = {
         name = "Git",
-        b = { "<cmd>lua require('fzf-lua').git_branches()<CR>", "Branches" },
+        b = { "<cmd>lua require('telescope.builtin').git_branches()<CR>", "Branches" },
         B = { ":Git blame<CR>", "Blame" },
-        c = { "<cmd>lua require('fzf-lua').git_commits()<CR>", "Commits" },
+        c = { "<cmd>lua require('telescope.builtin').git_commits()<CR>", "Commits" },
         d = { ":set nosplitright<CR>:execute 'Gvdiff ' .. g:git_base<CR>:set splitright<CR>", "Diff File" },
         h = { "<Plug>(GitGutterNextHunk)", "Next Hunk" },
         H = { "<Plug>(GitGutterPrevHunk)", "Previous Hunk" },
         l = { ":LazyGit<CR>", "LazyGit" },
-        s = { "<cmd>lua require('fzf-lua').git_status()<CR>", "Status" },
+        s = { "<cmd>lua require('telescope.builtin').git_status()<CR>", "Status" },
         S = { "<Plug>(GitGutterStageHunk)", "Stage Hunk" },
         u = { "<Plug>(GitGutterUndoHunk)", "Undo Hunk" },
     },
 
     h = {
         name = "Help",
-        C = { "<cmd>lua require('fzf-lua').colorschemes()<CR>", "Color Schemes" },
-        c = { "<cmd>lua require('fzf-lua').commands()<CR>", "Commands" },
-        h = { "<cmd>lua require('fzf-lua').help_tags()<CR>", "Help Tags" },
-        M = { "<cmd>lua require('fzf-lua').man_pages()<CR>", "Man Pages" },
-        k = { "<cmd>lua require('fzf-lua').keymaps()<CR>", "Keymaps" },
+        C = { "<cmd>lua require('telescope.builtin').colorscheme()<CR>", "Color Schemes" },
+        c = { "<cmd>lua require('telescope.builtin').commands()<CR>", "Commands" },
+        h = { "<cmd>lua require('telescope.builtin').help_tags()<CR>", "Help Tags" },
+        m = { "<cmd>lua require('telescope.builtin').man_pages()<CR>", "Man Pages" },
+        k = { "<cmd>lua require('telescope.builtin').keymaps()<CR>", "Keymaps" },
     },
 
     j = {
@@ -107,8 +104,8 @@ wk.register({
 
     n = {
         name = "Navigation",
-        b = { "<cmd>lua require('fzf-lua').buffers()<CR>", "Buffers" },
-        f = { "<cmd>lua require('fzf-lua').files()<CR>", "Files" },
+        b = { "<cmd>lua require('telescope.builtin').buffers()<CR>", "Buffers" },
+        f = { "<cmd>lua require('telescope.builtin').find_files()<CR>", "Files" },
         r = { ":RnvimrToggle<CR>", "Ranger" },
         s = { ":Neotree toggle float<CR>", "Sidebar Float" },
     },
@@ -124,22 +121,22 @@ wk.register({
 
     r = {
         name = "Find/Replace",
-        b = { "<cmd>lua require('fzf-lua').oldfiles()<CR>", "Recent File" },
-        g = { "<cmd>lua require('fzf-lua').git_files()<CR>", "Git Files" },
+        b = { "<cmd>lua require('telescope.builtin').oldfiles()<CR>", "Recent File" },
+        g = { "<cmd>lua require('telescope.builtin').git_files()<CR>", "Git Files" },
         l = { "<cmd>lua require('fzf-lua').grep_last()<CR>", "Last Search" },
-        R = { "<cmd>lua require('fzf-lua').registers()<CR>", "Registers" },
+        R = { "<cmd>lua require('telescope.builtin').registers()<CR>", "Registers" },
         r = { "<cmd>lua require('spectre').open()<cr>", "Replace" },
         w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", "Replace Word" },
         f = { "<cmd>lua require('spectre').open_file_search()<cr>", "Replace Buffer" },
-        t = { "<cmd>lua require('fzf-lua').live_grep()<CR>", "Find Text" },
+        t = { "<cmd>lua require('telescope.builtin').live_grep()<CR>", "Find Text" },
     },
 
     l = {
         name = "LSP",
         a = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code Actions" },
         d = { "<cmd>lua vim.lsp.buf.declaration()<CR>", "Declaration (gD)" },
-        D = { "<cmd>lua require('fzf-lua').lsp_definitions()<CR>", "Definition" },
-        f = { "<cmd>lua require('fzf-lua').lsp_references()<CR>", "Find References" },
+        D = { "<cmd>lua require('telescope.builtin').lsp_definitions()<CR>", "Definition" },
+        f = { "<cmd>lua require('telescope.builtin').lsp_references()<CR>", "Find References" },
         h = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Code Hover" },
         i = { "<cmd>lua vim.lsp.buf.implementation()<CR>", "Implemention" },
         l = { "<cmd>lua require'lsp.diagnostics'.line_diagnostics()<CR>", "Line Diagnostics" },
@@ -151,11 +148,11 @@ wk.register({
 
     s = {
         name = "Search",
-        c = { "<cmd>lua require('fzf-lua').grep_cword()<CR>", "Current Word" },
-        f = { "<cmd>lua require('fzf-lua').live_grep_native()<CR>", "Find Text" },
-        h = { "<cmd>lua require('fzf-lua').search_history()<CR>", "History" },
-        l = { "<cmd>lua require('fzf-lua').grep_last()<CR>", "Last Search" },
-        m = { "<cmd>lua require('fzf-lua').marks()<CR>", "Marks" },
+        b = { "<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>", "Current Buffer" },
+        c = { "<cmd>lua require('telescope.builtin').grep_string()<CR>", "Current Word" },
+        f = { "<cmd>lua require('telescope.builtin').live_grep()<CR>", "Find Text" },
+        h = { "<cmd>lua require('telescope.builtin').search_history()<CR>", "History" },
+        m = { "<cmd>lua require('telescope.builtin').marks()<CR>", "Marks" },
         p = { "<cmd>lua require('fzf-lua').grep_project()<CR>", "Project" },
         P = { "<cmd>lua require('fzf-lua').grep_project()<CR>", "Project - Live" },
         v = { "<cmd>lua require('fzf-lua').grep_visual()<CR>", "Visual Selection" },
