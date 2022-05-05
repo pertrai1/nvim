@@ -23,14 +23,15 @@ map({ "x", "n", "o" }, leader .. "j", "<Plug>Lightspeed_s", { noremap = false })
 map({ "x", "n", "o" }, leader .. "k", "<Plug>Lightspeed_S", { noremap = false })
 
 --Add leader shortcuts
-map('n', leader .. '<space>', ":lua require('telescope.builtin').buffers<CR>")
-map('n', leader .. 'sf', ":lua require('telescope.builtin').find_files()<CR>")
-map('n', leader .. 'sb', ":lua require('telescope.builtin').current_buffer_fuzzy_find<CR>")
-map('n', leader .. 'sh', ":lua require('telescope.builtin').help_tags<CR>")
-map('n', leader .. 'st', ":lua require('telescope.builtin').tags<CR>")
-map('n', leader .. 'sd', ":lua require('telescope.builtin').grep_string<CR>")
-map('n', leader .. 'sp', ":lua require('telescope.builtin').live_grep<CR>")
-map('n', leader .. '?', ":lua require('telescope.builtin').oldfiles<CR>")
+map('n', leader .. '<space>', ":lua require('telescope.builtin').buffers()<CR>", { noremap = true })
+map('n', leader .. 'tf', ":lua require('telescope.builtin').find_files()<CR>", { noremap = true })
+map('n', leader .. 'tb', ":lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>", { noremap = true })
+map('n', leader .. 'th', ":lua require('telescope.builtin').help_tags()<CR>", { noremap = true })
+map('n', leader .. 'tt', ":lua require('telescope.builtin').tags()<CR>", { noremap = true })
+map('n', leader .. 'ts', ":lua require('telescope.builtin').grep_string()<CR>", { noremap = true })
+map('n', leader .. 'tg', ":lua require('telescope.builtin').live_grep()<CR>", { noremap = true })
+map('n', leader .. '?', ":lua require('telescope.builtin').oldfiles()<CR>", { noremap = true })
+map("n", leader .. "fb", ":Telescope file_browser<CR>", { noremap = true })
 
 map("n", "/", "<Plug>(incsearch-forward)", { noremap = false })
 map("n", "?", "<Plug>(incsearch-backward)", { noremap = false })
@@ -193,7 +194,7 @@ map("n", leader .. "ra", ":RnvimrToggle<CR>", { silent = true, noremap = true })
 -- Spectre
 map("n", leader .. "sp", "<cmd>lua require('spectre').open()<CR>", { noremap = true })
 map("n", leader .. "sv", "<cmd>lua require('spectre').open_visual({select_word=true})<CR>", { noremap = true })
--- map("n", leader .. "sf", "<cmd>lua require('spectre').open_file_search()<CR>", { noremap = true })
+map("n", leader .. "sf", "<cmd>lua require('spectre').open_file_search()<CR>", { noremap = true })
 
 -- Trouble
 map("n", leader .. "xx", "<cmd>TroubleToggle<CR>", { silent = true, noremap = true })
