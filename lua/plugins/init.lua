@@ -27,10 +27,11 @@ return require("packer").startup({ function()
     use "wbthomason/packer.nvim"
     use 'lewis6991/impatient.nvim'
 
-    use "stevearc/dressing.nvim"
-
     -- GUI
+    -- Neovim plugin to improve the default vim.ui interfaces
+    use "stevearc/dressing.nvim"
     use "kyazdani42/nvim-web-devicons"
+    use 'folke/tokyonight.nvim'
     use "navarasu/onedark.nvim"
     use {
         "nvim-neo-tree/neo-tree.nvim",
@@ -41,6 +42,7 @@ return require("packer").startup({ function()
         },
         after = { "nvim-web-devicons" },
     }
+    use "akinsho/bufferline.nvim"
 
     -- UI to select things (files, grep results, open buffers...)
     use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } }
@@ -62,7 +64,9 @@ return require("packer").startup({ function()
             { "octaltree/cmp-look" },
         },
     }
+    use "github/copilot.vim"
 
+    -- Treesitter
     use {
         "nvim-treesitter/nvim-treesitter",
         run = ":TSUpdate",
@@ -74,23 +78,14 @@ return require("packer").startup({ function()
     use "JoosepAlviste/nvim-ts-context-commentstring"
     use "David-Kunz/treesitter-unit"
     use "windwp/nvim-ts-autotag"
+
     use "spywhere/detect-language.nvim"
     use "simrat39/symbols-outline.nvim"
-    use "github/copilot.vim"
     use "j-hui/fidget.nvim"
 
     use {
         "folke/which-key.nvim",
     }
-    use 'folke/tokyonight.nvim'
-
-    use "dhruvasagar/vim-table-mode"
-
-    use 'feline-nvim/feline.nvim'
-    use "akinsho/bufferline.nvim"
-    use "lukas-reineke/headlines.nvim"
-    use "lukas-reineke/virt-column.nvim"
-    use "lukas-reineke/indent-blankline.nvim"
 
     -- fZF
     use "ibhagwan/fzf-lua"
@@ -134,6 +129,11 @@ return require("packer").startup({ function()
     use "SirVer/ultisnips"
 
     -- Helpers
+    use "dhruvasagar/vim-table-mode"
+    use 'feline-nvim/feline.nvim'
+    use "lukas-reineke/headlines.nvim"
+    use "lukas-reineke/virt-column.nvim"
+    use "lukas-reineke/indent-blankline.nvim"
     use "numToStr/Comment.nvim"
     use "rmagatti/auto-session"
     use "krisajenkins/vim-projectlocal"
