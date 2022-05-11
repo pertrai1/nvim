@@ -76,6 +76,7 @@ wk.register({
         b = { ":Telescope file_browser<CR>", "Browser" },
         c = { "<cmd>lua require('buffers').close()<CR>", "Close" },
         f = { ":RnvimrToggle<CR>", "Ranger" },
+        n = { ":enew<CR>", "New File" },
         o = { ":Neotree position=float<CR>", "Open" },
         r = { "<cmd>lua require('telescope.builtin').oldfiles()<CR>", "Open Recent" },
         s = { ":update<CR>", "Save" }

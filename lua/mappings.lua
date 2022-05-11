@@ -4,6 +4,7 @@ local leader = "<space>"
 map("i", "jk", "<esc>", { silent = true })
 map("n", ";", ":", { silent = false })
 map("n", "<BS>", ":nohlsearch<CR>", { noremap = true, silent = true })
+map("n", leader .. "fn", "<cmd>enew<CR>")
 
 map("n", leader .. leader, ":<C-u>exe v:count ? v:count . 'b' : 'b' . (bufloaded(0) ? '#' : 'n')<CR>")
 
@@ -21,6 +22,13 @@ map("n", leader .. "N", ":e %:h/", { silent = false })
 
 map({ "x", "n", "o" }, leader .. "j", "<Plug>Lightspeed_s", { noremap = false })
 map({ "x", "n", "o" }, leader .. "k", "<Plug>Lightspeed_S", { noremap = false })
+
+-- Packer
+map("n", leader .. "pc", "<cmd>PackerCompile<cr>")
+map("n", leader .. "pi", "<cmd>PackerInstall<cr>")
+map("n", leader .. "ps", "<cmd>PackerSync<cr>")
+map("n", leader .. "pS", "<cmd>PackerStatus<cr>")
+map("n", leader .. "pu", "<cmd>PackerUpdate<cr>")
 
 --Add leader shortcuts
 map('n', leader .. '<space>', ":lua require('telescope.builtin').buffers()<CR>", { noremap = true })
