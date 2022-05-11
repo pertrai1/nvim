@@ -101,3 +101,12 @@ vim.g.floating_window_border_dark = {
   { "╰", "FloatBorderDark" },
   { "│", "FloatBorderDark" },
 }
+
+vim.diagnostic.config {
+  virtual_text = {
+    spacing = 3,
+    prefix = " ",
+    severity_sort = true,
+    source = "if_many",
+  },
+}

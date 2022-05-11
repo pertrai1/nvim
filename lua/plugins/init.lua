@@ -145,10 +145,9 @@ return require("packer").startup({ function()
     use "wellle/targets.vim"
 
     use "vim-scripts/UnconditionalPaste"
-
-    use "haya14busa/incsearch.vim"
-    use "vim-scripts/CmdlineComplete"
-
+    use {
+        "haya14busa/is.vim",
+    }
     use "mileszs/ack.vim"
 
     use "romainl/vim-qf"

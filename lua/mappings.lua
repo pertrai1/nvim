@@ -33,15 +33,6 @@ map('n', leader .. 'tg', ":lua require('telescope.builtin').live_grep()<CR>", { 
 map('n', leader .. '?', ":lua require('telescope.builtin').oldfiles()<CR>", { noremap = true })
 map("n", leader .. "fb", ":Telescope file_browser<CR>", { noremap = true })
 
-map("n", "/", "<Plug>(incsearch-forward)", { noremap = false })
-map("n", "?", "<Plug>(incsearch-backward)", { noremap = false })
-map("n", "n", "<Plug>(incsearch-nohl-n)", { noremap = false })
-map("n", "N", "<Plug>(incsearch-nohl-N)", { noremap = false })
-map("n", "*", "<Plug>(incsearch-nohl-*)N", { noremap = false })
-map("n", "#", "<Plug>(incsearch-nohl-#)", { noremap = false })
-map("n", "g*", "<Plug>(incsearch-nohl-g*)N", { noremap = false })
-map("n", "g#", "<Plug>(incsearch-nohl-g#)", { noremap = false })
-
 map("n", "<UP>", ":lua require('lists').move('up')<CR>")
 map("n", "<DOWN>", ":lua require('lists').move('down')<CR>")
 map("n", "<LEFT>", ":lua require('lists').move('left')<CR>")
