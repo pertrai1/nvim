@@ -157,7 +157,7 @@ map(
 )
 map("n", leader .. "gn", ":lua require('lists').change_active('Quickfix')<CR>:Git mergetool<CR>")
 map("n", leader .. "gh", ":diffget //2<CR> :diffupdate<CR>")
-map("n", leader .. "gl", ":diffget //3<CR> :diffupdate<CR>")
+-- map("n", leader .. "gl", ":diffget //3<CR> :diffupdate<CR>")
 
 map({ "n", "x" }, "s", "<Nope>", { noremap = false })
 
