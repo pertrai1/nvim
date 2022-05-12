@@ -15,6 +15,7 @@ wk.register({
     ["/"] = { "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", "Comment" },
     ["o"] = { "<cmd>SymbolsOutline<CR>", "Symbols Outline" },
     ["q"] = { "<cmd>lua require 'buffers'.close()<CR>", "Close File" },
+    ["lg"] = { "<cmd>LazyGit<CR>", "Lazy Git" },
 
     a = {
         name = "General",
