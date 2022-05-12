@@ -97,7 +97,7 @@ local on_attach = function(client)
         )
     end
     if client.resolved_capabilities.rename then
-        utils.map("n", "gr", "<cmd>lua require'lsp.rename'.rename()<CR>", { silent = true, buffer = true })
+        utils.map("n", "gr", "<cmd>lua vim.lsp.buf.rename()<CR>", { silent = true, buffer = true })
     end
     if client.resolved_capabilities.signature_help then
         utils.map("n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<CR>", { silent = true, buffer = true })
@@ -176,12 +176,17 @@ lspconfig.pyright.setup { capabilities = capabilities, on_attach = on_attach }
 -- https://github.com/theia-ide/typescript-language-server
 lspconfig.tsserver.setup {
     capabilities = capabilities,
-    on_attach = function(client)
+    on_attach = function(client, bufnr)
         client.resolved_capabilities.document_formatting = false
         require("nvim-lsp-ts-utils").setup({
             update_imports_on_move = true,
             require_confirmation_on_move = true
         })
+        -- no default maps, so you may want to define some here
+        local opts = { silent = true }
+        vim.api.nvim_buf_set_keymap(bufnr, "n", "gs", ":TSLspOrganize<CR>", opts)
+        vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", ":TSLspRenameFile<CR>", opts)
+        vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", ":TSLspImportAll<CR>", opts)
         on_attach(client)
     end,
 }

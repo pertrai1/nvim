@@ -6,5 +6,5 @@ return {
         "%f(%l,%c): %tarning %m",
         "%f(%l,%c): %rror %m",
     },
-    lintSource = "eslint",
+    lintSource = "eslint_d",
 }

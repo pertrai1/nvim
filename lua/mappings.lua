@@ -78,10 +78,11 @@ map("n", "<C-l>", "<CMD>lua require('Navigator').right()<CR>")
 map("x", "<C-j>", ":m'>+<cr>`<my`>mzgv`yo`z", { silent = false })
 map("x", "<C-k>", ":m'<-2<cr>`>my`<mzgv`yo`z", { silent = false })
 
-map("n", "<c-w>l", "<c-w>5>")
-map("n", "<c-w>h", "<c-w>5<")
-map("n", "<c-w>k", "<c-w>5+")
-map("n", "<c-w>j", "<c-w>5-")
+-- special way to handle option key + jklh in mac
+map("n", "¬", "<c-w>5>")
+map("n", "˙", "<c-w>5<")
+map("n", "˚", "<c-w>5+")
+map("n", "∆", "<c-w>5-")
 
 map({ "n", "o", "v" }, "H", "^")
 map({ "n", "o", "v" }, "L", "$")
@@ -99,12 +100,8 @@ map("", "b", "<Plug>CamelCaseMotion_b", { noremap = false })
 map("", "e", "<Plug>CamelCaseMotion_e", { noremap = false })
 map("", "ge", "<Plug>CamelCaseMotion_ge", { noremap = false })
 
--- map("n", "<C-p>", ":lua require('fuzzy').files('')<CR>")
 map("n", "<C-p>", ":lua require('telescope.builtin').find_files()<CR>")
 map("n", leader .. "gf", ":lua require('telescope.builtin').git_files()<CR>")
--- fuzzy does not seem to be working right now
---map("n", leader .. "n", ":lua require('fuzzy').files(vim.fn.expand('%:h'))<CR>")
--- map("n", leader .. "n", ":lua require('fuzzy').files(vim.fn.expand('%:h'))<CR>")
 map("n", leader .. "p", ":lua require('telescope.builtin').buffers()<CR>")
 map("n", leader .. "<C-p>", ":lua require('telescope.builtin').commands()<CR>")
 map("n", leader .. "<C-h>", ":lua require('telescope.builtin').help_tags()<CR>")
@@ -114,7 +111,7 @@ map("n", leader .. "ld", ":lua require('telescope.builtin').lsp_workspace_diagno
 map("n", leader .. "g", ":lua require('telescope.builtin').live_grep()<CR>")
 map("n", leader .. "bp", ":BufferLinePick<CR>", { noremap = true, silent = true })
 
--- map("n", "-", ":execute 'Neotree reveal git_base=' .. g:git_base<CR>")
+map("n", "-", ":execute 'Neotree reveal git_base=' .. g:git_base<CR>")
 -- map("n", "g-", ":execute 'Neotree current git_status git_base=' .. g:git_base<CR>")
 map("n", leader .. "e", ":Neotree position=float<CR>")
 map("n", leader .. "t", ":Neotree position=left toggle<CR>")
