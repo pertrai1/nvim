@@ -100,15 +100,12 @@ cmp.setup {
     },
 
     window = {
-        completion = {
-            border = vim.g.floating_window_border_dark,
-        },
-        documentation = {
-            border = vim.g.floating_window_border_dark,
-        }
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
     },
 
     experimental = {
+        native_menu = false,
         ghost_text = true,
     },
 }
