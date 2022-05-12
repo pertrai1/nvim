@@ -21,9 +21,9 @@ wk.register({
         C = { "<cmd>lua require 'buffers'.close_others()<CR>", "Close Others" },
         f = { "<cmd>lua require('fzf-lua').files()<CR>", "Open File" },
         q = { "<cmd>lua require('fzf-lua').files()<CR>", "Quick Open" },
-        h = { ":split", "Horizontal Split" },
-        s = { ":update<CR>", "Save File" },
-        v = { ":vsplit<CR>", "Vertical Split" }
+        h = { "<cmd>split", "Horizontal Split" },
+        s = { "<cmd>update<CR>", "Save File" },
+        v = { "<cmd>vsplit<CR>", "Vertical Split" }
     },
 
     b = {
@@ -73,24 +73,24 @@ wk.register({
 
     f = {
         name = "File",
-        b = { ":Telescope file_browser<CR>", "Browser" },
+        b = { "<cmd>Telescope file_browser<CR>", "Browser" },
         c = { "<cmd>lua require('buffers').close()<CR>", "Close" },
-        f = { ":RnvimrToggle<CR>", "Ranger" },
-        n = { ":enew<CR>", "New File" },
-        o = { ":Neotree position=float<CR>", "Open" },
+        f = { "<cmd>RnvimrToggle<CR>", "Ranger" },
+        n = { "<cmd>enew<CR>", "New File" },
+        o = { "<cmd>Neotree position=float<CR>", "Open" },
         r = { "<cmd>lua require('telescope.builtin').oldfiles()<CR>", "Open Recent" },
-        s = { ":update<CR>", "Save" }
+        s = { "<cmd>update<CR>", "Save" }
     },
 
     g = {
         name = "Git",
         b = { "<cmd>lua require('telescope.builtin').git_branches()<CR>", "Branches" },
-        B = { ":Git blame<CR>", "Blame" },
+        B = { "<cmd>Git blame<CR>", "Blame" },
         c = { "<cmd>lua require('telescope.builtin').git_commits()<CR>", "Commits" },
         d = { ":set nosplitright<CR>:execute 'Gvdiff ' .. g:git_base<CR>:set splitright<CR>", "Diff File" },
         h = { "<Plug>(GitGutterNextHunk)", "Next Hunk" },
         H = { "<Plug>(GitGutterPrevHunk)", "Previous Hunk" },
-        l = { ":LazyGit<CR>", "LazyGit" },
+        l = { "<cmd>LazyGit<CR>", "LazyGit" },
         s = { "<cmd>lua require('telescope.builtin').git_status()<CR>", "Status" },
         S = { "<Plug>(GitGutterStageHunk)", "Stage Hunk" },
         u = { "<Plug>(GitGutterUndoHunk)", "Undo Hunk" },
@@ -140,10 +140,10 @@ wk.register({
         D = { "<cmd>lua require('telescope.builtin').lsp_definitions()<CR>", "Definition" },
         f = { "<cmd>lua require('telescope.builtin').lsp_references()<CR>", "Find References" },
         h = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Code Hover" },
-        i = { "<cmd>lua vim.lsp.buf.implementation()<CR>", "Implemention" },
-        l = { "<cmd>lua require'lsp.diagnostics'.line_diagnostics()<CR>", "Line Diagnostics" },
-        r = { "<cmd>lua require'lsp.rename'.rename()<CR>", "Rename" },
-        s = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature" },
+        i = { "<cmd>lua require('telescope.builtin').lsp_implementations<CR>", "Implemention" },
+        l = { "<cmd>Telescope diagnostics bufnr=0<CR>", "Line Diagnostics" },
+        r = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename" },
+        s = { "<cmd>lua require('lsp_signature').signature()<CR>", "Signature" },
         t = { "<cmd>lua vim.lsp.buf.type_definition()<CR>", "Type Definition" },
         z = { "<cmd>LspInfo<CR>", "LSP Info" }
     },
@@ -164,28 +164,28 @@ wk.register({
 
     t = {
         name = "Testing",
-        f = { ":TestFile<CR>", "File" },
-        l = { ":TestLast<CR>", "Last" },
-        n = { ":TestNearest<CR>", "Nearest" },
-        s = { ":TestSuite<CR>", "Suite" },
-        v = { ":TestVisit<CR>", "Visit" }
+        f = { "<cmd>TestFile<CR>", "File" },
+        l = { "<cmd>TestLast<CR>", "Last" },
+        n = { "<cmd>TestNearest<CR>", "Nearest" },
+        s = { "<cmd>TestSuite<CR>", "Suite" },
+        v = { "<cmd>TestVisit<CR>", "Visit" }
     },
 
     v = {
         name = "View",
         c = { "<cmd>lua require('telescope.builtin').commands()<CR>", "Commands" },
         d = { "<cmd>TroubleToggle<cr>", "Problems" },
-        e = { ":Neotree position=left toggle<CR>", "Explorer" },
+        e = { "<cmd>Neotree position=left toggle<CR>", "Explorer" },
         f = { "<cmd>lua require('telescope.builtin').live_grep()<CR>", "Search" },
-        n = { ":Neotree toggle float<CR>", "Sidebar Float" },
-        s = { ":LazyGit<CR>", "SCM" },
+        n = { "<cmd>Neotree toggle float<CR>", "Sidebar Float" },
+        s = { "<cmd>LazyGit<CR>", "SCM" },
     },
 
     w = {
         name = "Window",
-        S = { ":Neotree position=right<CR>", "Sidebar Right" },
-        s = { ":Neotree position=left<CR>", "Sidebar Left" },
-        t = { ":Neotree position=float<CR>", "Sidebar Float" }
+        S = { "<cmd>Neotree position=right<CR>", "Sidebar Right" },
+        s = { "<cmd>Neotree position=left<CR>", "Sidebar Left" },
+        t = { "<cmd>Neotree position=float<CR>", "Sidebar Float" }
     }
 
 }, { mode = "n", prefix = "<Space>" })
