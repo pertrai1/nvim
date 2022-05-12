@@ -12,7 +12,8 @@ wk.setup({
 
 wk.register({
     ["/"] = { "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", "Comment" },
-    ["o"] = { ":SymbolsOutline<CR>", "Symbols Outline" },
+    ["o"] = { "<cmd>SymbolsOutline<CR>", "Symbols Outline" },
+    ["q"] = { "<cmd>lua require 'buffers'.close()<CR>", "Close File" },
 
     a = {
         name = "General",
@@ -64,11 +65,6 @@ wk.register({
         R = { "<cmd>lua require('telescope.builtin').lsp_references()<CR>", "References" },
         s = { "<cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>", "Document Symbols" },
         S = { "<cmd>lua require('telescope.builtin').lsp_workspace_symbols()<CR>", "Workspace Symbols" },
-    },
-
-    e = {
-        name = "Edit",
-        f = { "<cmd>lua require('telescope.builtin').live_grep()<CR>", "Find in Files" },
     },
 
     f = {
@@ -130,6 +126,7 @@ wk.register({
         r = { "<cmd>lua require('spectre').open()<cr>", "Replace" },
         w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", "Replace Word" },
         f = { "<cmd>lua require('spectre').open_file_search()<cr>", "Replace Buffer" },
+        F = { "<cmd>lua require('telescope.builtin').live_grep()<CR>", "Find in Files" },
         t = { "<cmd>lua require('telescope.builtin').live_grep()<CR>", "Find Text" },
     },
 
