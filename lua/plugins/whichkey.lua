@@ -2,7 +2,8 @@ local wk = require("which-key")
 
 wk.setup({
     window = {
-        border = "single",
+        border = "rounded",
+        padding = { 2, 2, 2, 2 },
     },
     layout = {
         align = "center",
@@ -71,7 +72,6 @@ wk.register({
         name = "File",
         b = { "<cmd>Telescope file_browser<CR>", "Browser" },
         c = { "<cmd>lua require('buffers').close()<CR>", "Close" },
-        f = { "<cmd>RnvimrToggle<CR>", "Ranger" },
         n = { "<cmd>enew<CR>", "New File" },
         o = { "<cmd>Neotree position=float<CR>", "Open" },
         r = { "<cmd>lua require('telescope.builtin').oldfiles()<CR>", "Open Recent" },

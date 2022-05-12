@@ -47,7 +47,6 @@ require "plugins.vim-signature"
 require "plugins.open-browser"
 require "plugins.vim-ultest"
 require "plugins.copilot"
-require "plugins.rnvimr"
 require "lsp"
 require "statusline"
 
