@@ -86,7 +86,6 @@ wk.register({
         d = { ":set nosplitright<CR>:execute 'Gvdiff ' .. g:git_base<CR>:set splitright<CR>", "Diff File" },
         h = { "<Plug>(GitGutterNextHunk)", "Next Hunk" },
         H = { "<Plug>(GitGutterPrevHunk)", "Previous Hunk" },
-        l = { "<cmd>LazyGit<CR>", "LazyGit" },
         s = { "<cmd>lua require('telescope.builtin').git_status()<CR>", "Status" },
         S = { "<Plug>(GitGutterStageHunk)", "Stage Hunk" },
         u = { "<Plug>(GitGutterUndoHunk)", "Undo Hunk" },
@@ -166,6 +165,11 @@ wk.register({
         n = { "<cmd>TestNearest<CR>", "Nearest" },
         s = { "<cmd>TestSuite<CR>", "Suite" },
         v = { "<cmd>TestVisit<CR>", "Visit" }
+    },
+
+    T = {
+        name = "Terminal",
+        t = { "<cmd>ToggleTerm<CR>", "Toggle Terminal" }
     },
 
     v = {

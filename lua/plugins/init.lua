@@ -130,7 +130,7 @@ return require("packer").startup({ function()
 
     -- Helpers
     use "dhruvasagar/vim-table-mode"
-    use 'feline-nvim/feline.nvim'
+    use "feline-nvim/feline.nvim"
     use "lukas-reineke/headlines.nvim"
     use "lukas-reineke/virt-column.nvim"
     use "lukas-reineke/indent-blankline.nvim"
@@ -138,7 +138,7 @@ return require("packer").startup({ function()
     use "rmagatti/auto-session"
     use "krisajenkins/vim-projectlocal"
     use "numToStr/Navigator.nvim"
-
+    use "akinsho/toggleterm.nvim"
     use "cohama/lexima.vim"
 
     use "michaeljsmith/vim-indent-object"
