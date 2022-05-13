@@ -1,5 +1,6 @@
 local map = require("utils").map
 local leader = "<space>"
+local custom_telescope = require("custom_telescope")
 
 map("i", "jk", "<esc>", { silent = true })
 map("n", ";", ":", { silent = false })
