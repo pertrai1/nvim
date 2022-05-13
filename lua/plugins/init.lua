@@ -174,7 +174,10 @@ return require("packer").startup({ function()
     use "rhysd/clever-f.vim"
     use "kepbod/quick-scope"
     use "ggandor/lightspeed.nvim"
-
+    use {
+        'phaazon/hop.nvim',
+        branch = 'v1', -- optional but strongly recommended
+    }
     use "AndrewRadev/splitjoin.vim"
 
     use "kshenoy/vim-signature"

@@ -2,9 +2,12 @@ local map = require("utils").map
 local leader = "<space>"
 
 map("i", "jk", "<esc>", { silent = true })
-map("n", ";", ":", { silent = false })
+-- map("n", ";", ":", { silent = false })
 map("n", "<BS>", ":nohlsearch<CR>", { noremap = true, silent = true })
 map("n", leader .. "fn", "<cmd>enew<CR>")
+
+map("n", ";", "<Plug>(clever-f-repeat-forward)")
+map("n", ",", "<Plug>(clever-f-repeat-back)")
 
 map("n", leader .. leader, ":<C-u>exe v:count ? v:count . 'b' : 'b' . (bufloaded(0) ? '#' : 'n')<CR>")
 
