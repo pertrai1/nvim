@@ -25,13 +25,14 @@ require("packer").init({
 
 return require("packer").startup({ function()
     use "wbthomason/packer.nvim"
-    use 'lewis6991/impatient.nvim'
+    use "lewis6991/impatient.nvim"
+    use "nvim-lua/plenary.nvim"
 
     -- GUI
     -- Neovim plugin to improve the default vim.ui interfaces
     use "stevearc/dressing.nvim"
     use "kyazdani42/nvim-web-devicons"
-    use 'folke/tokyonight.nvim'
+    use "folke/tokyonight.nvim"
     use "navarasu/onedark.nvim"
     use {
         "nvim-neo-tree/neo-tree.nvim",
@@ -47,7 +48,8 @@ return require("packer").startup({ function()
     -- UI to select things (files, grep results, open buffers...)
     use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } }
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
-    use { "nvim-telescope/telescope-file-browser.nvim" }
+    use "nvim-telescope/telescope-file-browser.nvim"
+    use "ThePrimeagen/harpoon"
 
     -- Completion
     use {

@@ -70,6 +70,7 @@ wk.register({
 
     f = {
         name = "File",
+        a = { "<cmd>lua require('harpoon.mark').add_file()<CR>", "Add to Harpoon" },
         b = { "<cmd>Telescope file_browser<CR>", "Browser" },
         c = { "<cmd>lua require('buffers').close()<CR>", "Close" },
         n = { "<cmd>enew<CR>", "New File" },
@@ -105,6 +106,11 @@ wk.register({
         B = { "<cmd>lua require('telescope.builtin').buffers()<CR>", "Buffers" },
         F = { "<cmd>lua require('telescope.builtin').find_files()<CR>", "Files" },
         f = { "<Plug>Lightspeed_s", "Jump Forward" }
+    },
+
+    n = {
+        name = "Navigation",
+        h = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>", "Toggle Harpoon" }
     },
 
     p = {
