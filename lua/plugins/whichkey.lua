@@ -105,7 +105,8 @@ wk.register({
         b = { "<Plug>Lightspeed_S", "Jump Backward" },
         B = { "<cmd>lua require('telescope.builtin').buffers()<CR>", "Buffers" },
         F = { "<cmd>lua require('telescope.builtin').find_files()<CR>", "Files" },
-        f = { "<Plug>Lightspeed_s", "Jump Forward" }
+        f = { "<Plug>Lightspeed_s", "Jump Forward" },
+        m = { "<cmd>Telescope harpoon marks<CR>", "Harpoon Marks" },
     },
 
     n = {
