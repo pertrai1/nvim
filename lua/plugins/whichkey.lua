@@ -15,6 +15,7 @@ wk.register({
     ["/"] = { "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", "Comment" },
     ["o"] = { "<cmd>SymbolsOutline<CR>", "Symbols Outline" },
     ["q"] = { "<cmd>lua require 'buffers'.close()<CR>", "Close File" },
+    ["c"] = { "<cmd>ToggleTerm<CR>", "Toggle Terminal" },
 
     a = {
         name = "General",
@@ -172,11 +173,6 @@ wk.register({
         n = { "<cmd>TestNearest<CR>", "Nearest" },
         s = { "<cmd>TestSuite<CR>", "Suite" },
         v = { "<cmd>TestVisit<CR>", "Visit" }
-    },
-
-    T = {
-        name = "Terminal",
-        t = { "<cmd>ToggleTerm<CR>", "Toggle Terminal" }
     },
 
     v = {

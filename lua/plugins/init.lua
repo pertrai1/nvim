@@ -89,11 +89,13 @@ return require("packer").startup({ function()
         "folke/which-key.nvim",
     }
 
+    use { "akinsho/toggleterm.nvim",
+        tag = 'v1.*',
+    }
     -- fZF
     use "ibhagwan/fzf-lua"
 
     -- Git
-    use "kdheepak/lazygit.nvim"
     use "airblade/vim-gitgutter"
     use "lewis6991/gitsigns.nvim"
     use "tpope/vim-fugitive"
@@ -140,7 +142,6 @@ return require("packer").startup({ function()
     use "rmagatti/auto-session"
     use "krisajenkins/vim-projectlocal"
     use "numToStr/Navigator.nvim"
-    use "akinsho/toggleterm.nvim"
     use "cohama/lexima.vim"
 
     use "michaeljsmith/vim-indent-object"
