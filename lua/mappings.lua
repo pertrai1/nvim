@@ -33,7 +33,8 @@ map("n", leader .. "pu", "<cmd>PackerUpdate<cr>")
 
 --Add leader shortcuts
 map('n', leader .. '<space>', ":lua require('telescope.builtin').buffers()<CR>", { noremap = true })
-map('n', leader .. 'tf', ":lua require('config.telescope').find_files()<CR>", { noremap = true })
+map('n', leader .. 'to', ":lua require('config.telescope').find_files()<CR>", { noremap = true })
+map('n', leader .. 'tq', ":lua require('config.telescope').find_files_quickly()<CR>", { noremap = true })
 map('n', leader .. 'tb', ":lua require('config.telescope').current_buffer_fuzzy_find()<CR>", { noremap = true })
 map('n', leader .. 'th', ":lua require('telescope.builtin').help_tags()<CR>", { noremap = true })
 map('n', leader .. 'tt', ":lua require('telescope.builtin').tags()<CR>", { noremap = true })

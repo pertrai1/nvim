@@ -41,6 +41,26 @@ function M.find_files()
   require("telescope.builtin").find_files(opts_with_preview)
 end
 
+function M.find_files_quickly()
+  local opts_without_preview
+
+  opts_without_preview = {
+    winblend = 10,
+    layout_strategy = "vertical",
+    layout_config = {
+      width = 0.5,
+      height = 0.5,
+      horizontal = {
+        prompt_position = "bottom",
+      },
+      scroll_speed = 1
+    },
+    previewer = false
+  }
+
+  require("telescope.builtin").find_files(opts_without_preview)
+end
+
 function M.live_grep()
   local opts_with_preview
 
