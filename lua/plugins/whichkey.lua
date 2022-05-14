@@ -22,9 +22,9 @@ wk.register({
         b = { "<Plug>(openbrowser-smart-search)", "Browser Search" },
         c = { "<cmd>lua require 'buffers'.close()<CR>", "Close File" },
         C = { "<cmd>lua require 'buffers'.close_others()<CR>", "Close Others" },
-        f = { "<cmd>lua require('telescope.builtin').find_files()<CR>", "Open File" },
+        -- f = { "<cmd>lua require('telescope.builtin').find_files({layout_config = { horizontal = {prompt_position = 'bottom'}},previewer = false})<CR>", "Open File" },
+        f = { "<cmd>lua require('config.telescope').find_files_no_previewer()<CR>", "Open File" },
         g = { "<cmd>lua require('telescope.builtin').git_files()<CR>", "Open File - Git" },
-        q = { "<cmd>lua require('fzf-lua').files()<CR>", "Quick Open" },
         h = { "<cmd>split", "Horizontal Split" },
         s = { "<cmd>update<CR>", "Save File" },
         v = { "<cmd>vsplit<CR>", "Vertical Split" }
@@ -73,7 +73,7 @@ wk.register({
     f = {
         name = "File",
         a = { "<cmd>lua require('harpoon.mark').add_file()<CR>", "Add to Harpoon" },
-        b = { "<cmd>Telescope file_browser<CR>", "Browser" },
+        b = { "<cmd>Telescope file_browser<CR>", "Browse" },
         c = { "<cmd>lua require('buffers').close()<CR>", "Close" },
         n = { "<cmd>enew<CR>", "New File" },
         o = { "<cmd>Neotree position=float<CR>", "Open" },
@@ -106,7 +106,7 @@ wk.register({
         name = "Navigation",
         b = { "<cmd>lua require('telescope.builtin').buffers()<CR>", "Buffers" },
         c = { "<cmd>HopChar1<CR>", "Hop Character" },
-        F = { "<cmd>lua require('telescope.builtin').find_files()<CR>", "Files" },
+        F = { "<cmd>lua require('config.telescope').find_files()<CR>", "Files" },
         f = { "<Plug>Lightspeed_s", "Jump Forward" },
         h = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>", "Toggle Harpoon" },
         l = { "<cmd>HopLine<CR>", "Hop Line" },
@@ -131,7 +131,7 @@ wk.register({
         r = { "<cmd>lua require('spectre').open()<cr>", "Replace" },
         w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", "Replace Word" },
         f = { "<cmd>lua require('spectre').open_file_search()<cr>", "Replace Buffer" },
-        t = { "<cmd>lua require('telescope.builtin').live_grep()<CR>", "Find in Files" },
+        t = { "<cmd>lua require('config.telescope').live_grep()<CR>", "Find in Files" },
     },
 
     l = {
@@ -151,9 +151,9 @@ wk.register({
 
     s = {
         name = "Search",
-        b = { "<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>", "Current Buffer" },
+        b = { "<cmd>lua require('config.telescope').current_buffer_fuzzy_find()<CR>", "Current Buffer" },
         c = { "<cmd>lua require('telescope.builtin').grep_string()<CR>", "Current Word" },
-        f = { "<cmd>lua require('telescope.builtin').live_grep()<CR>", "Find Text" },
+        f = { "<cmd>lua require('config.telescope').live_grep()<CR>", "Find Text" },
         h = { "<cmd>lua require('telescope.builtin').search_history()<CR>", "History" },
         l = { "<cmd>lua require('telescope.builtin').resume()<CR>", "Last Picks" },
         m = { "<cmd>lua require('telescope.builtin').marks()<CR>", "Marks" },
