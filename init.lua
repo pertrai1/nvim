@@ -53,5 +53,7 @@ require "lsp"
 require "statusline"
 
 require("git").setup()
-require("gitsigns").setup()
+require("gitsigns").setup({
+  current_line_blame = true
+})
 require("lists").setup()
