@@ -199,4 +199,7 @@ map("n", leader .. "xl", "<cmd>TroubleToggle loclist<CR>", { silent = true, nore
 map("n", leader .. "xq", "<cmd>TroubleToggle quickfix<CR>", { silent = true, noremap = true })
 map("n", "gR", "<cmd>TroubleToggle lsp_references<CR>", { silent = true, noremap = true })
 
+-- Vista
+map("n", leader .. "vt", "<cmd>Vista!!<CR>", { silent = true, noremap = true })
+
 vim.cmd [[cabbrev nw noautocmd write]]

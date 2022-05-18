@@ -44,6 +44,7 @@ return require("packer").startup({ function()
         after = { "nvim-web-devicons" },
     }
     use "akinsho/bufferline.nvim"
+    use { "liuchengxu/vista.vim", cmd = "Vista" }
 
     use "tami5/sqlite.lua"
 
