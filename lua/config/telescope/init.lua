@@ -1,3 +1,4 @@
+local themes = require "telescope.themes"
 local M = {}
 
 function M.find_files_no_previewer()
@@ -19,9 +20,8 @@ function M.find_files_no_previewer()
 end
 
 function M.find_files()
-  local opts_with_preview
-
-  opts_with_preview = {
+  local opts_with_preview = themes.get_dropdown {
+    winblend = 10,
     layout_strategy = "flex",
     layout_config = {
       width = 0.99,
@@ -89,6 +89,10 @@ function M.current_buffer_fuzzy_find()
     },
   }
   require('telescope.builtin').current_buffer_fuzzy_find(opts_with_preview)
+end
+
+function M.oldfiles()
+  require("telescope").extensions.frecency.frecency(themes.get_ivy {})
 end
 
 return M

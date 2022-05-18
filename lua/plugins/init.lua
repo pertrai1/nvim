@@ -45,10 +45,13 @@ return require("packer").startup({ function()
     }
     use "akinsho/bufferline.nvim"
 
+    use "tami5/sqlite.lua"
+
     -- UI to select things (files, grep results, open buffers...)
     use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } }
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
     use "nvim-telescope/telescope-file-browser.nvim"
+    use "nvim-telescope/telescope-frecency.nvim"
     use "ThePrimeagen/harpoon"
 
     -- Completion

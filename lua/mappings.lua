@@ -40,7 +40,7 @@ map('n', leader .. 'th', ":lua require('telescope.builtin').help_tags()<CR>", { 
 map('n', leader .. 'tt', ":lua require('telescope.builtin').tags()<CR>", { noremap = true })
 map('n', leader .. 'ts', ":lua require('telescope.builtin').grep_string()<CR>", { noremap = true })
 map('n', leader .. 'tg', ":lua require('config.telescope').live_grep()<CR>", { noremap = true })
-map('n', leader .. '?', ":lua require('telescope.builtin').oldfiles()<CR>", { noremap = true })
+map('n', leader .. '?', ":lua require('config.telescope').oldfiles()<CR>", { noremap = true })
 map("n", leader .. "fb", ":Telescope file_browser<CR>", { noremap = true })
 
 map("n", "<UP>", ":lua require('lists').move('up')<CR>")
