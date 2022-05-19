@@ -59,6 +59,22 @@ function M.find_files_quickly()
   require("telescope.builtin").find_files(opts_without_preview)
 end
 
+function M.git_files()
+  local opts_with_preview = {
+    winblend = 20,
+    layout_config = {
+      width = 0.99,
+      height = 0.99,
+      horizontal = {
+        prompt_position = "bottom",
+      },
+      scroll_speed = 1
+    },
+  }
+
+  require("telescope.builtin").git_files(opts_with_preview)
+end
+
 function M.live_grep()
   local opts_with_preview
 

@@ -1,8 +1,6 @@
-local ok, cmp = pcall(require, 'cmp')
-if not ok then
-    return
-end
+local cmp = require "cmp"
 local cmp_compare = require "cmp_compare"
+
 cmp.setup {
     preselect = cmp.PreselectMode.None,
     mapping = {
