@@ -42,16 +42,14 @@ function M.find_files()
 end
 
 function M.find_files_quickly()
-  local opts_without_preview
-
-  opts_without_preview = {
+  local opts_without_preview = themes.get_dropdown {
     winblend = 10,
     layout_strategy = "vertical",
     layout_config = {
       width = 0.5,
-      height = 0.5,
+      height = 0.7,
       horizontal = {
-        prompt_position = "bottom",
+        prompt_position = "top",
       },
       scroll_speed = 1
     },
