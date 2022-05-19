@@ -13,7 +13,7 @@ map("n", leader .. leader, ":<C-u>exe v:count ? v:count . 'b' : 'b' . (bufloaded
 
 map("n", leader .. "<C-o>", ":lua require 'buffers'.close_others()<CR>")
 
-map("n", leader .. "q", ":lua require 'buffers'.close()<CR>")
+map("n", leader .. "q", ":clo<CR>")
 map("n", leader .. "w", ":update<CR>")
 
 map("n", leader .. "rr", ":%s/\\v()", { silent = false })
