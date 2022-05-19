@@ -50,6 +50,7 @@ require "plugins.copilot"
 require "plugins.hop"
 require "plugins.vista"
 
+require "dbg"
 require "lsp"
 require "statusline"
 

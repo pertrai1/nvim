@@ -125,6 +125,14 @@ return require("packer").startup({ function()
             }
         end
     }
+
+    -- Debug
+    use "mfussenegger/nvim-dap"
+    use "nvim-telescope/telescope-dap.nvim"
+    use "theHamsta/nvim-dap-virtual-text"
+    use "rcarriga/nvim-dap-ui"
+    use "Pocco81/DAPInstall.nvim"
+
     use {
         "windwp/nvim-spectre",
         requires = {
