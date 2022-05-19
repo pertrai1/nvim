@@ -102,6 +102,18 @@ wk.register({
         k = { "<cmd>lua require('telescope.builtin').keymaps()<CR>", "Keymaps" },
     },
 
+    i = {
+        name = "Investigate",
+        b = { "<cmd>lua require'dap'.toggle_breakpoint()<CR>", "Toggle Breakpoint" },
+        c = { "<cmd>lua require'dap'.continue()<CR>", "Continue" },
+        s = {
+            name = "Step",
+            i = { "<cmd>lua require'dap'.step_into()<CR>", "Into" },
+            o = { "<cmd>lua require'dap'.step_out()<CR>", "Out" },
+            v = { "<cmd>lua require'dap'.step_over()<CR>", "Over" },
+        }
+    },
+
     k = {
         name = "Navigation",
         b = { "<cmd>lua require('telescope.builtin').buffers()<CR>", "Buffers" },
