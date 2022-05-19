@@ -1,4 +1,7 @@
-local wk = require("which-key")
+local ok, wk = pcall(require, 'which-key')
+if not ok then
+    return
+end
 
 wk.setup({
     window = {
@@ -16,6 +19,7 @@ wk.register({
     ["o"] = { "<cmd>SymbolsOutline<CR>", "Symbols Outline" },
     ["q"] = { "<cmd>lua require 'buffers'.close()<CR>", "Close File" },
     ["c"] = { "<cmd>ToggleTerm<CR>", "Toggle Terminal" },
+    ["?"] = { "<cmd>lua require('config.telescope').oldfiles()<CR>", "Old Files" },
 
     a = {
         name = "General",
@@ -176,7 +180,18 @@ wk.register({
     },
 
     t = {
-        name = "Testing",
+        name = "Telescope",
+        b = { "<cmd>lua require('config.telescope').current_buffer_fuzzy_find()<CR>", "Find - Buffer" },
+        f = { "<cmd>Telescope file_browser<CR>", "File Browser" },
+        h = { "<cmd>lua require('telescope.builtin').help_tags()<CR>", "Help Tags" },
+        o = { "<cmd>lua require('config.telescope').find_files()<CR>", "Find Files" },
+        q = { "<cmd>lua require('config.telescope').find_files_quickly()<CR>", "Quick Find" },
+        s = { "<cmd>lua require('config.telescope').grep_string()<CR>", "Grep String" },
+        t = { "<cmd>lua require('config.telescope').tags()<CR>", "Tags" },
+    },
+
+    u = {
+        name = "Unit Testing",
         f = { "<cmd>TestFile<CR>", "File" },
         l = { "<cmd>TestLast<CR>", "Last" },
         n = { "<cmd>TestNearest<CR>", "Nearest" },

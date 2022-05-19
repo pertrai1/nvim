@@ -1,5 +1,11 @@
-local onedark = require "onedark"
-require("orgmode").setup {
+local ok
+local orgmode = pcall(require, 'orgmode')
+local onedark = pcall(require, 'onedark')
+if not ok then
+    return
+end
+
+orgmode.setup {
     org_default_notes_file = "~/dev/org/notes.org",
     org_agenda_templates = {
         f = {

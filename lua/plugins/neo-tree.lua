@@ -1,3 +1,8 @@
+local ok, neotree = pcall(require, "neo-tree")
+if not ok then
+    return
+end
+
 vim.g.neo_tree_remove_legacy_commands = 1
 require("neo-tree.sources.common.components").diagnostics = function(config, node, state)
     local diag = state.diagnostics_lookup or {}
@@ -16,7 +21,7 @@ require("neo-tree.sources.common.components").diagnostics = function(config, nod
     }
 end
 
-require("neo-tree").setup {
+neotree.setup {
     close_if_last_window = true,
     default_component_configs = {
         indent = {

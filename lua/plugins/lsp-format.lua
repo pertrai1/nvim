@@ -4,7 +4,13 @@ local prettier = {
     trailingComma = "all",
     configPrecedence = "prefer-file",
 }
-require("lsp-format").setup {
+
+local ok, lsp_format = pcall(require, 'lsp-format')
+if not ok then
+    return
+end
+
+lsp_format.setup {
     typescript = prettier,
     javascript = prettier,
     typescriptreact = prettier,

@@ -1,4 +1,9 @@
-require("nvim-treesitter.configs").setup {
+local ok, nvim_treesitter_configs = pcall(require, 'nvim-treesitter.configs')
+if not ok then
+    return
+end
+
+nvim_treesitter_configs.setup {
     ensure_installed = {
         "tsx",
         "json",
