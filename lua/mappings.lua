@@ -9,7 +9,7 @@ map("n", leader .. "fn", "<cmd>enew<CR>")
 map("n", ";", "<Plug>(clever-f-repeat-forward)")
 map("n", ",", "<Plug>(clever-f-repeat-back)")
 
-map("n", leader .. leader, ":<C-u>exe v:count ? v:count . 'b' : 'b' . (bufloaded(0) ? '#' : 'n')<CR>")
+-- map("n", leader .. leader, ":<C-u>exe v:count ? v:count . 'b' : 'b' . (bufloaded(0) ? '#' : 'n')<CR>")
 
 map("n", leader .. "<C-o>", ":lua require 'buffers'.close_others()<CR>")
 
@@ -89,8 +89,8 @@ map("n", "˙", "<c-w>5<")
 map("n", "˚", "<c-w>5+")
 map("n", "∆", "<c-w>5-")
 
-map({ "n", "o", "v" }, "H", "^")
-map({ "n", "o", "v" }, "L", "$")
+-- map({ "n", "o", "v" }, "H", "^")
+-- map({ "n", "o", "v" }, "L", "$")
 
 map({ "n", "v" }, "J", "5j")
 map({ "n", "v" }, "K", "5k")
