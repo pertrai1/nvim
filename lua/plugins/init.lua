@@ -131,7 +131,7 @@ return require("packer").startup({ function()
     use "nvim-telescope/telescope-dap.nvim"
     use "theHamsta/nvim-dap-virtual-text"
     use "rcarriga/nvim-dap-ui"
-    use "Pocco81/DAPInstall.nvim"
+    use { "Pocco81/dap-buddy.nvim", branch = "dev" }
 
     use {
         "windwp/nvim-spectre",
@@ -167,7 +167,6 @@ return require("packer").startup({ function()
 
     use "romainl/vim-qf"
     use "kevinhwang91/nvim-bqf"
-    use "kevinhwang91/rnvimr"
     use "https://gitlab.com/yorickpeterse/nvim-pqf.git"
 
     use "machakann/vim-sandwich"
