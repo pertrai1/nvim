@@ -17,7 +17,7 @@ wk.setup({
 wk.register({
     ["/"] = { "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", "Comment" },
     ["o"] = { "<cmd>SymbolsOutline<CR>", "Symbols Outline" },
-    ["q"] = { "<cmd>lua require 'buffers'.close()<CR>", "Close File" },
+    ["q"] = { "<cmd>close<CR>", "Close File" },
     ["c"] = { "<cmd>ToggleTerm<CR>", "Toggle Terminal" },
     ["?"] = { "<cmd>lua require('config.telescope').oldfiles()<CR>", "Old Files" },
 
@@ -182,7 +182,8 @@ wk.register({
     t = {
         name = "Telescope",
         b = { "<cmd>lua require('config.telescope').current_buffer_fuzzy_find()<CR>", "Find - Buffer" },
-        f = { "<cmd>Telescope file_browser<CR>", "File Browser" },
+        e = { "<cmd>Telescope file_browser<CR>", "File Browser" },
+        f = { "<cmd>lua require('config.telescope').live_grep()<CR>", "Search - Buffer" },
         g = {
             name = "Git",
             b = { "<cmd>lua require('telescope.builtin').git_branches()<CR>", "Branches" },

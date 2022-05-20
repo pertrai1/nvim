@@ -41,8 +41,9 @@ map('n', leader .. 'tgb', ":lua require('telescope.builtin').git_branches()<CR>"
 map('n', leader .. 'tk', ":lua require('telescope.builtin').keymaps()<CR>", { noremap = true })
 map('n', leader .. 'tt', ":lua require('telescope.builtin').tags()<CR>", { noremap = true })
 map('n', leader .. 'ts', ":lua require('telescope.builtin').grep_string()<CR>", { noremap = true })
--- map('n', leader .. 'tg', ":lua require('config.telescope').live_grep()<CR>", { noremap = true })
-map('n', leader .. 'tg', ":lua require('utils').grep()<CR>", { noremap = true })
+map('n', leader .. 'tf', ":lua require('config.telescope').live_grep()<CR>", { noremap = true })
+-- map('n', leader .. 'tg', ":lua require('telescope.builtin').live_grep({grep_open_files=true})<CR>", { noremap = true })
+-- map('n', leader .. 'tg', ":lua require('utils').grep()<CR>", { noremap = true })
 map('n', leader .. '?', ":lua require('config.telescope').oldfiles()<CR>", { noremap = true })
 map("n", leader .. "fb", ":Telescope file_browser<CR>", { noremap = true })
 
