@@ -1,3 +1,14 @@
+local Terminal = require('toggleterm.terminal').Terminal
+local lazygit = Terminal:new({
+    cmd = "lazygit",
+    dir = "git_dir",
+    direction = "float",
+    float_opts = {
+        border = "double"
+    },
+    hidden = true
+})
+
 local M = {}
 
 M.is_repo = function()
@@ -22,6 +33,10 @@ M.set_base = function(base)
     vim.api.nvim_set_current_win(win)
 
     print(string.format("Now diffing against %s", vim.g.git_base))
+end
+
+M.lazygit_toggle = function()
+    lazygit:toggle()
 end
 
 return M
