@@ -197,13 +197,15 @@ return require("packer").startup({ function()
 
     use "tyru/open-browser.vim"
 
-    use "milisims/nvim-luaref"
+    use { 'milisims/nvim-luaref', branch = 'master' }
 
     use {
         "rcarriga/vim-ultest",
         requires = { "vim-test/vim-test" },
         run = ":UpdateRemotePlugins"
     }
+
+    use "mg979/vim-visual-multi"
 end,
 config = {
     display = {
