@@ -104,6 +104,7 @@ wk.register({
         h = { "<cmd>lua require('telescope.builtin').help_tags()<CR>", "Help Tags" },
         m = { "<cmd>lua require('telescope.builtin').man_pages()<CR>", "Man Pages" },
         k = { "<cmd>lua require('telescope.builtin').keymaps()<CR>", "Keymaps" },
+        t = { "<cmd>write | edit | TSBufEnable highlight<CR>", "Reload Treesitter" },
     },
 
     i = {

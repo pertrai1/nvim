@@ -5,6 +5,6 @@ end
 
 dressing.setup {
     select = {
-        backend = { "telescope" },
+        backend = { "telescope", "fzf_lua" },
     },
 }
