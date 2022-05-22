@@ -16,13 +16,14 @@ wk.setup({
 
 wk.register({
     ["/"] = { "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", "Comment" },
-    ["n"] = { "<cmd>Alpha<CR>", "Dashboard" },
+    ["a"] = { "<cmd>lua require('lists').change_active('Quickfix')<CR>:Ack<space>", "Search - Ack" },
     ["o"] = { "<cmd>SymbolsOutline<CR>", "Symbols Outline" },
     ["q"] = { "<cmd>close<CR>", "Close File" },
     ["c"] = { "<cmd>ToggleTerm<CR>", "Toggle Terminal" },
     ["?"] = { "<cmd>lua require('config.telescope').oldfiles()<CR>", "Old Files" },
+    ["<F1>"] = { "<cmd>Alpha<CR>", "Dashboard" },
 
-    a = {
+    ["<F2>"] = {
         name = "General",
         b = { "<Plug>(openbrowser-smart-search)", "Browser Search" },
         c = { "<cmd>lua require 'buffers'.close()<CR>", "Close File" },
@@ -45,6 +46,7 @@ wk.register({
         M = { "<cmd>BufferLineMovePrev<CR>", "Move Left" },
         n = { "<cmd>BufferLineCycleNext<CR>", "Next File" },
         p = { "<cmd>BufferLineCyclePrev<CR>", "Previous File" },
+        P = { "<cmd>BufferLinePick<CR>", "Pick from Buffers" },
         r = { "<cmd>BufferLineCloseRight<CR>", "Close all Right" },
     },
 
