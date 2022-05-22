@@ -5,7 +5,7 @@ map("i", "jk", "<esc>", { silent = true })
 -- map("n", ";", ":", { silent = false })
 map("n", "<BS>", ":nohlsearch<CR>", { noremap = true, silent = true })
 map("n", leader .. "fn", "<cmd>enew<CR>")
-map("n", leader .. "n", "<cmd>Alpha<CR>")
+map("n", "<F1>", "<cmd>Alpha<CR>")
 
 map("n", ";", "<Plug>(clever-f-repeat-forward)")
 map("n", ",", "<Plug>(clever-f-repeat-back)")
@@ -36,7 +36,8 @@ map("n", leader .. "f", ":lua require('telescope.builtin').lsp_document_symbols(
 map("n", leader .. "g", ":lua require('config.telescope').live_grep()<CR>")
 
 --Add leader shortcuts
-map("n", "<C-p>", ":lua require('config.telescope').git_files()<CR>")
+-- map("n", "<C-p>", ":lua require('config.telescope').git_files()<CR>")
+map("n", "<C-p>", ":lua require('telescope.builtin').git_files(require('telescope.themes').get_dropdown{previewer = false})<CR>")
 map('n', leader .. '?', ":lua require('config.telescope').oldfiles()<CR>", { noremap = true })
 map('n', leader .. '<space>', ":lua require('telescope.builtin').buffers()<CR>", { noremap = true })
 map('n', leader .. 'tb', ":lua require('config.telescope').current_buffer_fuzzy_find()<CR>", { noremap = true })

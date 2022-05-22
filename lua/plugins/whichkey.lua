@@ -18,10 +18,9 @@ wk.register({
     ["/"] = { "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", "Comment" },
     ["a"] = { "<cmd>lua require('lists').change_active('Quickfix')<CR>:Ack<space>", "Search - Ack" },
     ["o"] = { "<cmd>SymbolsOutline<CR>", "Symbols Outline" },
-    ["q"] = { "<cmd>close<CR>", "Close File" },
+    ["q"] = { "<cmd>bd<CR>", "Close File" },
     ["c"] = { "<cmd>ToggleTerm<CR>", "Toggle Terminal" },
     ["?"] = { "<cmd>lua require('config.telescope').oldfiles()<CR>", "Old Files" },
-    ["<F1>"] = { "<cmd>Alpha<CR>", "Dashboard" },
 
     ["<F2>"] = {
         name = "General",
