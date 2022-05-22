@@ -93,6 +93,13 @@ return require("packer").startup({ function()
         "folke/which-key.nvim",
     }
 
+    use {
+        "goolord/alpha-nvim",
+        config = function()
+            require("plugins.alpha").setup()
+        end,
+    }
+
     use { "akinsho/toggleterm.nvim",
         tag = 'v1.*',
     }

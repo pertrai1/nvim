@@ -20,6 +20,7 @@ require "plugins.nvim-web-devicons"
 require "plugins.nvim-treesitter"
 require "plugins.lsp-format"
 require "plugins.fidget"
+
 -- require "plugins.fzf"
 require "plugins.spectre"
 require "plugins.whichkey"

@@ -5,6 +5,7 @@ map("i", "jk", "<esc>", { silent = true })
 -- map("n", ";", ":", { silent = false })
 map("n", "<BS>", ":nohlsearch<CR>", { noremap = true, silent = true })
 map("n", leader .. "fn", "<cmd>enew<CR>")
+map("n", leader .. "n", "<cmd>Alpha<CR>")
 
 map("n", ";", "<Plug>(clever-f-repeat-forward)")
 map("n", ",", "<Plug>(clever-f-repeat-back)")
@@ -114,7 +115,7 @@ map("", "ge", "<Plug>CamelCaseMotion_ge", { noremap = false })
 
 map("n", leader .. "bp", ":BufferLinePick<CR>", { noremap = true, silent = true })
 
-map("n", "-", ":execute 'Neotree reveal git_base=' .. g:git_base<CR>")
+-- map("n", "-", ":execute 'Neotree reveal git_base=' .. g:git_base<CR>")
 -- map("n", "g-", ":execute 'Neotree current git_status git_base=' .. g:git_base<CR>")
 map("n", leader .. "e", ":Neotree position=float<CR>")
 map("n", leader .. "t", ":Neotree position=left toggle<CR>")

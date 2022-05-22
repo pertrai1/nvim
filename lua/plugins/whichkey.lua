@@ -16,6 +16,7 @@ wk.setup({
 
 wk.register({
     ["/"] = { "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", "Comment" },
+    ["n"] = { "<cmd>Alpha<CR>", "Dashboard" },
     ["o"] = { "<cmd>SymbolsOutline<CR>", "Symbols Outline" },
     ["q"] = { "<cmd>close<CR>", "Close File" },
     ["c"] = { "<cmd>ToggleTerm<CR>", "Toggle Terminal" },
