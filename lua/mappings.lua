@@ -37,7 +37,7 @@ map("n", leader .. "g", ":lua require('config.telescope').live_grep()<CR>")
 
 --Add leader shortcuts
 -- map("n", "<C-p>", ":lua require('config.telescope').git_files()<CR>")
-map("n", "<C-p>", ":lua require('telescope.builtin').git_files(require('telescope.themes').get_dropdown{previewer = false})<CR>")
+map("n", "<C-p>", ":lua require('telescope.builtin').git_files(require('telescope.themes').get_dropdown{layout_config = {height = 0.7}, previewer = false})<CR>")
 map('n', leader .. '?', ":lua require('config.telescope').oldfiles()<CR>", { noremap = true })
 map('n', leader .. '<space>', ":lua require('telescope.builtin').buffers()<CR>", { noremap = true })
 map('n', leader .. 'tb', ":lua require('config.telescope').current_buffer_fuzzy_find()<CR>", { noremap = true })
@@ -60,16 +60,16 @@ map("n", "<DOWN>", ":lua require('lists').move('down')<CR>")
 map("n", "<LEFT>", ":lua require('lists').move('left')<CR>")
 map("n", "<RIGHT>", ":lua require('lists').move('right')<CR>")
 map(
-    "n",
-    leader .. "c",
-    "<Plug>(qf_qf_toggle_stay):lua require('lists').change_active('Quickfix')<CR>",
-    { noremap = false }
+  "n",
+  leader .. "c",
+  "<Plug>(qf_qf_toggle_stay):lua require('lists').change_active('Quickfix')<CR>",
+  { noremap = false }
 )
 map(
-    "n",
-    leader .. "v",
-    "<Plug>(qf_loc_toggle_stay):lua require('lists').change_active('Location')<CR>",
-    { noremap = false }
+  "n",
+  leader .. "v",
+  "<Plug>(qf_loc_toggle_stay):lua require('lists').change_active('Location')<CR>",
+  { noremap = false }
 )
 map("n", leader .. "b", ":lua require('lists').toggle_active()<CR>")
 map("n", leader .. "a", ":lua require('lists').change_active('Quickfix')<CR>:Ack<space>", { silent = false })
@@ -125,10 +125,10 @@ map("n", leader .. "t", ":Neotree position=left toggle<CR>")
 -- map("n", "<S-h>", ":bprevious<CR>", { silent = true, noremap = true })
 
 map(
-    "i",
-    "<CR>",
-    [[pumvisible() ? complete_info()["selected"] != "-1" ? "\<Plug>(completion_confirm_completion)" : "\<c-e>" : lexima#expand('<LT>CR>', 'i')]],
-    { expr = true, noremap = false }
+  "i",
+  "<CR>",
+  [[pumvisible() ? complete_info()["selected"] != "-1" ? "\<Plug>(completion_confirm_completion)" : "\<c-e>" : lexima#expand('<LT>CR>', 'i')]],
+  { expr = true, noremap = false }
 )
 
 -- map("n", "grr", "<Plug>ReplaceWithSamrIndentRegisterLine", { noremap = false })
@@ -153,9 +153,9 @@ map("n", leader .. "gu", "<Plug>(GitGutterUndoHunk)", { noremap = false })
 map("n", leader .. "ga", "<Plug>(GitGutterStageHunk)", { noremap = false })
 map("n", leader .. "gc", ":0Gclog<CR>", { noremap = false })
 map(
-    "n",
-    leader .. "gg",
-    ":lua require('lists').change_active('Quickfix')<CR>:execute 'Git difftool ' .. g:git_base<CR>"
+  "n",
+  leader .. "gg",
+  ":lua require('lists').change_active('Quickfix')<CR>:execute 'Git difftool ' .. g:git_base<CR>"
 )
 map("n", leader .. "gn", ":lua require('lists').change_active('Quickfix')<CR>:Git mergetool<CR>")
 map("n", leader .. "gh", ":diffget //2<CR> :diffupdate<CR>")
