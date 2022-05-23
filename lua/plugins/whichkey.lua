@@ -21,6 +21,7 @@ wk.register({
     ["q"] = { "<cmd>bd<CR>", "Close File" },
     ["c"] = { "<cmd>ToggleTerm<CR>", "Toggle Terminal" },
     ["?"] = { "<cmd>lua require('config.telescope').oldfiles()<CR>", "Old Files" },
+    ["<CR>"] = { "<cmd>lua require'lsp.diagnostics'.line_diagnostics()<CR>", "Line Diagnostics" },
 
     [";"] = {
         name = "General",
@@ -51,13 +52,10 @@ wk.register({
 
     d = {
         name = "Diagnostics",
-        a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
         c = { "<cmd>TroubleToggle<cr>", "Toggle Diagnostics" },
-        d = { "<cmd>TroubleToggle worspace_diagnostics<cr>", "Toggle Workspace Diagnostics" },
         e = { "<cmd>TroubleToggle document_diagnostics<cr>", "Toggle Document Diagnostics" },
         f = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
         F = { "<cmd>LspToggleAutoFormat<cr>", "Toggle Autoformat" },
-        i = { "<cmd>LspInfo<cr>", "Info" },
         I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
         j = {
             "<cmd>lua vim.diagnostic.goto_next({buffer=0})<CR>",
@@ -82,8 +80,9 @@ wk.register({
         b = { "<cmd>Telescope file_browser<CR>", "Browse" },
         c = { "<cmd>lua require('buffers').close()<CR>", "Close" },
         n = { "<cmd>enew<CR>", "New File" },
-        o = { "<cmd>Neotree position=float<CR>", "Open" },
-        r = { "<cmd>lua require('telescope.builtin').oldfiles()<CR>", "Open Recent" },
+        o = { "<cmd>lua require('config.telescope').find_files()<CR>", "Open" },
+        O = { "<cmd>lua require('config.telescope').find_files_quickly()<CR>", "Open Quickly" },
+        r = { "<cmd>lua require('config.telescope').oldfiles()<CR>", "Open Recent" },
         s = { "<cmd>update<CR>", "Save" }
     },
 
@@ -161,6 +160,7 @@ wk.register({
         f = { "<cmd>lua require('telescope.builtin').lsp_references()<CR>", "Find References" },
         h = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Code Hover" },
         i = { "<cmd>lua require('telescope.builtin').lsp_implementations<CR>", "Implemention" },
+        I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
         l = { "<cmd>Telescope diagnostics bufnr=0<CR>", "Line Diagnostics" },
         r = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename" },
         s = { "<cmd>lua require('lsp_signature').signature()<CR>", "Signature" },
