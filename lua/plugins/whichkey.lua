@@ -22,7 +22,7 @@ wk.register({
     ["c"] = { "<cmd>ToggleTerm<CR>", "Toggle Terminal" },
     ["?"] = { "<cmd>lua require('config.telescope').oldfiles()<CR>", "Old Files" },
 
-    ["<F2>"] = {
+    [";"] = {
         name = "General",
         b = { "<Plug>(openbrowser-smart-search)", "Browser Search" },
         c = { "<cmd>lua require 'buffers'.close()<CR>", "Close File" },
