@@ -17,11 +17,6 @@ map("n", leader .. "<C-o>", ":lua require 'buffers'.close_others()<CR>")
 map("n", leader .. "q", ":clo<CR>")
 map("n", leader .. "w", ":update<CR>")
 
-map("n", leader .. "rr", ":%s/\\v()", { silent = false })
-map("x", leader .. "rr", ":s/\\v%V()", { silent = false })
-
-map("n", leader .. "N", ":e %:h/", { silent = false })
-
 map({ "x", "n", "o" }, leader .. "j", "<Plug>Lightspeed_s", { noremap = false })
 map({ "x", "n", "o" }, leader .. "k", "<Plug>Lightspeed_S", { noremap = false })
 
