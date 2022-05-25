@@ -16,7 +16,8 @@ wk.setup({
 
 wk.register({
     ["/"] = { "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", "Comment" },
-    ["a"] = { "<cmd>lua require('lists').change_active('Quickfix')<CR>:Ack<space>", "Search - Ack" },
+    -- ["a"] = { "<cmd>lua require('lists').change_active('Quickfix')<CR>:Ack<space>", "Search - Ack" },
+    ["a"] = { "<cmd>lua require('telescope.builtin').grep_string()<CR>", "Search" },
     ["o"] = { "<cmd>SymbolsOutline<CR>", "Symbols Outline" },
     ["q"] = { "<cmd>bd<CR>", "Close File" },
     ["c"] = { "<cmd>ToggleTerm<CR>", "Toggle Terminal" },
@@ -201,7 +202,7 @@ wk.register({
         k = { "<cmd>lua require('telescope.builtin').keymaps()<CR>", "Keymaps" },
         o = { "<cmd>lua require('config.telescope').find_files()<CR>", "Find Files" },
         q = { "<cmd>lua require('config.telescope').find_files_quickly()<CR>", "Quick Find" },
-        s = { "<cmd>lua require('config.telescope').grep_string()<CR>", "Grep String" },
+        s = { "<cmd>lua require('telescope.builtin').grep_string()<CR>", "Grep String" },
         t = { "<cmd>lua require('config.telescope').tags()<CR>", "Tags" },
     },
 
