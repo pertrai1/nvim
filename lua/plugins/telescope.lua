@@ -1,4 +1,5 @@
 local ok, telescope = pcall(require, "telescope")
+local action_layout = require("telescope.actions.layout")
 
 if not ok then
     return
@@ -52,10 +53,12 @@ telescope.setup {
             i = {
                 ["<Tab>"] = "move_selection_next",
                 ["<S-Tab>"] = "move_selection_previous",
+                ["<C-b>"] = action_layout.toggle_preview,
             },
             n = {
                 ["<Tab>"] = "move_selection_next",
                 ["<S-Tab>"] = "move_selection_previous",
+                ["<C-b>"] = action_layout.toggle_preview,
             },
         },
     },
