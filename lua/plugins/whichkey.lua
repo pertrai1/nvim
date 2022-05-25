@@ -82,8 +82,11 @@ wk.register({
         n = { "<cmd>enew<CR>", "New File" },
         o = { "<cmd>lua require('config.telescope').find_files()<CR>", "Open" },
         O = { "<cmd>lua require('config.telescope').find_files_quickly()<CR>", "Open Quickly" },
+        q = { "<cmd>qa<CR>", "Quit Editor" },
         r = { "<cmd>lua require('config.telescope').oldfiles()<CR>", "Open Recent" },
-        s = { "<cmd>update<CR>", "Save" }
+        s = { "<cmd>update<CR>", "Save" },
+        S = { "<cmd>wa<CR>", "Save All" },
+        w = { "<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>", "Add Folder to Workspace" }
     },
 
     g = {
