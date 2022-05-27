@@ -23,6 +23,7 @@ wk.register({
     ["c"] = { "<cmd>ToggleTerm<CR>", "Toggle Terminal" },
     ["?"] = { "<cmd>lua require('config.telescope').oldfiles()<CR>", "Old Files" },
     ["<CR>"] = { "<cmd>lua require'lsp.diagnostics'.line_diagnostics()<CR>", "Line Diagnostics" },
+    ["<C-o>"] = { "<cmd>%bd|e#|bd#<CR>", "Close Other Buffers" },
 
     [";"] = {
         name = "General",

@@ -6,13 +6,15 @@ map("i", "jk", "<esc>", { silent = true })
 map("n", "<BS>", ":nohlsearch<CR>", { noremap = true, silent = true })
 map("n", leader .. "fn", "<cmd>enew<CR>")
 map("n", "<F1>", "<cmd>Alpha<CR>")
+map("n", "<C-d>", "<Del>")
 
 map("n", ";", "<Plug>(clever-f-repeat-forward)")
 map("n", ",", "<Plug>(clever-f-repeat-back)")
 
 -- map("n", leader .. leader, ":<C-u>exe v:count ? v:count . 'b' : 'b' . (bufloaded(0) ? '#' : 'n')<CR>")
 
-map("n", leader .. "<C-o>", ":lua require 'buffers'.close_others()<CR>")
+-- map("n", leader .. "<C-o>", ":lua require 'buffers'.close_others()<CR>")
+map("n", leader .. "<C-o>", "<cmd>%bd|e#|bd#<CR>")
 
 map("n", leader .. "q", ":clo<CR>")
 map("n", leader .. "w", ":update<CR>")
