@@ -71,6 +71,7 @@ telescope.setup {
         oldfiles = {
             sort_lastused = true,
             previewer = false,
+            -- theme = "ivy",
             layout_config = {
                 horizontal = {
                     prompt_position = "bottom",
@@ -79,6 +80,7 @@ telescope.setup {
         },
         command_history = {
             sort_lastused = true,
+            theme = "ivy",
             previewer = false
         }
     },
