@@ -17,7 +17,7 @@ wk.setup({
 wk.register({
     ["/"] = { "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", "Comment" },
     ["!"] = { "<cmd>lua require('telescope.builtin').commands()<CR>", "Commands" },
-    ["?"] = { "<cmd>lua require('config.telescope').oldfiles()<CR>", "Old Files" },
+    ["?"] = { "<cmd>lua require('telescope.builtin').oldfiles()<CR>", "Old Files" },
     [","] = { "<cmd>lua require('telescope.builtin').git_status()<CR>", "Status" },
     -- ["a"] = { "<cmd>lua require('lists').change_active('Quickfix')<CR>:Ack<space>", "Search - Ack" },
     ["a"] = { "<cmd>lua require('telescope.builtin').grep_string()<CR>", "Search" },
@@ -88,7 +88,7 @@ wk.register({
         o = { "<cmd>lua require('config.telescope').find_files()<CR>", "Open" },
         O = { "<cmd>lua require('config.telescope').find_files_quickly()<CR>", "Open Quickly" },
         q = { "<cmd>qa<CR>", "Quit Editor" },
-        r = { "<cmd>lua require('config.telescope').oldfiles()<CR>", "Open Recent" },
+        r = { "<cmd>lua require('telescope.builtin').oldfiles()<CR>", "Open Recent" },
         s = { "<cmd>update<CR>", "Save" },
         S = { "<cmd>wa<CR>", "Save All" },
         w = { "<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>", "Add Folder to Workspace" }

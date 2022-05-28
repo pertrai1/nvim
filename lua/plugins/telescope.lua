@@ -62,6 +62,26 @@ telescope.setup {
             },
         },
     },
+    pickers = {
+        buffers = {
+            sort_lastused = true,
+            -- theme = "ivy",
+            -- layout_config = { height = 10 }
+        },
+        oldfiles = {
+            sort_lastused = true,
+            previewer = false,
+            layout_config = {
+                horizontal = {
+                    prompt_position = "bottom",
+                },
+            },
+        },
+        command_history = {
+            sort_lastused = true,
+            previewer = false
+        }
+    },
     extensions = {
         fzf = {
             fuzzy = true,
