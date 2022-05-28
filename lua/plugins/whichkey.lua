@@ -16,12 +16,14 @@ wk.setup({
 
 wk.register({
     ["/"] = { "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", "Comment" },
+    ["!"] = { "<cmd>lua require('telescope.builtin').commands()<CR>", "Commands" },
+    ["?"] = { "<cmd>lua require('config.telescope').oldfiles()<CR>", "Old Files" },
+    [","] = { "<cmd>lua require('telescope.builtin').git_status()<CR>", "Status" },
     -- ["a"] = { "<cmd>lua require('lists').change_active('Quickfix')<CR>:Ack<space>", "Search - Ack" },
     ["a"] = { "<cmd>lua require('telescope.builtin').grep_string()<CR>", "Search" },
     ["o"] = { "<cmd>SymbolsOutline<CR>", "Symbols Outline" },
     ["q"] = { "<cmd>bd<CR>", "Close File" },
     ["c"] = { "<cmd>ToggleTerm<CR>", "Toggle Terminal" },
-    ["?"] = { "<cmd>lua require('config.telescope').oldfiles()<CR>", "Old Files" },
     ["<CR>"] = { "<cmd>lua require'lsp.diagnostics'.line_diagnostics()<CR>", "Line Diagnostics" },
     ["<C-o>"] = { "<cmd>%bd|e#|bd#<CR>", "Close Other Buffers" },
     ["<Tab>"] = { "<cmd>e#<CR>", "Switch to previous Buffer" },
