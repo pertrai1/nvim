@@ -1,4 +1,8 @@
 local group = vim.api.nvim_create_augroup("MyAutogroup", {})
+-- don't auto comment new line
+vim.api.nvim_create_autocmd("BufEnter", {
+    command = [[set formatoptions-=cro]]
+})
 
 vim.api.nvim_create_autocmd("CursorMoved", {
     group = group,
