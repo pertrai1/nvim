@@ -5,7 +5,7 @@ map("i", "jk", "<esc>", { silent = true })
 -- map("n", ";", ":", { silent = false })
 map("n", "<BS>", ":nohlsearch<CR>", { noremap = true, silent = true })
 map("n", leader .. "fn", "<cmd>enew<CR>")
-map("n", "<F1>", "<cmd>Alpha<CR>")
+map("n", "<Tab>", "<cmd>Alpha<CR>")
 map("n", "<C-d>", "<Del>")
 
 map("n", ";", "<Plug>(clever-f-repeat-forward)")
