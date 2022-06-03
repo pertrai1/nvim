@@ -16,7 +16,7 @@ map("n", ",", "<Plug>(clever-f-repeat-back)")
 -- map("n", leader .. "<C-o>", ":lua require 'buffers'.close_others()<CR>")
 map("n", leader .. "<C-o>", "<cmd>%bd|e#|bd#<CR>")
 
-map("n", leader .. "q", ":clo<CR>")
+map("n", leader .. "q", ":b#|bd#<CR>")
 map("n", leader .. "w", ":update<CR>")
 
 map({ "x", "n", "o" }, leader .. "j", "<Plug>Lightspeed_s", { noremap = false })

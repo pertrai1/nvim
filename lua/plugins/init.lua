@@ -33,7 +33,7 @@ return require("packer").startup({ function()
     use "stevearc/dressing.nvim"
     use "kyazdani42/nvim-web-devicons"
     use "folke/tokyonight.nvim"
-    use "navarasu/onedark.nvim"
+    -- use "navarasu/onedark.nvim"
     use {
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v2.x",
