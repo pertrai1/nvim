@@ -3,12 +3,13 @@
 vim.g.dap_virtual_text = true
 
 -- nvim-dap-ui
-require("dapui").setup()
-require("dbg.node")
+require('telescope').load_extension('dap')
+require('dapui').setup()
+require('dbg.node')
 
-require("telescope").load_extension("dap")
+require('telescope').load_extension('dap')
 
-local utils = require "utils"
+local utils = require 'utils'
 
 -- nvim-dap-ui
 utils.map('n', '<leader>dui', '<cmd>lua require"dapui".toggle()<CR>')
