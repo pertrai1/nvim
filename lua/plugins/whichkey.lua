@@ -112,6 +112,7 @@ wk.register({
         C = { "<cmd>lua require('telescope.builtin').colorscheme()<CR>", "Color Schemes" },
         h = { "<cmd>lua require('telescope.builtin').help_tags()<CR>", "Help Tags" },
         m = { "<cmd>lua require('telescope.builtin').man_pages()<CR>", "Man Pages" },
+        n = { "<cmd>Notifications<CR>", "Notifications" },
         k = { "<cmd>lua require('telescope.builtin').keymaps()<CR>", "Keymaps" },
         t = { "<cmd>write | edit | TSBufEnable highlight<CR>", "Reload Treesitter" },
     },
