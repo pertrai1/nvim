@@ -154,6 +154,7 @@ wk.register({
         name = "Find/Replace",
         b = { "<cmd>lua require('telescope.builtin').oldfiles()<CR>", "Recent File" },
         g = { "<cmd>lua require('telescope.builtin').git_files()<CR>", "Git Files" },
+        j = { "<cmd>join<CR>", "Join Lines" },
         R = { "<cmd>lua require('telescope.builtin').registers()<CR>", "Registers" },
         r = { "<cmd>lua require('spectre').open()<cr>", "Replace" },
         w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", "Replace Word" },
