@@ -54,11 +54,13 @@ telescope.setup {
                 ["<Tab>"] = "move_selection_next",
                 ["<S-Tab>"] = "move_selection_previous",
                 ["<C-b>"] = action_layout.toggle_preview,
+                ["<C-r>"] = require('telescope.actions').delete_buffer
             },
             n = {
                 ["<Tab>"] = "move_selection_next",
                 ["<S-Tab>"] = "move_selection_previous",
                 ["<C-b>"] = action_layout.toggle_preview,
+                ["<C-r>"] = require('telescope.actions').delete_buffer
             },
         },
     },

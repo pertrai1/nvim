@@ -32,6 +32,7 @@ return require("packer").startup({ function()
     -- Neovim plugin to improve the default vim.ui interfaces
     use "stevearc/dressing.nvim"
     use "kyazdani42/nvim-web-devicons"
+    use "rcarriga/nvim-notify"
     use "folke/tokyonight.nvim"
     -- use "navarasu/onedark.nvim"
     use {
