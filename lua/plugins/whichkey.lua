@@ -34,9 +34,10 @@ wk.register({
         c = { "<cmd>lua require 'buffers'.close()<CR>", "Close File" },
         C = { "<cmd>lua require 'buffers'.close_others()<CR>", "Close Others" },
         -- f = { "<cmd>lua require('telescope.builtin').find_files({layout_config = { horizontal = {prompt_position = 'bottom'}},previewer = false})<CR>", "Open File" },
-        f = { "<cmd>lua require('config.telescope').find_files_no_previewer()<CR>", "Open File" },
+        -- f = { "<cmd>lua require('config.telescope').find_files_no_previewer()<CR>", "Open File" },
+        f = { "<cmd>lua require('config.telescope').leader_f()<CR>", "Open File" },
         g = { "<cmd>lua require('telescope.builtin').git_files()<CR>", "Open File - Git" },
-        h = { "<cmd>split", "Horizontal Split" },
+        h = { "<cmd>split<CR>", "Horizontal Split" },
         s = { "<cmd>update<CR>", "Save File" },
         v = { "<cmd>vsplit<CR>", "Vertical Split" }
     },

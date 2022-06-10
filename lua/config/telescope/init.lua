@@ -110,4 +110,18 @@ function M.oldfiles()
   require("telescope").extensions.frecency.frecency(themes.get_ivy {})
 end
 
+function M.leader_f()
+  require("telescope.builtin").buffers({
+    entry_maker = require("config.telescope.leader_f").gen_from_buffer_like_leaderf(),
+    previewer = false,
+    sort_lastused = true,
+    layout_config = {
+      horizontal = {
+        prompt_position = "bottom",
+      },
+    },
+
+  })
+end
+
 return M
