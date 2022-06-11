@@ -40,9 +40,9 @@ return require("packer").startup({ function()
         branch = "v2.x",
         requires = {
             "nvim-lua/plenary.nvim",
+            "kyazdani42/nvim-web-devicons",
             "MunifTanjim/nui.nvim",
         },
-        after = { "nvim-web-devicons" },
     }
     use "akinsho/bufferline.nvim"
     use { "liuchengxu/vista.vim", cmd = "Vista" }
