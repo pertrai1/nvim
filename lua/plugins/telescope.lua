@@ -23,6 +23,7 @@ telescope.setup {
         },
         selection_caret = "  ",
         entry_prefix = "  ",
+        scroll_strategy = 'limit',
         selection_strategy = "reset",
         sorting_strategy = "ascending",
         layout_strategy = "horizontal",
@@ -37,9 +38,9 @@ telescope.setup {
             height = 0.90,
             preview_cutoff = 120,
         },
-        file_sorter = require("telescope.sorters").get_fuzzy_file,
+        file_sorter = require("telescope.sorters").get_fzy_sorter,
         file_ignore_patterns = { "node_modules", ".git/", "dist/" },
-        generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
+        generic_sorter = require("telescope.sorters").get_fzy_sorter,
         path_display = { "absolute" },
         winblend = 0,
         color_devicons = true,
@@ -65,6 +66,9 @@ telescope.setup {
         },
     },
     pickers = {
+        live_grep = {
+            only_sort_text = true
+        },
         buffers = {
             sort_lastused = true,
             -- theme = "ivy",
@@ -91,7 +95,7 @@ telescope.setup {
             fuzzy = true,
             override_generic_sorter = true,
             override_file_sorter = true,
-            case_mode = "smart_case",
+            case_mode = 'smart_case',
         },
     },
 }

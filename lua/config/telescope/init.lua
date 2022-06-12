@@ -79,6 +79,7 @@ function M.live_grep()
   local opts_with_preview
 
   opts_with_preview = {
+    path_display = {},
     grep_open_files = true,
     layout_strategy = "vertical",
     layout_config = {
