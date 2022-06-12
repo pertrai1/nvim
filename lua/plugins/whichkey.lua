@@ -45,7 +45,7 @@ wk.register({
     b = {
         name = "Buffers",
         d = { "<cmd>BufferLineSortByDirectory<CR>", "Sort by Directory" },
-        f = { "<cmd>lua require('telescope.builtin').buffers()<CR>", "List Buffers" },
+        f = { "<cmd>lua require('config.telescope').my_buffers()<CR>", "List Buffers" },
         j = { "<cmd>BufferLinePick<CR>", "Jump to Buffer" },
         l = { "<cmd>BufferLineCloseLeft<CR>", "Close all Left" },
         m = { "<cmd>BufferLineMoveNext<CR>", "Move Right" },
@@ -196,6 +196,7 @@ wk.register({
     t = {
         name = "Telescope",
         b = { "<cmd>lua require('config.telescope').current_buffer_fuzzy_find()<CR>", "Find - Buffer" },
+        B = { "<cmd>lua require('config.telescope').my_buffers()<CR>", "My Buffers" },
         e = { "<cmd>Telescope file_browser<CR>", "File Browser" },
         f = { "<cmd>lua require('config.telescope').live_grep()<CR>", "Search - Buffer" },
         g = {

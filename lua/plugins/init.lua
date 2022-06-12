@@ -214,6 +214,11 @@ return require("packer").startup({ function()
     }
 
     use "mg979/vim-visual-multi"
+
+    use {
+        "kosayoda/nvim-lightbulb",
+        requires = "antoinemadec/FixCursorHold.nvim",
+    }
 end,
 config = {
     display = {

@@ -110,6 +110,25 @@ function M.oldfiles()
   require("telescope").extensions.frecency.frecency(themes.get_ivy {})
 end
 
+function M.my_buffers()
+  require('telescope.builtin').buffers(
+    require('telescope.themes').get_dropdown {
+      previewer = false,
+      only_cwd = vim.fn.haslocaldir() == 1,
+      show_all_buffers = false,
+      sort_mru = true,
+      ignore_current_buffer = true,
+      sorter = require('telescope.sorters').get_substr_matcher(),
+      selection_strategy = 'closest',
+      path_display = { 'shorten' },
+      layout_strategy = 'center',
+      winblend = 0,
+      layout_config = { width = 70 },
+      color_devicons = true,
+    }
+  )
+end
+
 function M.leader_f()
   require("telescope.builtin").buffers({
     entry_maker = require("config.telescope.leader_f").gen_from_buffer_like_leaderf(),
