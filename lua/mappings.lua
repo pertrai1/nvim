@@ -86,8 +86,21 @@ map("n", "<C-j>", "<CMD>lua require('Navigator').down()<CR>")
 map("n", "<C-k>", "<CMD>lua require('Navigator').up()<CR>")
 map("n", "<C-l>", "<CMD>lua require('Navigator').right()<CR>")
 
+-- https://github.com/mhinz/vim-galore#saner-behavior-of-n-and-n
+map("n", "n", "'Nn'[v:searchforward]", { expr = true })
+map("x", "n", "'Nn'[v:searchforward]", { expr = true })
+map("o", "n", "'Nn'[v:searchforward]", { expr = true })
+map("n", "N", "'nN'[v:searchforward]", { expr = true })
+map("x", "N", "'nN'[v:searchforward]", { expr = true })
+map("o", "N", "'nN'[v:searchforward]", { expr = true })
+
 map("x", "<C-j>", ":m'>+<cr>`<my`>mzgv`yo`z", { silent = false })
 map("x", "<C-k>", ":m'<-2<cr>`>my`<mzgv`yo`z", { silent = false })
+
+-- Quickly move current line
+-- These mappings also take a count, so 2]e moves the current line 2 lines below.
+map("n", "[e", ":<c-u>execute 'move -1-'. v:count1<CR>", { noremap = true })
+map("n", "]e", ":<c-u>execute 'move +'. v:count1<CR>", { noremap = true })
 
 -- special way to handle option key + jklh in mac
 map("n", "¬", "<c-w>5>")
