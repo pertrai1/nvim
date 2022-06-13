@@ -58,8 +58,6 @@ wk.register({
 
     d = {
         name = "Diagnostics",
-        c = { "<cmd>TroubleToggle<cr>", "Toggle Diagnostics" },
-        e = { "<cmd>TroubleToggle document_diagnostics<cr>", "Toggle Document Diagnostics" },
         f = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
         F = { "<cmd>LspToggleAutoFormat<cr>", "Toggle Autoformat" },
         I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
@@ -80,8 +78,15 @@ wk.register({
         S = { "<cmd>lua require('telescope.builtin').lsp_workspace_symbols()<CR>", "Workspace Symbols" },
     },
 
+    e = {
+        name = "+Errors",
+        d = { "<cmd>TroubleToggle document_diagnostics<cr>", "Trouble Document Diagnostics" },
+        e = { "<cmd>TroubleToggle<cr>", "Trouble" },
+        w = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "Trouble Workspace Diagnostics" },
+    },
+
     f = {
-        name = "File",
+        name = "+File",
         a = { "<cmd>lua require('harpoon.mark').add_file()<CR>", "Add to Harpoon" },
         b = { "<cmd>Telescope file_browser<CR>", "Browse" },
         c = { "<cmd>lua require('buffers').close()<CR>", "Close" },
@@ -130,7 +135,7 @@ wk.register({
         }
     },
 
-    k = {
+    n = {
         name = "Navigation",
         b = { "<cmd>lua require('telescope.builtin').buffers()<CR>", "Buffers" },
         c = { "<cmd>HopChar1<CR>", "Hop Character" },
