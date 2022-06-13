@@ -219,6 +219,8 @@ return require("packer").startup({ function()
         "kosayoda/nvim-lightbulb",
         requires = "antoinemadec/FixCursorHold.nvim",
     }
+
+    use "mbbill/undotree"
 end,
 config = {
     display = {

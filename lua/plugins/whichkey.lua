@@ -24,6 +24,7 @@ wk.register({
     ["o"] = { "<cmd>SymbolsOutline<CR>", "Symbols Outline" },
     ["q"] = { "<cmd>b#|bd#<CR>", "Close File" },
     ["c"] = { "<cmd>ToggleTerm<CR>", "Toggle Terminal" },
+    ["u"] = { "<cmd>UndotreeToggle<CR>", "Undo Tree" },
     ["<CR>"] = { "<cmd>lua require'lsp.diagnostics'.line_diagnostics()<CR>", "Line Diagnostics" },
     ["<C-o>"] = { "<cmd>%bd|e#|bd#<CR>", "Close Other Buffers" },
     ["<Tab>"] = { "<cmd>e#<CR>", "Switch to previous Buffer" },
@@ -219,15 +220,15 @@ wk.register({
         t = { "<cmd>lua require('config.telescope').tags()<CR>", "Tags" },
     },
 
-    u = {
-        name = "Unit Testing",
-        f = { "<cmd>TestFile<CR>", "File" },
-        l = { "<cmd>TestLast<CR>", "Last" },
-        n = { "<cmd>TestNearest<CR>", "Nearest" },
-        s = { "<cmd>TestSuite<CR>", "Suite" },
-        v = { "<cmd>TestVisit<CR>", "Visit" }
-    },
-
+    -- u = {
+    --     name = "Unit Testing",
+    --     f = { "<cmd>TestFile<CR>", "File" },
+    --     l = { "<cmd>TestLast<CR>", "Last" },
+    --     n = { "<cmd>TestNearest<CR>", "Nearest" },
+    --     s = { "<cmd>TestSuite<CR>", "Suite" },
+    --     v = { "<cmd>TestVisit<CR>", "Visit" }
+    -- },
+    --
     v = {
         name = "View",
         c = { "<cmd>lua require('telescope.builtin').commands()<CR>", "Commands" },

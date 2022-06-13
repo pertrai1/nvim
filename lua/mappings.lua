@@ -19,6 +19,8 @@ map("n", leader .. "<C-o>", "<cmd>%bd|e#|bd#<CR>")
 map("n", leader .. "q", ":b#|bd#<CR>")
 map("n", leader .. "w", ":update<CR>")
 
+map("n", leader .. "u", "<cmd>UndotreeToggle<CR>")
+
 map({ "x", "n", "o" }, leader .. "j", "<Plug>Lightspeed_s", { noremap = false })
 map({ "x", "n", "o" }, leader .. "k", "<Plug>Lightspeed_S", { noremap = false })
 
