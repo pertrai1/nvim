@@ -51,7 +51,6 @@ require "plugins.copilot"
 require "plugins.hop"
 require "plugins.nvim-lightbulb"
 
-require "dbg"
 require "lsp"
 require "statusline"
 
