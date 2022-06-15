@@ -45,7 +45,6 @@ return require("packer").startup({ function()
         },
     }
     use "akinsho/bufferline.nvim"
-    use { "liuchengxu/vista.vim", cmd = "Vista" }
 
     use "tami5/sqlite.lua"
 

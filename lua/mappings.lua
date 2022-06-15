@@ -5,7 +5,6 @@ map("i", "jk", "<esc>", { silent = true })
 -- map("n", ";", ":", { silent = false })
 map("n", "<BS>", ":nohlsearch<CR>", { noremap = true, silent = true })
 map("n", leader .. "fn", "<cmd>enew<CR>")
-
 map("n", "<C-d>", "<Del>")
 map("n", "<C-s>", "<cmd>lua require('session-lens').search_session()<CR>")
 

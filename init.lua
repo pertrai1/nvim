@@ -50,7 +50,6 @@ require "plugins.open-browser"
 require "plugins.vim-ultest"
 require "plugins.copilot"
 require "plugins.hop"
-require "plugins.vista"
 require "plugins.nvim-lightbulb"
 
 require "dbg"
