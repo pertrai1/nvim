@@ -202,11 +202,6 @@ map("n", "t<C-a>", ":TestSuite<CR>", { silent = true })
 map("n", "t<C-l>", ":TestLast<CR>", { silent = true })
 map("n", "t<C-v>", ":TestVisit<CR>", { silent = true })
 
--- Spectre
-map("n", leader .. "sp", "<cmd>lua require('spectre').open()<CR>", { noremap = true })
-map("n", leader .. "sv", "<cmd>lua require('spectre').open_visual({select_word=true})<CR>", { noremap = true })
-map("n", leader .. "sf", "<cmd>lua require('spectre').open_file_search()<CR>", { noremap = true })
-
 -- Trouble
 map("n", leader .. "xx", "<cmd>TroubleToggle<CR>", { silent = true, noremap = true })
 map("n", leader .. "xw", "<cmd>TroubleToggle workspace_diagnostics<CR>", { silent = true, noremap = true })

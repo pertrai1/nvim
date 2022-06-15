@@ -23,7 +23,6 @@ require "plugins.lsp-format"
 require "plugins.fidget"
 
 -- require "plugins.fzf"
-require "plugins.spectre"
 require "plugins.whichkey"
 require "plugins.vim-table-mode"
 -- require "plugins.onedark"

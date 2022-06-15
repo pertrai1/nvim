@@ -126,20 +126,6 @@ return require("packer").startup({ function()
         end
     }
 
-    -- Debug
-    use "mfussenegger/nvim-dap"
-    use "nvim-telescope/telescope-dap.nvim"
-    use "theHamsta/nvim-dap-virtual-text"
-    use "rcarriga/nvim-dap-ui"
-    use { "Pocco81/dap-buddy.nvim", branch = "dev" }
-
-    use {
-        "windwp/nvim-spectre",
-        requires = {
-            "nvim-lua/plenary.nvim"
-        },
-    }
-
     -- Language
     use "L3MON4D3/LuaSnip"
     use "SirVer/ultisnips"
@@ -223,9 +209,9 @@ return require("packer").startup({ function()
 
     use "mbbill/undotree"
 end,
-    config = {
-        display = {
-            open_fn = require('packer.util').float,
-        }
+config = {
+    display = {
+        open_fn = require('packer.util').float,
     }
+}
 })

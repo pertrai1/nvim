@@ -42,6 +42,7 @@ wk.register({
 
     b = {
         name = "Buffers",
+        b = { "<cmd>lua require('telescope.builtin').buffers()<CR>", "Buffers" },
         d = { "<cmd>BufferLineSortByDirectory<CR>", "Sort by Directory" },
         f = { "<cmd>lua require('config.telescope').my_buffers()<CR>", "List Buffers" },
         j = { "<cmd>BufferLinePick<CR>", "Jump to Buffer" },
@@ -78,9 +79,12 @@ wk.register({
 
     e = {
         name = "+Errors",
-        d = { "<cmd>TroubleToggle document_diagnostics<cr>", "Trouble Document Diagnostics" },
-        e = { "<cmd>TroubleToggle<cr>", "Trouble" },
-        w = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "Trouble Workspace Diagnostics" },
+        d = { "<cmd>TroubleToggle document_diagnostics<CR>", "Document Diagnostics" },
+        l = { "<cmd>TroubleToggle loclist<CR>", "Location List" },
+        q = { "<cmd>TroubleToggle quickfix<CR>", "Quickfix List" },
+        r = { "<cmd>TroubleToggle lsp_references<CR>", "LSP References" },
+        t = { "<cmd>TroubleToggle<cr>", "Problems" },
+        w = { "<cmd>TroubleToggle workspace_diagnostics<CR>", "Workspace Diagnostics" },
     },
 
     f = {
@@ -112,26 +116,11 @@ wk.register({
     },
 
     h = {
-        name = "Help",
-        C = { "<cmd>lua require('telescope.builtin').colorscheme()<CR>", "Color Schemes" },
-        h = { "<cmd>lua require('telescope.builtin').help_tags()<CR>", "Help Tags" },
-        m = { "<cmd>lua require('telescope.builtin').man_pages()<CR>", "Man Pages" },
-        n = { "<cmd>Notifications<CR>", "Notifications" },
-        k = { "<cmd>lua require('telescope.builtin').keymaps()<CR>", "Keymaps" },
-        t = { "<cmd>write | edit | TSBufEnable highlight<CR>", "Reload Treesitter" },
-    },
-
-    i = {
-        name = "Investigate",
-        b = { "<cmd>lua require'dap'.toggle_breakpoint()<CR>", "Toggle Breakpoint" },
-        c = { "<cmd>lua require'dap'.continue()<CR>", "Continue" },
-        s = {
-            name = "Step",
-            i = { "<cmd>lua require'dap'.step_into()<CR>", "Into" },
-            o = { "<cmd>lua require'dap'.step_out()<CR>", "Out" },
-            v = { "<cmd>lua require'dap'.step_over()<CR>", "Over" },
-        }
-    },
+        name = "Hop",
+        c = { "<cmd>HopChar1<CR>", "Hop Character" },
+        f = { "<Plug>Lightspeed_s", "Jump Forward" },
+        l = { "<cmd>HopLine<CR>", "Hop Line" },
+        w = { "<cmd>HopWord<CR>", "Hop Word" }, },
 
     l = {
         name = "LSP",
@@ -149,21 +138,11 @@ wk.register({
         z = { "<cmd>LspInfo<CR>", "LSP Info" }
     },
 
-    n = {
-        name = "Navigation",
-        b = { "<cmd>lua require('telescope.builtin').buffers()<CR>", "Buffers" },
-        c = { "<cmd>HopChar1<CR>", "Hop Character" },
-        F = { "<cmd>lua require('config.telescope').find_files()<CR>", "Files" },
-        f = { "<Plug>Lightspeed_s", "Jump Forward" },
-        h = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>", "Toggle Harpoon" },
-        l = { "<cmd>HopLine<CR>", "Hop Line" },
-        m = { "<cmd>Telescope harpoon marks<CR>", "Harpoon Marks" },
-        w = { "<cmd>HopWord<CR>", "Hop Word" },
-    },
-
     o = {
         name = "Open",
         c = { "<cmd>ToggleTerm<CR>", "Toggle Terminal" },
+        h = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>", "Harpoon" },
+        m = { "<cmd>Telescope harpoon marks<CR>", "Harpoon Marks" },
         s = { "<cmd>SymbolsOutline<CR>", "Symbols Outline" },
         u = { "<cmd>UndotreeToggle<CR>", "Undo Tree" },
     },
@@ -177,29 +156,18 @@ wk.register({
         u = { "<cmd>PackerUpdate<cr>", "Update" },
     },
 
-    r = {
-        name = "Find/Replace",
-        b = { "<cmd>lua require('telescope.builtin').oldfiles()<CR>", "Recent File" },
-        g = { "<cmd>lua require('telescope.builtin').git_files()<CR>", "Git Files" },
-        j = { "<cmd>join<CR>", "Join Lines" },
-        R = { "<cmd>lua require('telescope.builtin').registers()<CR>", "Registers" },
-        r = { "<cmd>lua require('spectre').open()<cr>", "Replace" },
-        w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", "Replace Word" },
-        f = { "<cmd>lua require('spectre').open_file_search()<cr>", "Replace Buffer" },
-        t = { "<cmd>lua require('config.telescope').live_grep()<CR>", "Find in Files" },
-    },
-
     s = {
         name = "Search",
         b = { "<cmd>lua require('config.telescope').current_buffer_fuzzy_find()<CR>", "Current Buffer" },
         c = { "<cmd>lua require('telescope.builtin').grep_string()<CR>", "Current Word" },
-        f = { "<cmd>lua require('telescope.builtin').live_grep()<CR>", "Find Text" },
+        f = { "<cmd>lua require('config.telescope').find_files()<CR>", "Files" },
         h = { "<cmd>lua require('telescope.builtin').search_history()<CR>", "History" },
         l = { "<cmd>lua require('telescope.builtin').resume()<CR>", "Last Picks" },
         m = { "<cmd>lua require('telescope.builtin').marks()<CR>", "Marks" },
         p = { "<cmd>lua require('fzf-lua').grep_project()<CR>", "Project" },
         P = { "<cmd>lua require('fzf-lua').grep_project()<CR>", "Project - Live" },
         r = { "<cmd>lua require('telescope.builtin').pickers()<CR>", "Recent Picks" },
+        t = { "<cmd>lua require('telescope.builtin').live_grep()<CR>", "Text" },
         v = { "<cmd>lua require('fzf-lua').grep_visual()<CR>", "Visual Selection" },
     },
 
@@ -233,20 +201,19 @@ wk.register({
     --     v = { "<cmd>TestVisit<CR>", "Visit" }
     -- },
     --
-    v = {
-        name = "View",
-        c = { "<cmd>lua require('telescope.builtin').commands()<CR>", "Commands" },
-        d = { "<cmd>TroubleToggle<cr>", "Problems" },
-        e = { "<cmd>Neotree position=left toggle<CR>", "Explorer" },
-        f = { "<cmd>lua require('telescope.builtin').live_grep()<CR>", "Search" },
-        n = { "<cmd>Neotree toggle float<CR>", "Sidebar Float" },
-    },
 
     w = {
         name = "Window",
+        c = { "<cmd>lua require('telescope.builtin').commands()<CR>", "Commands" },
+        C = { "<cmd>lua require('telescope.builtin').colorscheme()<CR>", "Color Schemes" },
+        h = { "<cmd>lua require('telescope.builtin').help_tags()<CR>", "Help Tags" },
+        m = { "<cmd>lua require('telescope.builtin').man_pages()<CR>", "Man Pages" },
+        n = { "<cmd>Notifications<CR>", "Notifications" },
+        k = { "<cmd>lua require('telescope.builtin').keymaps()<CR>", "Keymaps" },
         S = { "<cmd>Neotree position=right<CR>", "Sidebar Right" },
         s = { "<cmd>Neotree position=left<CR>", "Sidebar Left" },
         t = { "<cmd>Neotree position=float<CR>", "Sidebar Float" },
+        T = { "<cmd>write | edit | TSBufEnable highlight<CR>", "Reload Treesitter" },
         ["-"] = { "<C-w>s<CR>", "Split Window Below" },
         ["|"] = { "<C-w>v<CR>", "Split Window Right" }
     }
