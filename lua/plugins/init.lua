@@ -94,13 +94,6 @@ return require("packer").startup({ function()
         "folke/which-key.nvim",
     }
 
-    use {
-        "goolord/alpha-nvim",
-        config = function()
-            require("plugins.alpha").setup()
-        end,
-    }
-
     use { "akinsho/toggleterm.nvim",
         tag = 'v1.*',
     }
@@ -159,7 +152,16 @@ return require("packer").startup({ function()
     use "lukas-reineke/virt-column.nvim"
     use "lukas-reineke/indent-blankline.nvim"
     use "numToStr/Comment.nvim"
+
     use "rmagatti/auto-session"
+    use {
+        "rmagatti/session-lens",
+        requires = { "rmagatti/auto-session", "nvim-telescope/telescope.nvim" },
+        config = function()
+            require('session-lens').setup()
+        end
+    }
+
     use "krisajenkins/vim-projectlocal"
     use "numToStr/Navigator.nvim"
     use "cohama/lexima.vim"
@@ -222,9 +224,9 @@ return require("packer").startup({ function()
 
     use "mbbill/undotree"
 end,
-config = {
-    display = {
-        open_fn = require('packer.util').float,
+    config = {
+        display = {
+            open_fn = require('packer.util').float,
+        }
     }
-}
 })

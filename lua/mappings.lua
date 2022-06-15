@@ -5,8 +5,9 @@ map("i", "jk", "<esc>", { silent = true })
 -- map("n", ";", ":", { silent = false })
 map("n", "<BS>", ":nohlsearch<CR>", { noremap = true, silent = true })
 map("n", leader .. "fn", "<cmd>enew<CR>")
-map("n", "<Tab>", "<cmd>Alpha<CR>")
+
 map("n", "<C-d>", "<Del>")
+map("n", "<C-s>", "<cmd>lua require('session-lens').search_session()<CR>")
 
 map("n", ";", "<Plug>(clever-f-repeat-forward)")
 map("n", ",", "<Plug>(clever-f-repeat-back)")
@@ -36,12 +37,12 @@ map("n", leader .. "g", ":lua require('config.telescope').live_grep()<CR>")
 
 --Add leader shortcuts
 -- map("n", "<C-p>", ":lua require('config.telescope').git_files()<CR>")
-map("n", "<C-p>", ":lua require('telescope.builtin').git_files(require('telescope.themes').get_dropdown{layout_config = {height = 0.7}, previewer = false})<CR>")
+map("n", "<C-p>",
+  ":lua require('telescope.builtin').git_files(require('telescope.themes').get_dropdown{layout_config = {height = 0.7}, previewer = false})<CR>")
 map('n', leader .. '?', ":lua require('config.telescope').oldfiles()<CR>", { noremap = true })
 map('n', leader .. '<space>', ":lua require('config.telescope').my_buffers()<CR>", { noremap = true })
 map('n', leader .. 'tb', ":lua require('config.telescope').current_buffer_fuzzy_find()<CR>", { noremap = true })
-map('n', leader .. 'tf', ":lua require('config.telescope').live_grep()<CR>", { noremap = true })
-map('n', leader .. 'tgb', ":lua require('telescope.builtin').git_branches()<CR>", { noremap = true })
+map('n', leader .. 'tg', ":lua require('config.telescope').live_grep()<CR>", { noremap = true })
 map('n', leader .. 'th', ":lua require('telescope.builtin').help_tags()<CR>", { noremap = true })
 map('n', leader .. 'tk', ":lua require('telescope.builtin').keymaps()<CR>", { noremap = true })
 map("n", leader .. "tm", ":lua require('telescope.builtin').marks()<CR>")
@@ -51,7 +52,7 @@ map('n', leader .. 'ts', ":lua require('telescope.builtin').grep_string()<CR>", 
 map('n', leader .. 'tt', ":lua require('telescope.builtin').tags()<CR>", { noremap = true })
 -- map('n', leader .. 'tg', ":lua require('telescope.builtin').live_grep({grep_open_files=true})<CR>", { noremap = true })
 -- map('n', leader .. 'tg', ":lua require('utils').grep()<CR>", { noremap = true })
-map("n", leader .. "fb", ":Telescope file_browser<CR>", { noremap = true })
+map("n", leader .. "tf", ":Telescope file_browser<CR>", { noremap = true })
 map("n", leader .. "<C-p>", ":lua require('telescope.builtin').commands()<CR>")
 
 map("n", "<UP>", ":lua require('lists').move('up')<CR>")
@@ -139,7 +140,8 @@ map("n", leader .. "t", ":Neotree position=left toggle<CR>")
 map(
   "i",
   "<CR>",
-  [[pumvisible() ? complete_info()["selected"] != "-1" ? "\<Plug>(completion_confirm_completion)" : "\<c-e>" : lexima#expand('<LT>CR>', 'i')]],
+  [[pumvisible() ? complete_info()["selected"] != "-1" ? "\<Plug>(completion_confirm_completion)" : "\<c-e>" : lexima#expand('<LT>CR>', 'i')]]
+  ,
   { expr = true, noremap = false }
 )
 
