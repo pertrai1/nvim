@@ -12,20 +12,20 @@ telescope.setup {
     defaults = {
         vimgrep_arguments = {
             "rg",
-            "--color=never",
+            -- "--color=never",
             "--no-heading",
             "--with-filename",
             "--line-number",
             "--column",
-            "--no-ignore",
+            -- "--no-ignore",
             "--smart-case",
-            "--hidden",
+            -- "--hidden",
         },
         selection_caret = "  ",
         entry_prefix = "  ",
         scroll_strategy = 'limit',
         selection_strategy = "reset",
-        sorting_strategy = "ascending",
+        sorting_strategy = "descending",
         layout_strategy = "horizontal",
         layout_config = {
             horizontal = {

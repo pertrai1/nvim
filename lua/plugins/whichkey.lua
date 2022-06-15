@@ -21,10 +21,7 @@ wk.register({
     [","] = { "<cmd>lua require('telescope.builtin').git_status()<CR>", "Status" },
     -- ["a"] = { "<cmd>lua require('lists').change_active('Quickfix')<CR>:Ack<space>", "Search - Ack" },
     ["a"] = { "<cmd>lua require('telescope.builtin').live_grep()<CR>", "Search" },
-    ["o"] = { "<cmd>SymbolsOutline<CR>", "Symbols Outline" },
     ["q"] = { "<cmd>b#|bd#<CR>", "Close File" },
-    ["c"] = { "<cmd>ToggleTerm<CR>", "Toggle Terminal" },
-    ["u"] = { "<cmd>UndotreeToggle<CR>", "Undo Tree" },
     ["<CR>"] = { "<cmd>lua require'lsp.diagnostics'.line_diagnostics()<CR>", "Line Diagnostics" },
     ["<C-o>"] = { "<cmd>%bd|e#|bd#<CR>", "Close Other Buffers" },
     ["<Tab>"] = { "<cmd>e#<CR>", "Switch to previous Buffer" },
@@ -136,6 +133,22 @@ wk.register({
         }
     },
 
+    l = {
+        name = "LSP",
+        a = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code Actions" },
+        d = { "<cmd>lua vim.lsp.buf.declaration()<CR>", "Declaration (gD)" },
+        D = { "<cmd>lua require('telescope.builtin').lsp_definitions()<CR>", "Definition" },
+        f = { "<cmd>lua require('telescope.builtin').lsp_references()<CR>", "Find References" },
+        h = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Code Hover" },
+        i = { "<cmd>lua require('telescope.builtin').lsp_implementations<CR>", "Implemention" },
+        I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
+        l = { "<cmd>Telescope diagnostics bufnr=0<CR>", "Line Diagnostics" },
+        r = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename" },
+        s = { "<cmd>lua require('lsp_signature').signature()<CR>", "Signature" },
+        t = { "<cmd>lua vim.lsp.buf.type_definition()<CR>", "Type Definition" },
+        z = { "<cmd>LspInfo<CR>", "LSP Info" }
+    },
+
     n = {
         name = "Navigation",
         b = { "<cmd>lua require('telescope.builtin').buffers()<CR>", "Buffers" },
@@ -146,6 +159,13 @@ wk.register({
         l = { "<cmd>HopLine<CR>", "Hop Line" },
         m = { "<cmd>Telescope harpoon marks<CR>", "Harpoon Marks" },
         w = { "<cmd>HopWord<CR>", "Hop Word" },
+    },
+
+    o = {
+        name = "Open",
+        c = { "<cmd>ToggleTerm<CR>", "Toggle Terminal" },
+        s = { "<cmd>SymbolsOutline<CR>", "Symbols Outline" },
+        u = { "<cmd>UndotreeToggle<CR>", "Undo Tree" },
     },
 
     p = {
@@ -167,22 +187,6 @@ wk.register({
         w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", "Replace Word" },
         f = { "<cmd>lua require('spectre').open_file_search()<cr>", "Replace Buffer" },
         t = { "<cmd>lua require('config.telescope').live_grep()<CR>", "Find in Files" },
-    },
-
-    l = {
-        name = "LSP",
-        a = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code Actions" },
-        d = { "<cmd>lua vim.lsp.buf.declaration()<CR>", "Declaration (gD)" },
-        D = { "<cmd>lua require('telescope.builtin').lsp_definitions()<CR>", "Definition" },
-        f = { "<cmd>lua require('telescope.builtin').lsp_references()<CR>", "Find References" },
-        h = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Code Hover" },
-        i = { "<cmd>lua require('telescope.builtin').lsp_implementations<CR>", "Implemention" },
-        I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
-        l = { "<cmd>Telescope diagnostics bufnr=0<CR>", "Line Diagnostics" },
-        r = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename" },
-        s = { "<cmd>lua require('lsp_signature').signature()<CR>", "Signature" },
-        t = { "<cmd>lua vim.lsp.buf.type_definition()<CR>", "Type Definition" },
-        z = { "<cmd>LspInfo<CR>", "LSP Info" }
     },
 
     s = {
@@ -242,7 +246,9 @@ wk.register({
         name = "Window",
         S = { "<cmd>Neotree position=right<CR>", "Sidebar Right" },
         s = { "<cmd>Neotree position=left<CR>", "Sidebar Left" },
-        t = { "<cmd>Neotree position=float<CR>", "Sidebar Float" }
+        t = { "<cmd>Neotree position=float<CR>", "Sidebar Float" },
+        ["-"] = { "<C-w>s<CR>", "Split Window Below" },
+        ["|"] = { "<C-w>v<CR>", "Split Window Right" }
     }
 
 }, { mode = "n", prefix = "<Space>" })
