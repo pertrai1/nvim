@@ -19,7 +19,6 @@ wk.register({
     ["!"] = { "<cmd>lua require('telescope.builtin').commands()<CR>", "Commands" },
     ["?"] = { "<cmd>lua require('config.telescope').oldfiles()<CR>", "Old Files" },
     [","] = { "<cmd>lua require('telescope.builtin').git_status()<CR>", "Status" },
-    ["a"] = { "<cmd>lua require('config.telescope').live_grep()<CR>", "Search" },
     ["q"] = { "<cmd>b#|bd#<CR>", "Close File" },
     ["<CR>"] = { "<cmd>lua require'lsp.diagnostics'.line_diagnostics()<CR>", "Line Diagnostics" },
     ["<C-o>"] = { "<cmd>%bd|e#|bd#<CR>", "Close Other Buffers" },
@@ -38,6 +37,28 @@ wk.register({
         s = { "<cmd>update<CR>", "Save File" },
         v = { "<cmd>vsplit<CR>", "Vertical Split" }
     },
+
+    a = {
+        name = "Telescope",
+        b = { "<cmd>lua require('config.telescope').current_buffer_fuzzy_find()<CR>", "Find - Buffer" },
+        B = { "<cmd>lua require('config.telescope').my_buffers()<CR>", "My Buffers" },
+        e = { "<cmd>Telescope file_browser<CR>", "File Browser" },
+        f = { "<cmd>lua require('config.telescope').live_grep()<CR>", "Search - Buffer" },
+        g = {
+            name = "Git",
+            b = { "<cmd>lua require('telescope.builtin').git_branches()<CR>", "Branches" },
+            c = { "<cmd>lua require('telescope.builtin').git_commits()<CR>", "Commits" },
+            f = { "<cmd>lua require('telescope.builtin').git_files()<CR>", "Files" },
+            s = { "<cmd>lua require('telescope.builtin').git_status()<CR>", "Status" },
+        },
+        h = { "<cmd>lua require('telescope.builtin').help_tags()<CR>", "Help Tags" },
+        k = { "<cmd>lua require('telescope.builtin').keymaps()<CR>", "Keymaps" },
+        o = { "<cmd>lua require('config.telescope').find_files()<CR>", "Find Files" },
+        q = { "<cmd>lua require('config.telescope').find_files_quickly()<CR>", "Quick Find" },
+        s = { "<cmd>lua require('telescope.builtin').grep_string()<CR>", "Grep String" },
+        t = { "<cmd>lua require('telescope.builtin').tags()<CR>", "Tags" },
+    },
+
 
     b = {
         name = "Buffers",
@@ -171,27 +192,6 @@ wk.register({
         r = { "<cmd>lua require('telescope.builtin').pickers()<CR>", "Recent Picks" },
         t = { "<cmd>lua require('telescope.builtin').live_grep()<CR>", "Text" },
         v = { "<cmd>lua require('fzf-lua').grep_visual()<CR>", "Visual Selection" },
-    },
-
-    t = {
-        name = "Telescope",
-        b = { "<cmd>lua require('config.telescope').current_buffer_fuzzy_find()<CR>", "Find - Buffer" },
-        B = { "<cmd>lua require('config.telescope').my_buffers()<CR>", "My Buffers" },
-        e = { "<cmd>Telescope file_browser<CR>", "File Browser" },
-        f = { "<cmd>lua require('config.telescope').live_grep()<CR>", "Search - Buffer" },
-        g = {
-            name = "Git",
-            b = { "<cmd>lua require('telescope.builtin').git_branches()<CR>", "Branches" },
-            c = { "<cmd>lua require('telescope.builtin').git_commits()<CR>", "Commits" },
-            f = { "<cmd>lua require('telescope.builtin').git_files()<CR>", "Files" },
-            s = { "<cmd>lua require('telescope.builtin').git_status()<CR>", "Status" },
-        },
-        h = { "<cmd>lua require('telescope.builtin').help_tags()<CR>", "Help Tags" },
-        k = { "<cmd>lua require('telescope.builtin').keymaps()<CR>", "Keymaps" },
-        o = { "<cmd>lua require('config.telescope').find_files()<CR>", "Find Files" },
-        q = { "<cmd>lua require('config.telescope').find_files_quickly()<CR>", "Quick Find" },
-        s = { "<cmd>lua require('telescope.builtin').grep_string()<CR>", "Grep String" },
-        t = { "<cmd>lua require('telescope.builtin').tags()<CR>", "Tags" },
     },
 
     -- u = {
