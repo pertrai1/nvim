@@ -3,7 +3,6 @@ local leader = "<space>"
 
 map("i", "jk", "<esc>", { silent = true })
 map("n", "<BS>", ":nohlsearch<CR>", { noremap = true, silent = true })
-map("n", leader .. "fn", "<cmd>enew<CR>")
 map("n", "<C-d>", "<Del>")
 map("n", "<C-s>", "<cmd>lua require('session-lens').search_session()<CR>")
 
@@ -28,6 +27,8 @@ map("n", leader .. "bp", "<cmd>BufferLineCyclePrev<CR>", { noremap = true, silen
 map("n", leader .. "bP", "<cmd>BufferLinePick<CR>", { noremap = true, silent = true })
 map("n", leader .. "br", "<cmd>BufferLineCloseRight<CR>", { noremap = true, silent = true })
 
+-- File
+map("n", leader .. "fn", "<cmd>enew<CR>")
 
 -- Git
 map("n", "gj", "<Plug>(GitGutterNextHunk)", { noremap = false })

@@ -117,7 +117,7 @@ function M.my_buffers()
       only_cwd = vim.fn.haslocaldir() == 1,
       show_all_buffers = false,
       sort_mru = true,
-      ignore_current_buffer = true,
+      ignore_current_buffer = false,
       sorter = require('telescope.sorters').get_substr_matcher(),
       selection_strategy = 'closest',
       path_display = { 'shorten' },
