@@ -25,7 +25,7 @@ wk.register({
     ["<Tab>"] = { "<cmd>e#<CR>", "Switch to previous Buffer" },
 
     [";"] = {
-        name = "General",
+        name = "+General",
         b = { "<Plug>(openbrowser-smart-search)", "Browser Search" },
         c = { "<cmd>lua require 'buffers'.close()<CR>", "Close File" },
         C = { "<cmd>lua require 'buffers'.close_others()<CR>", "Close Others" },
@@ -39,7 +39,7 @@ wk.register({
     },
 
     a = {
-        name = "Telescope",
+        name = "+Telescope",
         b = { "<cmd>lua require('config.telescope').current_buffer_fuzzy_find()<CR>", "Find - Buffer" },
         B = { "<cmd>lua require('config.telescope').my_buffers()<CR>", "My Buffers" },
         e = { "<cmd>Telescope file_browser<CR>", "File Browser" },
@@ -61,7 +61,7 @@ wk.register({
 
 
     b = {
-        name = "Buffers",
+        name = "+Buffers",
         b = { "<cmd>lua require('telescope.builtin').buffers()<CR>", "Buffers" },
         d = { "<cmd>BufferLineSortByDirectory<CR>", "Sort by Directory" },
         f = { "<cmd>lua require('config.telescope').my_buffers()<CR>", "List Buffers" },
@@ -76,7 +76,7 @@ wk.register({
     },
 
     d = {
-        name = "Diagnostics",
+        name = "+Diagnostics",
         f = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
         F = { "<cmd>LspToggleAutoFormat<cr>", "Toggle Autoformat" },
         I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
@@ -98,7 +98,7 @@ wk.register({
     },
 
     e = {
-        name = "+Errors",
+        name = "+Errors/Trouble",
         d = { "<cmd>TroubleToggle document_diagnostics<CR>", "Document Diagnostics" },
         l = { "<cmd>TroubleToggle loclist<CR>", "Location List" },
         q = { "<cmd>TroubleToggle quickfix<CR>", "Quickfix List" },
@@ -123,7 +123,7 @@ wk.register({
     },
 
     g = {
-        name = "Git",
+        name = "+Git",
         b = { "<cmd>lua require('telescope.builtin').git_branches()<CR>", "Branches" },
         B = { "<cmd>Git blame<CR>", "Blame" },
         c = { "<cmd>lua require('telescope.builtin').git_commits()<CR>", "Commits" },
@@ -135,7 +135,7 @@ wk.register({
     },
 
     j = {
-        name = "Jump",
+        name = "+Jump",
         c = { "<cmd>HopChar1<CR>", "Hop Character" },
         f = { "<Plug>Lightspeed_s", "Jump Forward" },
         k = { "<Plug>Lightspeed_S", "Jump Backwards" },
@@ -143,7 +143,7 @@ wk.register({
         w = { "<cmd>HopWord<CR>", "Hop Word" }, },
 
     l = {
-        name = "LSP",
+        name = "+LSP",
         a = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code Actions" },
         d = { "<cmd>lua vim.lsp.buf.declaration()<CR>", "Declaration (gD)" },
         D = { "<cmd>lua require('telescope.builtin').lsp_definitions()<CR>", "Definition" },
@@ -159,7 +159,7 @@ wk.register({
     },
 
     o = {
-        name = "Open",
+        name = "+Open",
         c = { "<cmd>ToggleTerm<CR>", "Toggle Terminal" },
         e = { "<cmd>Neotree position=float<CR>", "Toggle Neotree" },
         h = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>", "Harpoon" },
@@ -171,7 +171,7 @@ wk.register({
     },
 
     p = {
-        name = "Packer",
+        name = "+Packer",
         c = { "<cmd>PackerCompile<cr>", "Compile" },
         i = { "<cmd>PackerInstall<cr>", "Install" },
         s = { "<cmd>PackerSync<cr>", "Sync" },
@@ -180,7 +180,7 @@ wk.register({
     },
 
     s = {
-        name = "Search",
+        name = "+Search",
         b = { "<cmd>lua require('config.telescope').current_buffer_fuzzy_find()<CR>", "Current Buffer" },
         c = { "<cmd>lua require('telescope.builtin').grep_string()<CR>", "Current Word" },
         f = { "<cmd>lua require('config.telescope').find_files()<CR>", "Files" },
@@ -205,7 +205,7 @@ wk.register({
     --
 
     w = {
-        name = "Window",
+        name = "+Window",
         c = { "<cmd>lua require('telescope.builtin').commands()<CR>", "Commands" },
         C = { "<cmd>lua require('telescope.builtin').colorscheme()<CR>", "Color Schemes" },
         h = { "<cmd>lua require('telescope.builtin').help_tags()<CR>", "Help Tags" },
