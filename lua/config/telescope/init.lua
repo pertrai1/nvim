@@ -80,7 +80,6 @@ function M.live_grep()
 
   opts_with_preview = {
     path_display = {},
-    grep_open_files = true,
     layout_strategy = "vertical",
     layout_config = {
       height = 0.99,

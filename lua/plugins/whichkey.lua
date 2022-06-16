@@ -19,8 +19,7 @@ wk.register({
     ["!"] = { "<cmd>lua require('telescope.builtin').commands()<CR>", "Commands" },
     ["?"] = { "<cmd>lua require('telescope.builtin').oldfiles()<CR>", "Old Files" },
     [","] = { "<cmd>lua require('telescope.builtin').git_status()<CR>", "Status" },
-    -- ["a"] = { "<cmd>lua require('lists').change_active('Quickfix')<CR>:Ack<space>", "Search - Ack" },
-    ["a"] = { "<cmd>lua require('telescope.builtin').live_grep()<CR>", "Search" },
+    ["a"] = { "<cmd>lua require('config.telescope').live_grep()<CR>", "Search" },
     ["q"] = { "<cmd>b#|bd#<CR>", "Close File" },
     ["<CR>"] = { "<cmd>lua require'lsp.diagnostics'.line_diagnostics()<CR>", "Line Diagnostics" },
     ["<C-o>"] = { "<cmd>%bd|e#|bd#<CR>", "Close Other Buffers" },
@@ -110,15 +109,15 @@ wk.register({
         d = { ":set nosplitright<CR>:execute 'Gvdiff ' .. g:git_base<CR>:set splitright<CR>", "Diff File" },
         h = { "<Plug>(GitGutterNextHunk)", "Next Hunk" },
         H = { "<Plug>(GitGutterPrevHunk)", "Previous Hunk" },
-        s = { "<cmd>lua require('telescope.builtin').git_status()<CR>", "Status" },
-        S = { "<Plug>(GitGutterStageHunk)", "Stage Hunk" },
+        s = { "<Plug>(GitGutterStageHunk)", "Stage Hunk" },
         u = { "<Plug>(GitGutterUndoHunk)", "Undo Hunk" },
     },
 
-    h = {
-        name = "Hop",
+    j = {
+        name = "Jump",
         c = { "<cmd>HopChar1<CR>", "Hop Character" },
         f = { "<Plug>Lightspeed_s", "Jump Forward" },
+        k = { "<Plug>Lightspeed_S", "Jump Backwards" },
         l = { "<cmd>HopLine<CR>", "Hop Line" },
         w = { "<cmd>HopWord<CR>", "Hop Word" }, },
 
@@ -141,8 +140,11 @@ wk.register({
     o = {
         name = "Open",
         c = { "<cmd>ToggleTerm<CR>", "Toggle Terminal" },
+        e = { "<cmd>Neotree position=float<CR>", "Toggle Neotree" },
         h = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>", "Harpoon" },
+        l = { "<cmd>Neotree position=left toggle<CR>", "Neotree - left" },
         m = { "<cmd>Telescope harpoon marks<CR>", "Harpoon Marks" },
+        r = { "<cmd>Neotree position=right toggle<CR>", "Neotree - right" },
         s = { "<cmd>SymbolsOutline<CR>", "Symbols Outline" },
         u = { "<cmd>UndotreeToggle<CR>", "Undo Tree" },
     },
@@ -189,7 +191,7 @@ wk.register({
         o = { "<cmd>lua require('config.telescope').find_files()<CR>", "Find Files" },
         q = { "<cmd>lua require('config.telescope').find_files_quickly()<CR>", "Quick Find" },
         s = { "<cmd>lua require('telescope.builtin').grep_string()<CR>", "Grep String" },
-        t = { "<cmd>lua require('config.telescope').tags()<CR>", "Tags" },
+        t = { "<cmd>lua require('telescope.builtin').tags()<CR>", "Tags" },
     },
 
     -- u = {
