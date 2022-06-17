@@ -34,6 +34,7 @@ wk.register({
         f = { "<cmd>lua require('config.telescope').leader_f()<CR>", "Open File - Buffers" },
         g = { "<cmd>lua require('telescope.builtin').git_files()<CR>", "Open File - Git" },
         h = { "<cmd>split<CR>", "Horizontal Split" },
+        j = { "<cmd>join<CR>", "Join Lines" },
         s = { "<cmd>update<CR>", "Save File" },
         v = { "<cmd>vsplit<CR>", "Vertical Split" }
     },
