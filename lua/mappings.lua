@@ -31,8 +31,8 @@ map("n", leader .. "br", "<cmd>BufferLineCloseRight<CR>", { noremap = true, sile
 map("n", leader .. "fn", "<cmd>enew<CR>")
 
 -- Git
-map("n", "gj", "<Plug>(GitGutterNextHunk)", { noremap = false })
-map("n", "gk", "<Plug>(GitGutterPrevHunk)", { noremap = false })
+map("n", "gj", "<cmd>lua require('gitsigns').next_hunk()<CR>")
+map("n", "gk", "<cmd>lua require('gitsigns').prev_hunk()<CR>", { noremap = false })
 map("n", leader .. "lg", "<cmd>lua require('git').lazygit_toggle()<CR>")
 map("n", leader .. "gb", "<cmd>lua require('telescope.builtin').git_branches()<CR>")
 map("n", leader .. "gB", "<cmd>Git blame<CR>")
@@ -43,11 +43,14 @@ map(
   leader .. "gg",
   ":lua require('lists').change_active('Quickfix')<CR>:execute 'Git difftool ' .. g:git_base<CR>"
 )
-map("n", leader .. "gh", "<Plug>(GitGutterNextHunk)")
-map("n", leader .. "gH", "<Plug>(GitGutterPrevHunk)")
+map("n", leader .. "gh", "<cmd>lua require('gitsigns').next_hunk()<CR>")
+map("n", leader .. "gH", "<cmd>lua require('gitsigns').prev_hunk()<CR>")
+map("n", leader .. "gl", "<cmd>lua require('gitsigns').blame_line()<CR>")
 map("n", leader .. "gn", ":lua require('lists').change_active('Quickfix')<CR>:Git mergetool<CR>")
-map("n", leader .. "gu", "<Plug>(GitGutterUndoHunk)", { noremap = false })
-map("n", leader .. "gs", "<Plug>(GitGutterStageHunk)", { noremap = false })
+map("n", leader .. "gp", "<cmd>lua require('gitsigns').preview_hunk()<CR>")
+map("n", leader .. "gr", "<cmd>lua require('gitsigns').reset_hunk()<CR>")
+map("n", leader .. "gu", "<cmd>lua require('gitsigns').undo_stage_hunk()<CR>")
+map("n", leader .. "gs", "<cmd>lua require('gitsigns').stage_hunk()<CR>")
 
 -- Jumps
 map("n", leader .. "jc", "<cmd>HopChar1<CR>", { noremap = false })
