@@ -129,10 +129,10 @@ wk.register({
         B = { "<cmd>Git blame<CR>", "Blame" },
         c = { "<cmd>lua require('telescope.builtin').git_commits()<CR>", "Commits" },
         d = { ":set nosplitright<CR>:execute 'Gvdiff ' .. g:git_base<CR>:set splitright<CR>", "Diff File" },
-        h = { "<Plug>(GitGutterNextHunk)", "Next Hunk" },
-        H = { "<Plug>(GitGutterPrevHunk)", "Previous Hunk" },
-        s = { "<Plug>(GitGutterStageHunk)", "Stage Hunk" },
-        u = { "<Plug>(GitGutterUndoHunk)", "Undo Hunk" },
+        h = { "<cmd>lua require('gitsigns').next_hunk()<CR>", "Next Hunk" },
+        H = { "<cmd>lua require('gitsigns').prev_hunk()<CR>", "Previous Hunk" },
+        s = { "<cmd>lua require('gitsigns').stage_hunk()<CR>", "Stage Hunk" },
+        u = { "<cmd>lua require('gitsigns').undo_stage_hunk()<CR>", "Undo Hunk" },
     },
 
     j = {
