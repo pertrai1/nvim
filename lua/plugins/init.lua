@@ -195,9 +195,20 @@ return require("packer").startup({ function()
     use { 'milisims/nvim-luaref', branch = 'master' }
 
     use {
-        "rcarriga/vim-ultest",
-        requires = { "vim-test/vim-test" },
-        run = ":UpdateRemotePlugins"
+        "nvim-neotest/neotest",
+        requires = {
+            "nvim-lua/plenary.nvim",
+            "nvim-treesitter/nvim-treesitter",
+            "antoinemadec/FixCursorHold.nvim",
+            "haydenmeade/neotest-jest",
+        },
+        config = function()
+            require('neotest').setup({
+                adapters = {
+                    require('neotest-jest'),
+                }
+            })
+        end
     }
 
     use "mg979/vim-visual-multi"
@@ -209,9 +220,9 @@ return require("packer").startup({ function()
 
     use "mbbill/undotree"
 end,
-config = {
-    display = {
-        open_fn = require('packer.util').float,
+    config = {
+        display = {
+            open_fn = require('packer.util').float,
+        }
     }
-}
 })

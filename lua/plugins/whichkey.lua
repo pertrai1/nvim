@@ -195,15 +195,15 @@ wk.register({
         v = { "<cmd>lua require('fzf-lua').grep_visual()<CR>", "Visual Selection" },
     },
 
-    -- u = {
-    --     name = "Unit Testing",
-    --     f = { "<cmd>TestFile<CR>", "File" },
-    --     l = { "<cmd>TestLast<CR>", "Last" },
-    --     n = { "<cmd>TestNearest<CR>", "Nearest" },
-    --     s = { "<cmd>TestSuite<CR>", "Suite" },
-    --     v = { "<cmd>TestVisit<CR>", "Visit" }
-    -- },
-    --
+    u = {
+        name = "Unit Testing",
+        f = { "<cmd>lua require('neotest').run.run(vim.fn.expand(' % '))<CR>", "File" },
+        l = { "<cmd>lua require('neotest').run.run_last()<CR>", "Run Last" },
+        n = { "<cmd>lua require('neotest').run.run()<CR>", "Run Nearest" },
+        o = { "<cmd>lua require('neotest').summary.toggle()<CR>", "Toggle Summary" },
+        s = { "<cmd>lua require('neotest').run.stop()<CR>", "Stop Nearest" }
+    },
+
 
     w = {
         name = "+Window",

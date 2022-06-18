@@ -198,13 +198,6 @@ map({ "i", "s" }, "<C-k>", "<cmd>lua require'luasnip'.jump(-1)<Cr>")
 map("c", "<C-J>", "<DOWN>")
 map("c", "<C-K>", "<UP>")
 
--- Testing
-map("n", "t<C-n>", ":TestNearest<CR>", { silent = true })
-map("n", "t<C-f>", ":TestFile<CR>", { silent = true })
-map("n", "t<C-a>", ":TestSuite<CR>", { silent = true })
-map("n", "t<C-l>", ":TestLast<CR>", { silent = true })
-map("n", "t<C-v>", ":TestVisit<CR>", { silent = true })
-
 -- Trouble
 map("n", leader .. "et", "<cmd>TroubleToggle<CR>", { silent = true, noremap = true })
 map("n", leader .. "ew", "<cmd>TroubleToggle workspace_diagnostics<CR>", { silent = true, noremap = true })
