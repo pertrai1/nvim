@@ -19,6 +19,7 @@ wk.register({
     ["!"] = { "<cmd>lua require('telescope.builtin').commands()<CR>", "Commands" },
     ["?"] = { "<cmd>lua require('config.telescope').oldfiles()<CR>", "Old Files" },
     [","] = { "<cmd>lua require('telescope.builtin').git_status()<CR>", "Status" },
+    ["."] = { "<cmd>lua require('config.telescope').my_buffers()<CR>", "Buffers" },
     ["q"] = { "<cmd>b#|bd#<CR>", "Close File" },
     ["<CR>"] = { "<cmd>lua require'lsp.diagnostics'.line_diagnostics()<CR>", "Line Diagnostics" },
     ["<C-o>"] = { "<cmd>%bd|e#|bd#<CR>", "Close Other Buffers" },
