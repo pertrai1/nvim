@@ -46,7 +46,7 @@ require "plugins.clever-f"
 require "plugins.splitjoin"
 require "plugins.vim-signature"
 require "plugins.open-browser"
-require "plugins.copilot"
+-- require "plugins.copilot"
 require "plugins.hop"
 require "plugins.nvim-lightbulb"
 

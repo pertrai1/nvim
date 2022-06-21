@@ -70,7 +70,7 @@ return require("packer").startup({ function()
             { "octaltree/cmp-look" },
         },
     }
-    use "github/copilot.vim"
+    -- use "github/copilot.vim"
 
     -- Treesitter
     use {
@@ -220,9 +220,9 @@ return require("packer").startup({ function()
 
     use "mbbill/undotree"
 end,
-    config = {
-        display = {
-            open_fn = require('packer.util').float,
-        }
+config = {
+    display = {
+        open_fn = require('packer.util').float,
     }
+}
 })
