@@ -39,7 +39,7 @@ telescope.setup {
             preview_cutoff = 120,
         },
         file_sorter = require("telescope.sorters").get_fzy_sorter,
-        file_ignore_patterns = { "node_modules", ".git/", "dist/" },
+        file_ignore_patterns = { "node_modules", ".git/", "dist/", "apps/web-e2e" },
         generic_sorter = require("telescope.sorters").get_fzy_sorter,
         path_display = { "absolute" },
         winblend = 0,
