@@ -15,7 +15,9 @@ wk.setup({
 })
 
 wk.register({
-    ["/"] = { "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", "Comment" },
+    ["/"] = { "<cmd>lua require('telescope.builtin').live_grep()<CR>", "Search" },
+    ["["] = { "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", "Comment" },
+    ["r"] = { "<cmd>lua require('telescope.builtin').lsp_references()<CR>", "References" },
     ["!"] = { "<cmd>lua require('telescope.builtin').commands()<CR>", "Commands" },
     ["?"] = { "<cmd>lua require('config.telescope').oldfiles()<CR>", "Old Files" },
     [","] = { "<cmd>lua require('telescope.builtin').git_status()<CR>", "Status" },
