@@ -34,7 +34,6 @@ return require("packer").startup({ function()
     use "kyazdani42/nvim-web-devicons"
     use "rcarriga/nvim-notify"
     use "folke/tokyonight.nvim"
-    use { "kabouzeid/nvim-jellybeans", requires = "rktjmp/lush.nvim" }
     -- use "navarasu/onedark.nvim"
     use {
         "nvim-neo-tree/neo-tree.nvim",

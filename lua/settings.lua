@@ -9,8 +9,7 @@ local opt = setmetatable({}, {
 })
 
 vim.g.tokyonight_style = "night"
--- vim.cmd [[colorscheme tokyonight]]
-vim.cmd [[colorscheme jellybeans]]
+vim.cmd [[colorscheme tokyonight]]
 
 -- opt.dict = "~/dotfiles/lib/10k.txt"
 opt.expandtab = true
