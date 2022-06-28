@@ -175,6 +175,7 @@ lspconfig.pyright.setup { capabilities = capabilities, on_attach = on_attach }
 -- https://github.com/theia-ide/typescript-language-server
 lspconfig.tsserver.setup {
     capabilities = capabilities,
+    root_dir = lspconfig.util.root_pattern("package.json"),
     on_attach = function(client, bufnr)
         client.resolved_capabilities.document_formatting = false
         require("nvim-lsp-ts-utils").setup({
@@ -189,6 +190,25 @@ lspconfig.tsserver.setup {
         vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", ":TSLspImportAll<CR>", opts)
         on_attach(client)
     end,
+}
+
+lspconfig.denols.setup {
+    capabilities = capabilities,
+    root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
+    on_attach = function(client, bufnr)
+        client.resolved_capabilities.document_formatting = false
+        require("nvim-lsp-ts-utils").setup({
+            enable_import_on_completion = true,
+            update_imports_on_move = true,
+            require_confirmation_on_move = true
+        })
+        -- no default maps, so you may want to define some here
+        local opts = { silent = true }
+        vim.api.nvim_buf_set_keymap(bufnr, "n", "gs", ":TSLspOrganize<CR>", opts)
+        vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", ":TSLspRenameFile<CR>", opts)
+        vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", ":TSLspImportAll<CR>", opts)
+        on_attach(client)
+    end
 }
 
 local function get_lua_runtime()
