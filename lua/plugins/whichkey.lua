@@ -192,10 +192,10 @@ wk.register({
         l = { "<cmd>lua require('telescope.builtin').resume()<CR>", "Last Picks" },
         m = { "<cmd>lua require('telescope.builtin').marks()<CR>", "Marks" },
         p = { "<cmd>lua require('fzf-lua').grep_project()<CR>", "Project" },
-        P = { "<cmd>lua require('fzf-lua').grep_project()<CR>", "Project - Live" },
         r = { "<cmd>lua require('telescope.builtin').pickers()<CR>", "Recent Picks" },
         t = { "<cmd>lua require('telescope.builtin').live_grep()<CR>", "Text" },
         v = { "<cmd>lua require('fzf-lua').grep_visual()<CR>", "Visual Selection" },
+        w = { "<cmd>lua require('fzf-lua').grep_cword()<CR>", "Word" },
     },
 
     u = {
