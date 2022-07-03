@@ -8,6 +8,26 @@ local opt = setmetatable({}, {
   end,
 })
 
+--disable_distribution_plugins
+vim.g.loaded_gzip              = 1
+vim.g.loaded_tar               = 1
+vim.g.loaded_tarPlugin         = 1
+vim.g.loaded_zip               = 1
+vim.g.loaded_zipPlugin         = 1
+vim.g.loaded_getscript         = 1
+vim.g.loaded_getscriptPlugin   = 1
+vim.g.loaded_vimball           = 1
+vim.g.loaded_vimballPlugin     = 1
+vim.g.loaded_matchit           = 1
+vim.g.loaded_matchparen        = 1
+vim.g.loaded_2html_plugin      = 1
+vim.g.loaded_logiPat           = 1
+vim.g.loaded_rrhelper          = 1
+vim.g.loaded_netrw             = 1
+vim.g.loaded_netrwPlugin       = 1
+vim.g.loaded_netrwSettings     = 1
+vim.g.loaded_netrwFileHandlers = 1
+
 vim.g.tokyonight_style = "night"
 vim.cmd [[colorscheme tokyonight]]
 
@@ -54,9 +74,13 @@ vim.o.smarttab = true
 vim.o.splitbelow = true
 vim.o.splitright = true
 vim.o.termguicolors = true
+vim.o.timeout = true
+vim.o.ttimeout = true
 vim.o.timeoutlen = 500
+vim.o.ttimeoutlen = 10
+vim.o.updatetime = 100
+vim.o.redrawtime = 1500
 vim.o.undodir = vim.fn.expand "~/.config/nvim/backups"
-vim.o.updatetime = 300
 vim.o.viewoptions = ""
 vim.o.virtualedit = "onemore"
 vim.o.whichwrap = "b,h,l"

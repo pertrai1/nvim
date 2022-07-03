@@ -1,1 +1,1 @@
-vim.g.do_filetype_lua = true
+vim.g.do_filetype_lua = 1
