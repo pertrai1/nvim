@@ -32,18 +32,18 @@ vim.g.tokyonight_style = "night"
 vim.cmd [[colorscheme tokyonight]]
 
 -- opt.dict = "~/dotfiles/lib/10k.txt"
-opt.expandtab = true
+opt.expandtab     = true
 opt.formatoptions = "crqnbj"
-opt.grepprg = "rg --vimgrep --no-heading --hidden"
-opt.shiftwidth = 2
-opt.smartindent = true
-opt.softtabstop = 2
+opt.grepprg       = "rg --vimgrep --no-heading --hidden"
+opt.shiftwidth    = 2
+opt.smartindent   = true
+opt.softtabstop   = 2
 opt.spellcapcheck = ""
-opt.swapfile = false
-opt.tabstop = 2
-opt.textwidth = 80
-opt.undofile = true
-opt.undolevels = 10000
+opt.swapfile      = false
+opt.tabstop       = 2
+opt.textwidth     = 80
+opt.undofile      = true
+opt.undolevels    = 10000
 
 vim.o.clipboard = "unnamedplus"
 vim.o.completeopt = "menu,menuone,noinsert,noselect"
@@ -78,7 +78,7 @@ vim.o.timeout = true
 vim.o.ttimeout = true
 vim.o.timeoutlen = 500
 vim.o.ttimeoutlen = 10
-vim.o.updatetime = 100
+vim.o.updatetime = 300
 vim.o.redrawtime = 1500
 vim.o.undodir = vim.fn.expand "~/.config/nvim/backups"
 vim.o.viewoptions = ""

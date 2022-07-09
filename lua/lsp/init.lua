@@ -69,25 +69,25 @@ vim.fn.sign_define("DiagnosticSignHint", { text = "", numhl = "DiagnosticHint" }
 
 local on_attach = function(client)
     require("lsp-format").on_attach(client)
-    if client.resolved_capabilities.code_action then
+    if client.server_capabilities.code_action then
         utils.map("n", "gA", "<cmd>lua vim.lsp.buf.code_action()<CR>", { noremap = true, buffer = true, silent = true })
     end
-    if client.resolved_capabilities.declaration then
+    if client.server_capabilities.declaration then
         utils.map("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", { buffer = true, silent = true })
     end
-    if client.resolved_capabilities.goto_definition then
+    if client.server_capabilities.goto_definition then
         utils.map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { buffer = true })
     end
-    if client.resolved_capabilities.type_definition then
+    if client.server_capabilities.type_definition then
         utils.map("n", "gt", "<cmd>lua vim.lsp.buf.type_definition()<CR>", { buffer = true })
     end
-    if client.resolved_capabilities.implementation then
+    if client.server_capabilities.implementation then
         utils.map("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", { buffer = true })
     end
-    if client.resolved_capabilities.hover then
+    if client.server_capabilities.hover then
         utils.map("n", "<CR>", "<cmd>lua vim.lsp.buf.hover()<CR>", { buffer = true })
     end
-    if client.resolved_capabilities.find_references then
+    if client.server_capabilities.find_references then
         utils.map(
             "n",
             "<Space>*",
@@ -95,10 +95,10 @@ local on_attach = function(client)
             { buffer = true }
         )
     end
-    if client.resolved_capabilities.rename then
+    if client.server_capabilities.rename then
         utils.map("n", "gr", "<cmd>lua vim.lsp.buf.rename()<CR>", { silent = true, buffer = true })
     end
-    if client.resolved_capabilities.signature_help then
+    if client.server_capabilities.signature_help then
         utils.map("n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<CR>", { silent = true, buffer = true })
     end
 
@@ -132,8 +132,9 @@ end
 -- https://github.com/golang/tools/tree/master/gopls
 lspconfig.gopls.setup {
     capabilities = capabilities,
+    cmd = { 'gopls', 'serve' },
     on_attach = function(client)
-        client.resolved_capabilities.document_formatting = false
+        client.server_capabilities.document_formatting = false
         on_attach(client)
     end,
     settings = {
@@ -145,6 +146,7 @@ lspconfig.gopls.setup {
                 unusedparams = true,
                 unusewrites = true,
             },
+            staticcheck = true
         },
     },
 }
@@ -177,7 +179,7 @@ lspconfig.tsserver.setup {
     capabilities = capabilities,
     root_dir = lspconfig.util.root_pattern("package.json"),
     on_attach = function(client, bufnr)
-        client.resolved_capabilities.document_formatting = false
+        client.server_capabilities.document_formatting = false
         require("nvim-lsp-ts-utils").setup({
             enable_import_on_completion = true,
             update_imports_on_move = true,
@@ -196,7 +198,7 @@ lspconfig.denols.setup {
     capabilities = capabilities,
     root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
     on_attach = function(client, bufnr)
-        client.resolved_capabilities.document_formatting = false
+        client.server_capabilities.document_formatting = false
         require("nvim-lsp-ts-utils").setup({
             enable_import_on_completion = true,
             update_imports_on_move = true,
@@ -344,7 +346,7 @@ lspconfig.bashls.setup { capabilities = capabilities, on_attach = on_attach }
 lspconfig.dockerls.setup {
     capabilities = capabilities,
     on_attach = function(client)
-        client.resolved_capabilities.document_formatting = false
+        client.server_capabilities.document_formatting = false
         on_attach(client)
     end,
 }
@@ -353,12 +355,30 @@ lspconfig.dockerls.setup {
 lspconfig.terraformls.setup {
     capabilities = capabilities,
     on_attach = function(client)
-        client.resolved_capabilities.document_formatting = false
+        client.server_capabilities.document_formatting = false
         on_attach(client)
     end,
     cmd = { "terraform-ls", "serve" },
     filetypes = { "tf" },
 }
+
+require("lspconfig").rust_analyzer.setup({
+    on_attach = on_attach,
+    settings = {
+        ["rust-analyzer"] = {
+            assist = {
+                importGranularity = "module",
+                importPrefix = "self",
+            },
+            cargo = {
+                loadOutDirsFromCheck = true
+            },
+            procMacro = {
+                enable = true
+            },
+        }
+    }
+})
 
 local vint = require "efm/vint"
 local stylua = require "efm/stylua"
@@ -412,7 +432,7 @@ lspconfig.efm.setup {
 lspconfig.clangd.setup {
     capabilities = capabilities,
     on_attach = function(client)
-        client.resolved_capabilities.document_formatting = false
+        client.server_capabilities.document_formatting = false
         on_attach(client)
     end,
 }
