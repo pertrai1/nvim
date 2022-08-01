@@ -130,7 +130,7 @@ return require("packer").startup({ function()
     }
 
     use { "akinsho/toggleterm.nvim",
-        tag = 'v1.*',
+        tag = 'v2.*',
     }
     -- fZF
     use "ibhagwan/fzf-lua"
