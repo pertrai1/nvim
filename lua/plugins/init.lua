@@ -225,8 +225,6 @@ return require("packer").startup({ function()
 
     use "kana/vim-niceblock"
 
-    use "tyru/open-browser.vim"
-
     use { 'milisims/nvim-luaref', branch = 'master' }
 
     use {
