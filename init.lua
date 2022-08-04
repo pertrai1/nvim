@@ -44,7 +44,6 @@ require "plugins.clever-f"
 require "plugins.splitjoin"
 require "plugins.vim-signature"
 require "plugins.hop"
-require "plugins.nvim-lightbulb"
 
 require "lsp"
 require "statusline"
