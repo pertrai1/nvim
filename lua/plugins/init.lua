@@ -227,23 +227,6 @@ return require("packer").startup({ function()
 
     use { 'milisims/nvim-luaref', branch = 'master' }
 
-    use {
-        "nvim-neotest/neotest",
-        requires = {
-            "nvim-lua/plenary.nvim",
-            "nvim-treesitter/nvim-treesitter",
-            "antoinemadec/FixCursorHold.nvim",
-            "haydenmeade/neotest-jest",
-        },
-        config = function()
-            require('neotest').setup({
-                adapters = {
-                    require('neotest-jest'),
-                }
-            })
-        end
-    }
-
     use "mg979/vim-visual-multi"
 
     use {
