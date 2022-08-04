@@ -29,7 +29,6 @@ wk.register({
 
     [";"] = {
         name = "+General",
-        b = { "<Plug>(openbrowser-smart-search)", "Browser Search" },
         c = { "<cmd>lua require 'buffers'.close()<CR>", "Close File" },
         C = { "<cmd>lua require 'buffers'.close_others()<CR>", "Close Others" },
         -- f = { "<cmd>lua require('telescope.builtin').find_files({layout_config = { horizontal = {prompt_position = 'bottom'}},previewer = false})<CR>", "Open File" },
@@ -144,7 +143,8 @@ wk.register({
         f = { "<Plug>Lightspeed_s", "Jump Forward" },
         k = { "<Plug>Lightspeed_S", "Jump Backwards" },
         l = { "<cmd>HopLine<CR>", "Hop Line" },
-        w = { "<cmd>HopWord<CR>", "Hop Word" }, },
+        w = { "<cmd>HopWord<CR>", "Hop Word" },
+    },
 
     l = {
         name = "+LSP",
@@ -191,22 +191,9 @@ wk.register({
         h = { "<cmd>lua require('telescope.builtin').search_history()<CR>", "History" },
         l = { "<cmd>lua require('telescope.builtin').resume()<CR>", "Last Picks" },
         m = { "<cmd>lua require('telescope.builtin').marks()<CR>", "Marks" },
-        p = { "<cmd>lua require('fzf-lua').grep_project()<CR>", "Project" },
         r = { "<cmd>lua require('telescope.builtin').pickers()<CR>", "Recent Picks" },
         t = { "<cmd>lua require('telescope.builtin').live_grep()<CR>", "Text" },
-        v = { "<cmd>lua require('fzf-lua').grep_visual()<CR>", "Visual Selection" },
-        w = { "<cmd>lua require('fzf-lua').grep_cword()<CR>", "Word" },
     },
-
-    u = {
-        name = "Unit Testing",
-        f = { "<cmd>lua require('neotest').run.run(vim.fn.expand(' % '))<CR>", "File" },
-        l = { "<cmd>lua require('neotest').run.run_last()<CR>", "Run Last" },
-        n = { "<cmd>lua require('neotest').run.run()<CR>", "Run Nearest" },
-        o = { "<cmd>lua require('neotest').summary.toggle()<CR>", "Toggle Summary" },
-        s = { "<cmd>lua require('neotest').run.stop()<CR>", "Stop Nearest" }
-    },
-
 
     w = {
         name = "+Window",
