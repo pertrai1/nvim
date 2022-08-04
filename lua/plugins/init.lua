@@ -34,7 +34,7 @@ return require("packer").startup({ function()
     use "kyazdani42/nvim-web-devicons"
     use "rcarriga/nvim-notify"
     use "folke/tokyonight.nvim"
-    -- use "navarasu/onedark.nvim"
+
     use {
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v2.x",
@@ -77,7 +77,6 @@ return require("packer").startup({ function()
         "nvim-treesitter/nvim-treesitter",
         run = ":TSUpdate",
     }
-    -- use "nvim-treesitter/playground"
     use "nvim-treesitter/nvim-treesitter-refactor"
     use "nvim-treesitter/nvim-treesitter-textobjects"
     use "RRethy/nvim-treesitter-textsubjects"
