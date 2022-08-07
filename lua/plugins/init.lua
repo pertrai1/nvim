@@ -69,7 +69,6 @@ return require("packer").startup({ function()
             { "octaltree/cmp-look" },
         },
     }
-    -- use "github/copilot.vim"
 
     -- Treesitter
     use {
@@ -180,7 +179,6 @@ return require("packer").startup({ function()
         end
     }
 
-    use "krisajenkins/vim-projectlocal"
     use "numToStr/Navigator.nvim"
     use "cohama/lexima.vim"
 
@@ -195,8 +193,6 @@ return require("packer").startup({ function()
     use "romainl/vim-qf"
     use "kevinhwang91/nvim-bqf"
     use "https://gitlab.com/yorickpeterse/nvim-pqf.git"
-
-    use "machakann/vim-sandwich"
 
     use "bounceme/poppy.vim"
 
