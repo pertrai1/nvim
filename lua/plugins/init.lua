@@ -121,7 +121,6 @@ return require("packer").startup({ function()
 
     use "spywhere/detect-language.nvim"
     use "simrat39/symbols-outline.nvim"
-    use "j-hui/fidget.nvim"
 
     use {
         "folke/which-key.nvim",
@@ -192,7 +191,6 @@ return require("packer").startup({ function()
     use {
         "haya14busa/is.vim",
     }
-    use "mileszs/ack.vim"
 
     use "romainl/vim-qf"
     use "kevinhwang91/nvim-bqf"
