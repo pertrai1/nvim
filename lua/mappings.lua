@@ -63,6 +63,7 @@ map("n", leader .. "jw", "<cmd>HopWord<CR>", { noremap = false })
 map("n", leader .. "oc", "<cmd>ToggleTerm<CR>")
 map("n", leader .. "os", "<cmd>SymbolsOutline<CR>")
 map("n", leader .. "ou", "<cmd>UndotreeToggle<CR>")
+map("n", leader .. "ol", "<cmd>NvimTreeToggle<CR>")
 
 -- Packer
 map("n", leader .. "pc", "<cmd>PackerCompile<cr>")

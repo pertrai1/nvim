@@ -34,7 +34,16 @@ return require("packer").startup({ function()
     use "kyazdani42/nvim-web-devicons"
     use "rcarriga/nvim-notify"
     use "folke/tokyonight.nvim"
-
+    use {
+        'kyazdani42/nvim-tree.lua',
+        requires = {
+            'kyazdani42/nvim-web-devicons', -- optional, for file icons
+        },
+        config = function()
+            require('nvim-tree').setup()
+        end,
+        tag = 'nightly' -- optional, updated every week. (see issue #1193)
+    }
     use "akinsho/bufferline.nvim"
 
     use "tami5/sqlite.lua"

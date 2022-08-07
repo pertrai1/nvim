@@ -12,7 +12,6 @@ require "commands"
 require "autocmds"
 
 require "plugins.telescope"
--- require "plugins.neo-tree"
 require "plugins.dressing"
 require "plugins.nvim-cmp"
 require "plugins.lua-snip"
