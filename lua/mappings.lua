@@ -61,9 +61,6 @@ map("n", leader .. "jw", "<cmd>HopWord<CR>", { noremap = false })
 
 -- Open
 map("n", leader .. "oc", "<cmd>ToggleTerm<CR>")
-map("n", leader .. "oe", "<cmd>Neotree position=float<CR>")
-map("n", leader .. "ol", "<cmd>Neotree position=left toggle<CR>")
-map("n", leader .. "or", "<cmd>Neotree position=right toggle<CR>")
 map("n", leader .. "os", "<cmd>SymbolsOutline<CR>")
 map("n", leader .. "ou", "<cmd>UndotreeToggle<CR>")
 

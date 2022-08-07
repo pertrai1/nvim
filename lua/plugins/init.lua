@@ -35,16 +35,6 @@ return require("packer").startup({ function()
     use "rcarriga/nvim-notify"
     use "folke/tokyonight.nvim"
 
-    use {
-        "nvim-neo-tree/neo-tree.nvim",
-        branch = "v2.x",
-        requires = {
-            "nvim-lua/plenary.nvim",
-            "kyazdani42/nvim-web-devicons",
-            "MunifTanjim/nui.nvim",
-        },
-    }
-
     use "akinsho/bufferline.nvim"
 
     use "tami5/sqlite.lua"

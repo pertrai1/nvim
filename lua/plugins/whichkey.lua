@@ -164,9 +164,6 @@ wk.register({
     o = {
         name = "+Open",
         c = { "<cmd>ToggleTerm<CR>", "Toggle Terminal" },
-        e = { "<cmd>Neotree position=float<CR>", "Toggle Neotree" },
-        l = { "<cmd>Neotree position=left toggle<CR>", "Neotree - left" },
-        r = { "<cmd>Neotree position=right toggle<CR>", "Neotree - right" },
         s = { "<cmd>SymbolsOutline<CR>", "Symbols Outline" },
         u = { "<cmd>UndotreeToggle<CR>", "Undo Tree" },
     },
@@ -200,9 +197,6 @@ wk.register({
         m = { "<cmd>lua require('telescope.builtin').man_pages()<CR>", "Man Pages" },
         n = { "<cmd>Notifications<CR>", "Notifications" },
         k = { "<cmd>lua require('telescope.builtin').keymaps()<CR>", "Keymaps" },
-        S = { "<cmd>Neotree position=right<CR>", "Sidebar Right" },
-        s = { "<cmd>Neotree position=left<CR>", "Sidebar Left" },
-        t = { "<cmd>Neotree position=float<CR>", "Sidebar Float" },
         T = { "<cmd>write | edit | TSBufEnable highlight<CR>", "Reload Treesitter" },
         ["-"] = { "<C-w>s<CR>", "Split Window Below" },
         ["|"] = { "<C-w>v<CR>", "Split Window Right" }
