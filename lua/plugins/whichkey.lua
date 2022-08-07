@@ -112,7 +112,6 @@ wk.register({
 
     f = {
         name = "+File",
-        a = { "<cmd>lua require('harpoon.mark').add_file()<CR>", "Add to Harpoon" },
         b = { "<cmd>Telescope file_browser<CR>", "Browse" },
         c = { "<cmd>lua require('buffers').close()<CR>", "Close" },
         n = { "<cmd>enew<CR>", "New File" },
@@ -166,9 +165,7 @@ wk.register({
         name = "+Open",
         c = { "<cmd>ToggleTerm<CR>", "Toggle Terminal" },
         e = { "<cmd>Neotree position=float<CR>", "Toggle Neotree" },
-        h = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>", "Harpoon" },
         l = { "<cmd>Neotree position=left toggle<CR>", "Neotree - left" },
-        m = { "<cmd>Telescope harpoon marks<CR>", "Harpoon Marks" },
         r = { "<cmd>Neotree position=right toggle<CR>", "Neotree - right" },
         s = { "<cmd>SymbolsOutline<CR>", "Symbols Outline" },
         u = { "<cmd>UndotreeToggle<CR>", "Undo Tree" },
