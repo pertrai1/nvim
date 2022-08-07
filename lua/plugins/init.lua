@@ -203,8 +203,6 @@ return require("packer").startup({ function()
 
     use "arthurxavierx/vim-caser"
 
-    use "z1mm32m4n/vim-superman"
-
     use "rhysd/clever-f.vim"
     use "kepbod/quick-scope"
     use "ggandor/lightspeed.nvim"
@@ -217,10 +215,6 @@ return require("packer").startup({ function()
     use "kshenoy/vim-signature"
 
     use "kana/vim-niceblock"
-
-    use { 'milisims/nvim-luaref', branch = 'master' }
-
-    use "mg979/vim-visual-multi"
 
     use "mbbill/undotree"
 end,

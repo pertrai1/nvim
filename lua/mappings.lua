@@ -11,9 +11,6 @@ map("n", ",", "<Plug>(clever-f-repeat-back)")
 
 map("n", leader .. "<C-o>", "<cmd>%bd|e#|bd#<CR>")
 
-map("n", leader .. "q", ":b#|bd#<CR>")
-map("n", leader .. "w", ":update<CR>")
-
 -- Buffers
 map("n", leader .. "bb", "<cmd>lua require('telescope.builtin').buffers()<CR>", { noremap = true, silent = true })
 map("n", leader .. "bd", "<cmd>BufferLineSortByDirectory<CR>", { noremap = true, silent = true })
@@ -174,8 +171,6 @@ map(
 )
 
 map({ "n", "x" }, "s", "<Nope>", { noremap = false })
-
-map({ "n", "v" }, "gx", "<Plug>(openbrowser-smart-search)", { noremap = false })
 
 map("v", "<", "<gv")
 map("v", ">", ">gv")
